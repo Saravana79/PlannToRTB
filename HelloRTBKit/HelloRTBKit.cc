@@ -124,7 +124,7 @@ namespace RTBKIT {
 				c.exchangeFilter.include.push_back("adx");
 				c.providerConfig["adx"]["externalId"] = "1234";
 				c.providerConfig["adx"]["htmlTemplate"] = 
-					"<html><body><iframe src=\"http://www.plannto.com/show_ads?size=%{creative.width}x%{creative.height}&click_url=%%CLICK_URL_UNESC%%%%WINNING_PRICE%%\"/></body></html>";
+					"<html><body><iframe src=\"http://www.plannto.com/advertisments/show_ads?item_id=%{meta.item_ids}&ads_id=%{meta.advertisementids}&size=%{creative.width}x%{creative.height}&click_url=%%CLICK_URL_UNESC%%%%WINNING_PRICE%%\"/></body></html>";
 				c.providerConfig["adx"]["clickThroughUrl"] = "http://click.usmc.com";
 				c.providerConfig["adx"]["agencyId"] = 59;
 				c.providerConfig["adx"]["vendorType"] = "113";
@@ -180,7 +180,7 @@ namespace RTBKIT {
 			double timeLeftMs,
 			const Json::Value & augmentations)
 		{
-			vector<CAdDataSorter> *vDS = new vector<CAdDataSorter>();
+			//vector<CAdDataSorter> *vDS = new vector<CAdDataSorter>();
 
 			for (Bid& bid : bids) {
 
@@ -202,72 +202,66 @@ namespace RTBKIT {
 				bid.bid(availableCreative, MicroUSD(100));
 			}
 
-			// fetch the details about the requested URL from the redis db
+		/*	// fetch the details about the requested URL from the redis db
         		std::string urlName(br->url.c_str());
-        		std::string item_ids ;
-				std::string prfx = "url:";
-				urlName = prfx + urlName;
-	        		cout << urlName << endl;
-	        		cout << "\t\t URL From the Requester --> " << urlName << endl;
+			std::string prfx = "url:";
+			urlName = prfx + urlName;
+	        	cout << urlName << endl;
+	        	cout << "\t\t UR  From the Requester --> " << urlName << endl;
 
 	        	std::string cmd = "";
         		redisReply *reply = 0;
 
 	        	cmd = "HGET " + urlName + " item_ids";
-	        	cout << "\t command: " << cmd << endl;
+	        cout << "\t command: " << cmd << endl;
 	        	reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
 	        	if (reply->type == REDIS_REPLY_NIL)
         		{
-	        	} 
-	        	else 
-        		{
-		            item_ids = reply->str;
-		            cout << "\t\t item_ids From the Requester --> " << item_ids << endl;
-			    	std::vector <std::string> vItemIDs;
-			    	vItemIDs = parseString(item_ids);
+	        	} else {
+		            std::string str = reply->str;
+			    std::vector <std::string> vItemIDs;
+			    vItemIDs = parseString(str);
 		            //  HGET item:123 avertisement_id
 
-	    			for (unsigned int i = 0; i < vItemIDs.size(); i++)
-		   		    {
-						cmd = "HGET item:" + vItemIDs[i] + " avertisement_id";
-						cout << "\t\t Next command: " << cmd << endl;
+    			    for (unsigned int i = 0; i < vItemIDs.size(); i++)
+	   		    {
+				cmd = "HGET item:" + vItemIDs[i] + " avertisement_id";
+				cout << "\t\t Next command: " << cmd << endl;
+				reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
+				if (reply->type == REDIS_REPLY_NIL)
+				{
+				} else {
+					std::string str = reply->str;
+					cout << "\t\t Ad IDs " << str.c_str() << endl;
+					std::vector <std::string> vAdIDs;
+					vAdIDs = parseString(str);
+
+					// HGET advertisments:1 eCPM
+					for (unsigned int i = 0; i < vAdIDs.size(); i++)
+					{
+						cmd = "HGET advertisments:" + vAdIDs[i] + " eCPM";
+						cout << "\t\t\t Next command: " << cmd << endl;
 						reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
 						if (reply->type == REDIS_REPLY_NIL)
 						{
-						} 
-						else 
-						{
+						} else {
 							std::string str = reply->str;
-							cout << "\t\t Ad IDs " << str.c_str() << endl;
-							std::vector <std::string> vAdIDs;
-							vAdIDs = parseString(str);
+							cout << "\t\t\t eCPMs " << str.c_str() << endl;
+							std::vector <std::string> vECpms;
+							vECpms = parseString(str);
 
-							// HGET advertisments:1 eCPM
-							for (unsigned int i = 0; i < vAdIDs.size(); i++)
-							{
-								cmd = "HGET advertisments:" + vAdIDs[i] + " eCPM";
-								cout << "\t\t\t Next command: " << cmd << endl;
-								reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
-								if (reply->type == REDIS_REPLY_NIL)
-								{
-								} else {
-									std::string str = reply->str;
-									cout << "\t\t\t eCPMs " << str.c_str() << endl;
-									std::vector <std::string> vECpms;
-									vECpms = parseString(str);
+							// sorting the ads to get the min ecpm
+							CAdDataSorter ds;
+							ds.id = atoi(vAdIDs[i].c_str());
+							ds.val = atof(vECpms[0].c_str());
 
-									// sorting the ads to get the min ecpm
-									CAdDataSorter ds;
-									ds.id = atoi(vAdIDs[i].c_str());
-									ds.val = atof(vECpms[0].c_str());
-									vDS.push_back(ds);
 
-								}
-							}
-	 
 						}
+					}
+ 
+				}
 
-				    }
+			    }
 
 	         	}
         		freeReplyObject(reply);
@@ -286,15 +280,18 @@ namespace RTBKIT {
 					}
 				}
 			}
-
+	
 			// A value that will be passed back to us when we receive the result of
 			// our bid.
 			//Json::Value metadata = 42;
 			Json::Value metadata;
 			metadata["advertisementids"] = vDS->at(0).id;
-			metadata["item_ids"] = 
 			metadata["eCPM"] = vDS->at(0).val;
-			
+			*/
+			Json::Value metadata;
+		    metadata["advertisementids"] = "2";
+			metadata["eCPM"] = ".01";
+			metadata["item_ids"] = "6473";
 
 			// Send our bid back to the agent.
 			doBid(id, bids, metadata);
