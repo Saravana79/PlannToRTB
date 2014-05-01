@@ -22,13 +22,13 @@ CHANNELS = ['12345']
 # The below are example values for these fields that are used to populate
 # publisher info.
 BRANDED_PUB_DATA = [
-    ('http://www.youtube.com', 502, 32423234, 'Youtube'),
-    ('http://www.youtube.com/shows', 502, 32423234, 'Youtube'),
+    ('http://gadgets.ndtv.com/mobiles/reviews/moto-x-review-the-new-moto-in-town-redefines-mid-range-513382', 502, 32423234, 'NDTV'),
+    ('http://www.fonearena.com/blog/101795/htc-one-m8-becomes-official-phone-of-delhi-daredevils.html', 502, 32423234, 'FoneAre'),
     ('http://news.google.com', 10001, 56751341, 'Google News'),
-    ('http://news.google.com/news?pz=1&ned=us&topic=b&ict=ln', 10001, 12672383,
-     'Google News'),
-    ('http://www.google.com/finance?hl=en&ned=us&tab=ne', 1528, 84485234,
-     'Google Finance'),
+    ('http://gadgetstouse.com/featured/top-5-smartphones-6-inch-display/18459', 10001, 12672383,
+     'gadgetstouse'),
+    ('http://tech.firstpost.com/reviews/sony-xperia-t2-ultra-dual-review-righting-the-wrongs-of-the-z-ultra-222504.html', 1528, 84485234,
+     'Tech First'),
     ('http://www.nytimes.com/pages/technology/index.html', 936, 9034124,
      'New York Times'),
     ('http://some.gcn.site.com', 10002, 12002392, 'GCN'),
@@ -292,7 +292,7 @@ class DefaultBidGenerator(object):
     self._GeneratePageInfo(bid_request)
     self._GenerateUserInfo(bid_request)
     self._GenerateAdSlot(bid_request)
-
+    self._GenerateAdSlot(bid_request)
     return bid_request
 
   def GeneratePingRequest(self):
@@ -597,6 +597,7 @@ class MobileBidGenerator(DefaultBidGenerator):
         mobile.app_category_ids.append(category_id)
 
     self._GenerateUserInfo(bid_request)
+    self._GenerateAdSlot(bid_request)
     self._GenerateAdSlot(bid_request)
 
     return bid_request

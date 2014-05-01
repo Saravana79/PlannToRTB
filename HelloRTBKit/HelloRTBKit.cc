@@ -15,6 +15,7 @@
 #include <boost/program_options/variables_map.hpp>
 
 #include <iostream>
+#include <vector>
 #include <thread>
 #include <chrono>
 
@@ -33,7 +34,7 @@ namespace RTBKIT {
 			accountSetup(false)
 		{}
 
-		redisContext* m_redisContext;
+		/*redisContext* m_redisContext;
 		redisContext* connectRedisSvr()
 		{
 			redisContext *c;
@@ -53,26 +54,244 @@ namespace RTBKIT {
 
 			return c;
 		}
-
+		*/
+		/* Start redis finding code */
 		std::vector<std::string> parseString(std::string str)
-		{
-		std::vector <std::string> vec;
-		std::string tmp;
-		while( (str.find(",", 0)) != string::npos )
-		{
-			size_t pos = str.find(",", 0);
-			tmp = str.substr(0, pos);
-			str.erase(0, pos + 1);
-			vec.push_back(tmp);
+			{
+			std::vector <std::string> vec;
+			std::string tmp;
+			while( (str.find(",", 0)) != string::npos )
+			{
+				size_t pos = str.find(",", 0);
+				tmp = str.substr(0, pos);
+				str.erase(0, pos + 1);
+				vec.push_back(tmp);
+			}
+			vec.push_back(str);
+			return vec;
+			}
+
+
+		std::string appendStringswithComma(const std::string mainstr, const std::string newstr)
+			{
+				std::string finalstr;
+			 	if(mainstr.empty())
+					{
+						finalstr =  newstr;
+					}
+					else
+					{
+						finalstr = mainstr + "," + newstr;
+					}
+					return finalstr;
+			}
+
+		std::string getRootItemID(const std::string itemtype)
+			{
+			//Advertisment which as associated direclty to that type is taken based on item's type.
+						    std::string root_item_id;
+						    if (itemtype == "Mobile")
+						    {
+						    		root_item_id = "3215";
+						    }
+				    	 	if (itemtype == "Tablet")
+				    	 	{
+							    	root_item_id = "3217";
+							}
+						 	if (itemtype == "Camera")
+				    	 	{
+							    	root_item_id = "3216";
+							}
+						 	if (itemtype == "Game")
+				    	 	{
+							    	root_item_id = "15411";
+							}
+						 	if (itemtype == "Laptop")
+				    	 	{
+							    	root_item_id = "15412";
+							}
+						 	if (itemtype == "Car")
+				    	 	{
+							    	root_item_id = "3214";
+							}
+						 	if (itemtype == "Bike")
+				    	 	{
+							    	root_item_id = "3218";
+							}
+							if (itemtype == "Cycle")
+				    	 	{
+							    	root_item_id = "3210";
+							}
+							return root_item_id;
+
+			}				
+
+		bool processBidURL(const std::string url, std::string &item_ids, std::string &advertisementid, std::string &eCPM )
+			{
+					redisContext* m_redisContext;
+					const char *hostname = "54.83.203.184";
+					//const char *hostname = "127.0.0.1";
+					int port = 6379;
+					
+					vector<CAdDataSorter> *vDS = new vector<CAdDataSorter>();
+					struct timeval timeout = { 1, 500000 }; // 1.5 seconds
+					m_redisContext = redisConnectWithTimeout(hostname, port, timeout);
+					if (m_redisContext == NULL || m_redisContext->err) {
+						if (m_redisContext) {
+							printf("Connection error: %s\n", m_redisContext->errstr);
+							redisFree(m_redisContext);
+						} else {
+							printf("Connection error: can't allocate redis context\n");
+						}
+					}
+						std::string prfx = "url:";
+						std::string urlKey = "";
+						std::map<int,Item> items;
+						std::map<int,Advertisement> ads;
+						std::string adIdsStr ;
+						std::string vendorIDString =",";
+						urlKey = prfx + url;
+			        	std::string cmd = "";
+		        		redisReply *reply = 0;
+					
+			        	cmd = "HGET " + urlKey + " item_ids";
+			        	reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
+			        	if (reply->type != REDIS_REPLY_NIL)
+		        		{
+				            item_ids = reply->str;
+				        	std::vector <std::string> vItemIDs;
+					    	vItemIDs = parseString(item_ids);
+				            //  HGET item:123 avertisement_id
+					    	std::string itemtype;
+			    			for (unsigned int i = 0; i < vItemIDs.size(); i++)
+				   		    {
+
+					   		    	cmd = "HMGET items:" + vItemIDs[i] + " price type vendor_id advertisement_id";
+						        	reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
+
+						        
+						        	if (reply->type == REDIS_REPLY_ARRAY)
+					        		{
+					        			Item item;
+					        			item.id = atoi(vItemIDs[i].c_str());
+					        			item.price = reply->element[0]->type != REDIS_REPLY_NIL ? reply->element[0]->str : "";
+					        			item.type = reply->element[1]->type != REDIS_REPLY_NIL ? reply->element[1]->str : "";
+					        			item.vendor_id = reply->element[2]->type != REDIS_REPLY_NIL ? reply->element[2]->str : "";
+					        			item.advertisement_id = reply->element[3]->type != REDIS_REPLY_NIL ? reply->element[3]->str : "";
+
+					        			if(!item.advertisement_id.empty())
+					        				{
+					        					adIdsStr = appendStringswithComma(adIdsStr,item.advertisement_id);
+											
+				        					}
+					        			if(!item.vendor_id.empty())
+					        			{
+					        				vendorIDString = appendStringswithComma(vendorIDString,item.vendor_id);
+					        			}
+					        			items[item.id] = item;
+					        			itemtype = item.type;
+					        			
+						        	} 
+						    }
+						    std::string root_item_id = getRootItemID(itemtype);
+						    if(!root_item_id.empty())
+						    {
+
+						    	cmd = "HGET items:" + root_item_id + " advertisement_id";
+
+						    
+						    	reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
+				        		if (reply->type != REDIS_REPLY_NIL)
+				        		{
+				        			adIdsStr = appendStringswithComma(adIdsStr,reply->str);
+				        		}
+
+						    }
+
+					        if(!adIdsStr.empty())
+								{
+									std::vector <std::string> vAdIDs;
+									vAdIDs = parseString(adIdsStr);
+										// HGET advertisments:1 eCPM
+									for (unsigned int i = 0; i < vAdIDs.size(); i++)
+									{
+										if(ads.find(atoi(vAdIDs[i].c_str())) == ads.end())
+										{
+											cmd = "HMGET advertisments:" + vAdIDs[i] + " type vendor_id dailybudget ecpm";
+											reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
+											if (reply->type == REDIS_REPLY_ARRAY)
+							        		{
+							        			Advertisement ad;
+							        			ad.id = atoi(vAdIDs[i].c_str());
+							        			ad.type = reply->element[0]->type != REDIS_REPLY_NIL ? reply->element[0]->str : "";
+							        			ad.vendor_id = reply->element[1]->type != REDIS_REPLY_NIL ? reply->element[1]->str : "";
+							        			ad.dailybudget = reply->element[2]->type != REDIS_REPLY_NIL ? reply->element[2]->str : "";
+							        			ad.eCPM = reply->element[3]->type != REDIS_REPLY_NIL ? reply->element[3]->str : "0";
+							        			ads[ad.id] = ad;
+
+					        					CAdDataSorter ds;
+												ds.id = ad.id;
+												ds.val = stof(ad.eCPM);
+										
+												vDS->push_back(ds);
+							
+								        	} 
+
+											
+										}	
+									}
+			 
+								}
+		   
+		         		}
+			         	
+						    
+						redisFree(m_redisContext);
+						if(vDS->size() > 0)
+						{         	
+							sort(vDS->begin(),vDS->end(),greater_than_key());
+							vendorIDString = vendorIDString + ",";
+							std::vector<CAdDataSorter>::iterator It;
+							for (It = vDS->begin(); It != vDS->end(); ++It)
+							{
+								cout << "Ad id - " << It->id << endl;
+								Advertisement ad = ads[It->id];
+								if(ad.type == "dynamic")
+								{	
+									if (vendorIDString.find(ad.vendor_id) != std::string::npos) 
+										{
+										    advertisementid = std::to_string(It->id);
+											eCPM = std::to_string(It->val);
+											return true;
+										}		
+								}
+								else
+								{
+								  advertisementid = std::to_string(It->id);
+								  eCPM = std::to_string(It->val);
+								  return true;
+								}
+							
+							}
+							
+						}
+						else
+						{
+
+							return false;
+						}
+
+				return false;
 		}
-		vec.push_back(str);
-		return vec;
-		}
+
+		/* end redis access code */
+
+
 
 		void init()
 		{
 
-			m_redisContext = connectRedisSvr();
+			//m_redisContext = connectRedisSvr();
 
 			// We only want to specify a subset of the callbacks so turn the
 			// annoying safety belt off.
@@ -124,7 +343,7 @@ namespace RTBKIT {
 				c.exchangeFilter.include.push_back("adx");
 				c.providerConfig["adx"]["externalId"] = "1234";
 				c.providerConfig["adx"]["htmlTemplate"] = 
-					"<html><body><iframe src=\"http://www.plannto.com/advertisments/show_ads?item_id=%{meta.item_ids}&ads_id=%{meta.advertisementids}&size=%{creative.width}x%{creative.height}&click_url=%%CLICK_URL_UNESC%%%%WINNING_PRICE%%\"/></body></html>";
+					"<html><body><iframe src=\"http://www.plannto.com/advertisments/show_ads?item_id=%{meta.item_ids}&ads_id=%{meta.advertisementids}&size=%{creative.width}x%{creative.height}&click_url=%%CLICK_URL_UNESC%%&wp=%%WINNING_PRICE%%&ref_url=%{bidrequest.url}\" width=\"%{creative.width}\" height=\"%{creative.height}\"/></body></html>";
 				c.providerConfig["adx"]["clickThroughUrl"] = "http://click.usmc.com";
 				c.providerConfig["adx"]["agencyId"] = 59;
 				c.providerConfig["adx"]["vendorType"] = "113";
@@ -180,121 +399,50 @@ namespace RTBKIT {
 			double timeLeftMs,
 			const Json::Value & augmentations)
 		{
-			//vector<CAdDataSorter> *vDS = new vector<CAdDataSorter>();
-
-			for (Bid& bid : bids) {
-
-				// In our example, all our creatives are of the different sizes so
-				// there should only ever be one biddable creative. Note that that
-				// the router won't ask for bids on imp that don't have any
-				// biddable creatives.
-				ExcAssertEqual(bid.availableCreatives.size(), 1);
-				int availableCreative = bid.availableCreatives.front();
-
-				// We don't really need it here but this is how you can get the
-				// AdSpot and Creative object from the indexes.
-				(void) br->imp[bid.spotIndex];
-				(void) config.creatives[availableCreative];
-
-				// Create a 0.0001$ CPM bid with our available creative.
-				// Note that by default, the bid price is set to 0 which indicates
-				// that we don't wish to bid on the given spot.
-				bid.bid(availableCreative, MicroUSD(100));
-			}
-
-		/*	// fetch the details about the requested URL from the redis db
-        		std::string urlName(br->url.c_str());
-			std::string prfx = "url:";
-			urlName = prfx + urlName;
-	        	cout << urlName << endl;
-	        	cout << "\t\t UR  From the Requester --> " << urlName << endl;
-
-	        	std::string cmd = "";
-        		redisReply *reply = 0;
-
-	        	cmd = "HGET " + urlName + " item_ids";
-	        cout << "\t command: " << cmd << endl;
-	        	reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
-	        	if (reply->type == REDIS_REPLY_NIL)
-        		{
-	        	} else {
-		            std::string str = reply->str;
-			    std::vector <std::string> vItemIDs;
-			    vItemIDs = parseString(str);
-		            //  HGET item:123 avertisement_id
-
-    			    for (unsigned int i = 0; i < vItemIDs.size(); i++)
-	   		    {
-				cmd = "HGET item:" + vItemIDs[i] + " avertisement_id";
-				cout << "\t\t Next command: " << cmd << endl;
-				reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
-				if (reply->type == REDIS_REPLY_NIL)
-				{
-				} else {
-					std::string str = reply->str;
-					cout << "\t\t Ad IDs " << str.c_str() << endl;
-					std::vector <std::string> vAdIDs;
-					vAdIDs = parseString(str);
-
-					// HGET advertisments:1 eCPM
-					for (unsigned int i = 0; i < vAdIDs.size(); i++)
-					{
-						cmd = "HGET advertisments:" + vAdIDs[i] + " eCPM";
-						cout << "\t\t\t Next command: " << cmd << endl;
-						reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
-						if (reply->type == REDIS_REPLY_NIL)
-						{
-						} else {
-							std::string str = reply->str;
-							cout << "\t\t\t eCPMs " << str.c_str() << endl;
-							std::vector <std::string> vECpms;
-							vECpms = parseString(str);
-
-							// sorting the ads to get the min ecpm
-							CAdDataSorter ds;
-							ds.id = atoi(vAdIDs[i].c_str());
-							ds.val = atof(vECpms[0].c_str());
 
 
-						}
-					}
- 
-				}
+			
+			std::string urltemp = br->url.toString();
+   			std::string item_ids="";
+			std::string advertisementid="";
+   			std::string eCPM="";
 
-			    }
+		
 
-	         	}
-        		freeReplyObject(reply);
-
-			// applying the simple bubble sort on the objects
-			CAdDataSorter temp;
-			for (int i = 1; i <= vDS->size(); i++)
+			if(processBidURL(urltemp, item_ids, advertisementid,eCPM ))
 			{
-				for (int j = 0; j < vDS->size() - 1; j++)
-				{
-					if (vDS->at(j).val > vDS->at(j+1).val)
-					{
-						temp = vDS->at(j);
-						vDS->at(j) = vDS->at(j+1);
-						vDS->at(j+1) = temp;
-					}
-				}
-			}
-	
-			// A value that will be passed back to us when we receive the result of
-			// our bid.
-			//Json::Value metadata = 42;
-			Json::Value metadata;
-			metadata["advertisementids"] = vDS->at(0).id;
-			metadata["eCPM"] = vDS->at(0).val;
-			*/
-			Json::Value metadata;
-		    metadata["advertisementids"] = "2";
-			metadata["eCPM"] = ".01";
-			metadata["item_ids"] = "6473";
+				Json::Value metadata;
+	    		metadata["advertisementids"] = advertisementid;
+				metadata["eCPM"] = eCPM;
+				metadata["item_ids"] = item_ids;
 
-			// Send our bid back to the agent.
-			doBid(id, bids, metadata);
+
+				for (Bid& bid : bids) {
+
+					// In our example, all our creatives are of the different sizes so
+					// there should only ever be one biddable creative. Note that that
+					// the router won't ask for bids on imp that don't have any
+					// biddable creatives.
+					ExcAssertEqual(bid.availableCreatives.size(), 1);
+					int availableCreative = bid.availableCreatives.front();
+
+					// We don't really need it here but this is how you can get the
+					// AdSpot and Creative object from the indexes.
+					(void) br->imp[bid.spotIndex];
+					(void) config.creatives[availableCreative];
+
+					// Create a 0.0001$ CPM bid with our available creative.
+					// Note that by default, the bid price is set to 0 which indicates
+					// that we don't wish to bid on the given spot.
+					bid.bid(availableCreative, MicroUSD(100));
+				}
+
+			
+
+				// Send our bid back to the agent.
+				doBid(id, bids, metadata);
+
+			}
 		}
 
 
