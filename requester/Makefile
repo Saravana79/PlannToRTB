@@ -1,6 +1,6 @@
-PROTO_COMPILER=/usr/bin/protoc
+PROTO_COMPILER=/usr/local/bin/protoc
 SRC_DIR = .
-PROTO_SRC_DIR = .
+PROTO_SRC_DIR =/Users/saravana/projects/plannto/protobuf-2.5.0
 DEST_DIR = .
 
 all: realtime-bidding_pb2.py

@@ -141,7 +141,7 @@ redisContext* FrequencyCapAugmentor::connectRedisSvr()
 		addSource("FrequencyCapAugmentor::palEvents", palEvents);
 
 		// Connecting the redis once and saving its context
-		m_redisContext = connectRedisSvr();
+		
 
 	}
 
@@ -167,7 +167,7 @@ redisContext* FrequencyCapAugmentor::connectRedisSvr()
 		urlName = prfx + urlName;
 		cout << urlName << endl;
 		cout << "\t\t URL From the Requester --> " << urlName << endl;
-
+		m_redisContext = connectRedisSvr();
 		/*
 		redisContext *c;
 		redisReply *reply = 0;
@@ -201,6 +201,8 @@ redisContext* FrequencyCapAugmentor::connectRedisSvr()
 			//cout << "VICKY: NULL val returned" << reply->integer << endl;
         	        //printf("VICKY: NULL val returned %d\n", reply->len);
 			//cout << "VICKY: NULL val returned" << reply->len << endl;
+			cmd = "HINCRBY missing" + urlName + " count 1";
+		    reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
 
 		} else {
 			std::string str = reply->str;
@@ -231,7 +233,7 @@ redisContext* FrequencyCapAugmentor::connectRedisSvr()
 		}
 		*/
 		freeReplyObject(reply);
-
+		redisFree(m_redisContext);
 		for (const string& agent : request.agents) {
 
 			RTBKIT::AgentConfigEntry config = agentConfig.getAgentEntry(agent);

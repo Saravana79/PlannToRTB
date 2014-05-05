@@ -57,6 +57,8 @@ public:
 	std::string vendor_id;
 	std::string eCPM;
 	std::string dailybudget;
+	std::string click_url;
+	std::string enabled;
 	float val;
 
 	// index

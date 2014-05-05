@@ -126,11 +126,11 @@ namespace RTBKIT {
 
 			}				
 
-		bool processBidURL(const std::string url, std::string &item_ids, std::string &advertisementid, std::string &eCPM )
+			bool processBidURL(const std::string url, std::string &item_ids, std::string &advertisementid, std::string &eCPM,std::string &click_url )
 			{
 					redisContext* m_redisContext;
+					//const char *hostname = "54.83.203.184";
 					const char *hostname = "54.83.203.184";
-					//const char *hostname = "127.0.0.1";
 					int port = 6379;
 					
 					vector<CAdDataSorter> *vDS = new vector<CAdDataSorter>();
@@ -193,6 +193,7 @@ namespace RTBKIT {
 					        			
 						        	} 
 						    }
+						  
 						    std::string root_item_id = getRootItemID(itemtype);
 						    if(!root_item_id.empty())
 						    {
@@ -207,8 +208,7 @@ namespace RTBKIT {
 				        		}
 
 						    }
-
-					        if(!adIdsStr.empty())
+						    if(!adIdsStr.empty())
 								{
 									std::vector <std::string> vAdIDs;
 									vAdIDs = parseString(adIdsStr);
@@ -217,7 +217,7 @@ namespace RTBKIT {
 									{
 										if(ads.find(atoi(vAdIDs[i].c_str())) == ads.end())
 										{
-											cmd = "HMGET advertisments:" + vAdIDs[i] + " type vendor_id dailybudget ecpm";
+											cmd = "HMGET advertisments:" + vAdIDs[i] + " type vendor_id dailybudget ecpm click_url enabled";
 											reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
 											if (reply->type == REDIS_REPLY_ARRAY)
 							        		{
@@ -227,14 +227,18 @@ namespace RTBKIT {
 							        			ad.vendor_id = reply->element[1]->type != REDIS_REPLY_NIL ? reply->element[1]->str : "";
 							        			ad.dailybudget = reply->element[2]->type != REDIS_REPLY_NIL ? reply->element[2]->str : "";
 							        			ad.eCPM = reply->element[3]->type != REDIS_REPLY_NIL ? reply->element[3]->str : "0";
-							        			ads[ad.id] = ad;
+							        			ad.click_url = reply->element[4]->type != REDIS_REPLY_NIL ? reply->element[4]->str : "";
+							        			ad.enabled = reply->element[5]->type != REDIS_REPLY_NIL ? reply->element[5]->str : "";
 
-					        					CAdDataSorter ds;
-												ds.id = ad.id;
-												ds.val = stof(ad.eCPM);
-										
-												vDS->push_back(ds);
-							
+						    	    			if(ad.enabled == "true")
+							        			{
+
+						    						ads[ad.id] = ad;
+							        				CAdDataSorter ds;
+													ds.id = ad.id;
+													ds.val = stof(ad.eCPM);
+													vDS->push_back(ds);
+												}
 								        	} 
 
 											
@@ -245,8 +249,9 @@ namespace RTBKIT {
 		   
 		         		}
 			         	
-						    
-						redisFree(m_redisContext);
+						 
+						bool admatch = false;    
+						
 						if(vDS->size() > 0)
 						{         	
 							sort(vDS->begin(),vDS->end(),greater_than_key());
@@ -254,7 +259,7 @@ namespace RTBKIT {
 							std::vector<CAdDataSorter>::iterator It;
 							for (It = vDS->begin(); It != vDS->end(); ++It)
 							{
-								cout << "Ad id - " << It->id << endl;
+								
 								Advertisement ad = ads[It->id];
 								if(ad.type == "dynamic")
 								{	
@@ -262,27 +267,37 @@ namespace RTBKIT {
 										{
 										    advertisementid = std::to_string(It->id);
 											eCPM = std::to_string(It->val);
-											return true;
+											click_url = ad.click_url;
+											admatch = true;
 										}		
 								}
 								else
 								{
 								  advertisementid = std::to_string(It->id);
 								  eCPM = std::to_string(It->val);
-								  return true;
+								  click_url = ad.click_url;
+								  admatch = true;
 								}
 							
 							}
 							
 						}
-						else
-						{
-
-							return false;
-						}
-
-				return false;
+				
+				if(admatch)
+				{
+						cmd = "HINCRBY " + urlKey + " count 1";
+			        	reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
+			        
+				}	
+				else
+				{
+						cmd = "HINCRBY missingad:" + url  + " count 1";	
+			        	reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
+				}	
+				redisFree(m_redisContext);
+				return admatch;
 		}
+
 
 		/* end redis access code */
 
@@ -343,8 +358,8 @@ namespace RTBKIT {
 				c.exchangeFilter.include.push_back("adx");
 				c.providerConfig["adx"]["externalId"] = "1234";
 				c.providerConfig["adx"]["htmlTemplate"] = 
-					"<html><body><iframe src=\"http://www.plannto.com/advertisments/show_ads?item_id=%{meta.item_ids}&ads_id=%{meta.advertisementids}&size=%{creative.width}x%{creative.height}&click_url=%%CLICK_URL_UNESC%%&wp=%%WINNING_PRICE%%&ref_url=%{bidrequest.url}\" width=\"%{creative.width}\" height=\"%{creative.height}\"/></body></html>";
-				c.providerConfig["adx"]["clickThroughUrl"] = "http://click.usmc.com";
+					"<html><body><iframe src=\"http://www.plannto.com/advertisments/show_ads?item_id=%{meta.item_ids}&ads_id=%{meta.advertisementids}&size=%{creative.width}x%{creative.height}&click_url=%%CLICK_URL_UNESC%%&wp=%%WINNING_PRICE%%&ref_url=%{bidrequest.url}\" width=\"%{creative.width}\" height=\"%{creative.height}\" style=\"border:0px;\"/></body></html>";
+				c.providerConfig["adx"]["clickThroughUrl"] = "%{meta.click_url}";
 				c.providerConfig["adx"]["agencyId"] = 59;
 				c.providerConfig["adx"]["vendorType"] = "113";
 				c.providerConfig["adx"]["attribute"]  = "";
@@ -359,7 +374,7 @@ namespace RTBKIT {
 			// Accounts are used to control the allocation of spending budgets for
 			// an agent. The whole mechanism is fully generic and can be setup in
 			// whatever you feel it bests suits you.
-			config.account = {"hello", "world"};
+			config.account = {"plannto", "test"};
 
 			// Indicate to the router that we want our bid requests to be augmented
 			// with our frequency cap augmentor example.
@@ -406,18 +421,22 @@ namespace RTBKIT {
    			std::string item_ids="";
 			std::string advertisementid="";
    			std::string eCPM="";
+   			std::string click_url="";
 
 		
 
-			if(processBidURL(urltemp, item_ids, advertisementid,eCPM ))
+			if(processBidURL(urltemp, item_ids, advertisementid,eCPM,click_url ))
 			{
 				Json::Value metadata;
 	    		metadata["advertisementids"] = advertisementid;
+	    		metadata["click_url"] = click_url;
 				metadata["eCPM"] = eCPM;
 				metadata["item_ids"] = item_ids;
+				float bidValueforsingleImpression = stof(eCPM)/1000 ;
 
 
-				for (Bid& bid : bids) {
+				for (Bid& bid : bids) 
+				{
 
 					// In our example, all our creatives are of the different sizes so
 					// there should only ever be one biddable creative. Note that that
@@ -431,10 +450,14 @@ namespace RTBKIT {
 					(void) br->imp[bid.spotIndex];
 					(void) config.creatives[availableCreative];
 
+					cout << "auction id - " << id << endl;
+					cout << "adspot id - " << bid.spotIndex << endl;
+
 					// Create a 0.0001$ CPM bid with our available creative.
 					// Note that by default, the bid price is set to 0 which indicates
 					// that we don't wish to bid on the given spot.
-					bid.bid(availableCreative, MicroUSD(100));
+					bid.bid(availableCreative, USD(bidValueforsingleImpression));
+					break;
 				}
 
 			
@@ -456,7 +479,7 @@ namespace RTBKIT {
 			}
 
 			// Make sure we have 1$ to spend for the next period.
-			budgetController.topupTransferSync(config.account, USD(1));
+			budgetController.topupTransferSync(config.account, USD(2));
 		}
 
 
