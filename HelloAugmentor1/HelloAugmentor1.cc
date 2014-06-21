@@ -15,10 +15,10 @@ CKY: Feb-05-2015
 #include "rtbkit/common/bid_request.h"
 #include "soa/service/zmq_named_pub_sub.h"
 #include "jml/utils/exc_assert.h"
-
+#include "PlannToUtilities.h"
 #include <unordered_map>
 #include <mutex>
-
+#include <vector>
 
 using namespace std;
 
@@ -161,79 +161,21 @@ redisContext* FrequencyCapAugmentor::connectRedisSvr()
 		RTBKIT::AugmentationList result;
 
 		bool gotIDs = false;
-		const RTBKIT::UserIds& uids = request.bidRequest->userIds;
 		std::string urlName(request.bidRequest->url.c_str());
-		std::string prfx = "url:";
-		urlName = prfx + urlName;
+		//std::string prfx = "url:";
+		Helper helper;
+		//urlName = prfx + urlName;
 		cout << urlName << endl;
 		cout << "\t\t URL From the Requester --> " << urlName << endl;
-		m_redisContext = connectRedisSvr();
-		/*
-		redisContext *c;
-		redisReply *reply = 0;
-		const char *hostname = "127.0.0.1";
-		int port = 6379;
 
-		struct timeval timeout = { 1, 500000 }; // 1.5 seconds
-		c = redisConnectWithTimeout(hostname, port, timeout);
-		if (c == NULL || c->err) {
-			if (c) {
-				printf("Connection error: %s\n", c->errstr);
-				redisFree(c);
-			} else {
-				printf("Connection error: can't allocate redis context\n");
-			}
-			//exit(1);
-		}
-		*/
+		std::string item_ids="";
+   		std::string advertisementid="";
+   		std::string eCPM="";
+   		std::string click_url = "";
 
-		std::string cmd = "";
-		redisReply *reply = 0;
+		gotIDs = helper.processBidURL(urlName, item_ids, advertisementid,eCPM, click_url);
+		
 
-		cmd = "HGET " + urlName + " item_ids";
-		cout << "\t command: " << cmd << endl;
-		reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
-		if (reply->type == REDIS_REPLY_NIL)
-		{
-			//printf("VICKY: NULL val returned %s\n", reply->str);
-			//cout << "VICKY: NULL val returned" << reply->str << endl;
-	                //printf("VICKY: NULL val returned %d\n", reply->integer);
-			//cout << "VICKY: NULL val returned" << reply->integer << endl;
-        	        //printf("VICKY: NULL val returned %d\n", reply->len);
-			//cout << "VICKY: NULL val returned" << reply->len << endl;
-			cmd = "HINCRBY missing" + urlName + " count 1";
-		    reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
-
-		} else {
-			std::string str = reply->str;
-			//unsigned start = 0;
-			//unsigned end;
-			//printf("%s\n\n", str.c_str());
-
-
-                        //cout << "VICKY: REPLY val returned" << reply->str << endl;
-			gotIDs = true;
-		}
-
-		/*
-		cmd = "HGET ";
-		cmd = cmd + "\"" + urlName + "\"";
-		cmd = cmd + " item_ids";
-		cout << "\t command: " << cmd << endl;
-		reply = (redisReply*)redisCommand(c, cmd.c_str());
-		//cout << "\t redis :: " << reply->str << endl;
-		cout << "\t redis :: " << reply->integer << endl;
-		cout << "\t redis :: " << reply->len << endl;
-		if (reply->type == REDIS_REPLY_NIL)
-		{
-			//printf("VICKY: NULL val returned %s\n", reply->str);
-		} else {
-			//printf("VICKY: Item ID val returned %s\n", reply->str);
-			gotIDs = true;
-		}
-		*/
-		freeReplyObject(reply);
-		redisFree(m_redisContext);
 		for (const string& agent : request.agents) {
 
 			RTBKIT::AgentConfigEntry config = agentConfig.getAgentEntry(agent);
@@ -249,41 +191,21 @@ redisContext* FrequencyCapAugmentor::connectRedisSvr()
 
 			const RTBKIT::AccountKey& account = config.config->account;
 
-			size_t count = storage->get(account, uids);
-
-			/* The number of times a user has been seen by a given agent can be
-			useful to make bid decisions so attach this data to the bid
-			request.
-
-			It's also recomended to place your data in an object labeled
-			after the augmentor from which it originated.
-			*/
-			result[account[0]].data = count;
-
-			/* We tag bid requests that pass the frequency cap filtering because
-			if the augmentation doesn't terminate in time or if an error
-			occured, then the bid request will not receive any tags and will
-			therefor be filtered out for agents that require the frequency
-			capping.
-			*/
-			// VICKY: the capping done here
-
-			if (count < getCap(request.augmentor, agent, config)) {
-				result[account].tags.insert("pass-frequency-cap-ex");
-				recordHit("accounts." + account[0] + ".passed");
-			}
-			else 
-			{
-				recordHit("accounts." + account[0] + ".capped");
-			}
-
-
+			
 			// VICKY: Feb-05-2014: START
 			if (gotIDs)
 			{
 				cout << "VICKY: UrlMatch" << endl;
 				result[account].tags.insert("UrlMatch");
 				recordHit("accounts." + account[0] + ".UrlMatch");
+
+				Json::Value metadata;
+				metadata["adsid"] = advertisementid;
+				metadata["item_ids"] = item_ids;
+				metadata["eCPM"] = eCPM;
+				metadata["click_url"] = click_url;
+				result[account].data = metadata;
+
 			}
 
 		}
