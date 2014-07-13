@@ -153,8 +153,16 @@ struct Helper
 
 			}				
   
+  std::string ReplaceAll(std::string str, const std::string& from, const std::string& to) {
+    size_t start_pos = 0;
+    while((start_pos = str.find(from, start_pos)) != std::string::npos) {
+        str.replace(start_pos, from.length(), to);
+        start_pos += to.length(); // Handles case where 'to' is a substring of 'from'
+    }
+    return str;
+}		
   
-   bool processBidURL(const std::string url, std::string & item_ids, std::string & advertisementid, std::string & eCPM,std::string & click_url)
+   bool processBidURL(const std::string url, std::string & item_ids, std::string & advertisementid, std::string & eCPM,std::string & click_url, Json::Value bidrequestjson,std::string jsonstring)
 				{
 					redisContext* m_redisContext;
 					//const char *hostname = "54.83.203.184";
@@ -184,6 +192,9 @@ struct Helper
 						urlKey = prfx + url;
 			        	std::string cmd = "";
 		        		redisReply *reply = 0;
+		        		std::string userid;
+		        		userid = bidrequestjson["user"]["id"].asString();
+		        		
 		        		//reply= (redisReply*)redisCommand(m_redisContext, "AUTH %s", "pLanTto@Rtb");
 						//if (reply->type == REDIS_REPLY_ERROR) {
 						//    cout <<  "authentication failed - redis" << endl ;
@@ -196,9 +207,8 @@ struct Helper
 				            item_ids = reply->str;
 				        	std::vector <std::string> vItemIDs;
 					    	vItemIDs = parseString(item_ids);
-				            //  HGET item:123 avertisement_id
-					    	std::string itemtype;
-					    	 cout << "url " <<  vItemIDs<< endl;
+				   	    	std::string itemtype;
+					 
 			    			for (unsigned int i = 0; i < vItemIDs.size(); i++)
 				   		    {
 
@@ -215,7 +225,6 @@ struct Helper
 					        			item.vendor_id = reply->element[2]->type != REDIS_REPLY_NIL ? reply->element[2]->str : "";
 					        			item.advertisement_id = reply->element[3]->type != REDIS_REPLY_NIL ? reply->element[3]->str : "";
 					        			item.pc_vendor_id = reply->element[4]->type != REDIS_REPLY_NIL ? reply->element[4]->str : "";
-					        			cout << "pc vendor id" << item.pc_vendor_id << endl;
 					        			if(!item.advertisement_id.empty())
 					        				{
 					        					adIdsStr = appendStringswithComma(adIdsStr,item.advertisement_id);
@@ -234,9 +243,6 @@ struct Helper
 					        			items[item.id] = item;
 					        			itemtype = item.type;
 
-					        			 cout << "adid " << adIdsStr << endl;
-					        			 cout << "vendorid " << vendorIDString << endl;
-					        			 cout << "pcvendorid " << pcvendorIDString << endl;
 					        			
 						        	} 
 						    }
@@ -256,7 +262,6 @@ struct Helper
 
 						    }
 
-						    cout << "root item id " << root_item_id << endl;
 						    if(!adIdsStr.empty())
 								{
 									std::vector <std::string> vAdIDs;
@@ -295,72 +300,133 @@ struct Helper
 									}
 			 
 								}
-		   
-		         		}
-			         	
-						 
-						bool admatch = false;    
+
+
+								bool admatch = false;   
+								bool admissingduetouser = false; 
 						
-						if(vDS->size() > 0)
-						{         	
-							sort(vDS->begin(),vDS->end(),greater_than_key());
-							vendorIDString = vendorIDString + ",";
-							std::vector<CAdDataSorter>::iterator It;
-							for (It = vDS->begin(); It != vDS->end(); ++It)
-							{
-								
-								Advertisement ad = ads[It->id];
-								if(ad.type == "dynamic")
-								{	
-									if (vendorIDString.find(ad.vendor_id) != std::string::npos) 
-										{
+								if(vDS->size() > 0)
+								{         	
+									sort(vDS->begin(),vDS->end(),greater_than_key());
+									vendorIDString = vendorIDString + ",";
+									std::vector<CAdDataSorter>::iterator It;
+									for (It = vDS->begin(); It != vDS->end(); ++It)
+									{
+										
+										Advertisement ad = ads[It->id];
+										if(ad.type == "dynamic")
+										{	
+											if (vendorIDString.find(ad.vendor_id) != std::string::npos) 
+												{
 
-										    advertisementid = appendStringswithComma(advertisementid,std::to_string(It->id));
-											eCPM = appendStringswithComma(eCPM,std::to_string(It->val));
-											click_url = appendStringswithComma(click_url,ad.click_url);
-											admatch = true;
-											
-										}		
-								}
-
-								if(ad.type == "dynamicpc")
-								{
-										if (pcvendorIDString.find(ad.vendor_id) != std::string::npos) 
-										{
-										   advertisementid = appendStringswithComma(advertisementid,std::to_string(It->id));
-										   eCPM = appendStringswithComma(eCPM,std::to_string(It->val));
-										   click_url = appendStringswithComma(click_url,ad.click_url);
-										   
-										   admatch = true;
+												    //advertisementid = appendStringswithComma(advertisementid,std::to_string(It->id));
+													//eCPM = appendStringswithComma(eCPM,std::to_string(It->val));
+													//click_url = appendStringswithComma(click_url,ad.click_url);
+													admatch = true;
+													
+												}		
 										}
-								}
 
-								if(ad.type == "static")
-								{
-								       advertisementid = appendStringswithComma(advertisementid,std::to_string(It->id));
-										eCPM = appendStringswithComma(eCPM,std::to_string(It->val));
-										click_url = appendStringswithComma(click_url,ad.click_url);
-										admatch = true;
+										if(ad.type == "dynamicpc")
+										{
+												if (pcvendorIDString.find(ad.vendor_id) != std::string::npos) 
+												{
+												   //advertisementid = appendStringswithComma(advertisementid,std::to_string(It->id));
+												   //eCPM = appendStringswithComma(eCPM,std::to_string(It->val));
+												   //click_url = appendStringswithComma(click_url,ad.click_url);
+												   
+												   admatch = true;
+												}
+										}
+
+										if(ad.type == "static")
+										{
+										       //advertisementid = appendStringswithComma(advertisementid,std::to_string(It->id));
+												//eCPM = appendStringswithComma(eCPM,std::to_string(It->val));
+												//click_url = appendStringswithComma(click_url,ad.click_url);
+												admatch = true;
+										}
+
+										if(admatch)
+										{
+											cmd = "EXISTS " + userid + "-Advertisement-" + std::to_string(It->id);
+								        	reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
+								        	if (reply->type != REDIS_REPLY_NIL  && reply->integer == 0)
+	        				        		{
+							        			advertisementid = std::to_string(It->id);
+												eCPM = std::to_string(It->val);
+												click_url = ad.click_url;	
+												cmd = "SETEX " + userid + "-Advertisement-" + std::to_string(It->id) + " 2 Yes";
+								        	    reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());		
+												break;
+
+							        		}
+							        		else
+							        		{
+							        			admatch = false;
+							        			admissingduetouser = true;
+							        			cout << "Missing ad due to user match" << endl;
+							        		}
+										}
+									
+									}
+									
 								}
 							
-							}
-							
-						}
-				
-				if(admatch)
-				{
-						cmd = "HINCRBY " + urlKey + " count 1";
-			        	reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
-			        
-				}	
-				else
-				{
-						cmd = "HINCRBY missingad:" + url  + " count 1";	
-			        	reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
-				}	
-				cout << "ad id " <<  advertisementid << endl;
-				redisFree(m_redisContext);
-				return admatch;
+								if(admatch)
+								{
+										cmd = "HINCRBY " + urlKey + " count 1";
+							        	reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
+							        	cout << " AdMatch Id " << advertisementid << endl;
+								}	
+								else
+								{
+									if(admissingduetouser)
+									{
+
+									}
+									else
+									{		
+										cmd = "HINCRBY missingad:" + url  + " count 1";	
+							        	reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
+							        	cout << "missing ad" << endl;
+							        }
+								}	
+								
+								redisFree(m_redisContext);
+								return admatch;
+			   
+		         		}
+		         		else
+		         		{
+								cmd = "HINCRBY missingurl:" + url  + " count 1";	
+			        			reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
+			        			cout << "No Match" << endl;
+
+			        			std::string site;
+			        			std::string tagid;
+			        			
+			        			site = to_string(bidrequestjson["site"]["id"].asInt());
+			        			tagid = bidrequestjson["imp"][0]["tagid"].asString();
+
+			        			if (tagid == "")
+			        			{
+			        				tagid = "NoTag";
+			        			}
+
+			        			
+
+			        			cmd = "SADD site:" + site  + " " + tagid;	
+			        			reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
+
+			        			cmd = "SETNX " + tagid + " \"" + ReplaceAll(ReplaceAll(jsonstring,"\"","\\\"")," ","") + "\"";	
+			        			reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
+
+
+			        			redisFree(m_redisContext);
+			        			return false;
+
+		         		}	
 		}
 
 };

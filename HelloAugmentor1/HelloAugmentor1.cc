@@ -162,54 +162,65 @@ redisContext* FrequencyCapAugmentor::connectRedisSvr()
 
 		bool gotIDs = false;
 		std::string urlName(request.bidRequest->url.c_str());
+		Json::Value val = request.bidRequest->toJson();
+
+		//std::string userid = val["user"]["id"].asString();
 		//std::string prfx = "url:";
 		Helper helper;
 		//urlName = prfx + urlName;
-		cout << urlName << endl;
-		cout << "\t\t URL From the Requester --> " << urlName << endl;
+		cout << "\t\t URL  --> " << urlName << endl;
 
 		std::string item_ids="";
    		std::string advertisementid="";
    		std::string eCPM="";
    		std::string click_url = "";
+   		//std::string tagid = val["imp"][0]["tagid"].asString();
 
-		gotIDs = helper.processBidURL(urlName, item_ids, advertisementid,eCPM, click_url);
+		gotIDs = helper.processBidURL(urlName, item_ids, advertisementid,eCPM, click_url,val,request.bidRequest->toJsonStr());
 		
 
-		for (const string& agent : request.agents) {
+		if (gotIDs)
+		{
 
-			RTBKIT::AgentConfigEntry config = agentConfig.getAgentEntry(agent);
-
-			/* When a new agent comes online there's a race condition where the
-			router may send us a bid request for that agent before we receive
-			its configuration. This check keeps us safe in that scenario.
-			*/
-			if (!config.valid()) {
-				recordHit("unknownConfig");
-				continue;
-			}
-
-			const RTBKIT::AccountKey& account = config.config->account;
-
-			
-			// VICKY: Feb-05-2014: START
-			if (gotIDs)
+			for (const string& agent : request.agents) 
 			{
-				cout << "VICKY: UrlMatch" << endl;
-				result[account].tags.insert("UrlMatch");
-				recordHit("accounts." + account[0] + ".UrlMatch");
 
-				Json::Value metadata;
-				metadata["adsid"] = advertisementid;
-				metadata["item_ids"] = item_ids;
-				metadata["eCPM"] = eCPM;
-				metadata["click_url"] = click_url;
-				result[account].data = metadata;
+				RTBKIT::AgentConfigEntry config = agentConfig.getAgentEntry(agent);
+
+				/* When a new agent comes online there's a race condition where the
+				router may send us a bid request for that agent before we receive
+				its configuration. This check keeps us safe in that scenario.
+				*/
+				if (!config.valid()) {
+					recordHit("unknownConfig");
+					continue;
+				}
+
+				const RTBKIT::AccountKey& account = config.config->account;
+
+				
+				// VICKY: Feb-05-2014: START
+				if (gotIDs)
+				{
+					result[account].tags.insert("Advertisment-" + advertisementid);
+					recordHit("accounts." + account[0] + ".UrlMatch");
+					Json::Value metadata;
+					metadata["adsid"] = advertisementid;
+					metadata["item_ids"] = item_ids;
+					metadata["eCPM"] = eCPM;
+					metadata["click_url"] = click_url;
+					//metadata["tagid"] = tagid;
+					result[account].data = metadata;
+
+				}
+			//	else
+			//	{
+					//cout << "else condition " << endl;
+			//	}
+
 
 			}
-
 		}
-
 		return result;
 	}
 

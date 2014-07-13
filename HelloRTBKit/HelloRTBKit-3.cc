@@ -21,6 +21,16 @@ using namespace ML;
 
 namespace RTBKIT {
 
+	class PlannToAdSpot
+	{
+	public:	
+		PlannToAdSpot(void){};
+		~PlannToAdSpot(void){};
+
+		std::string id;
+		std::string group_id;
+	};
+
 	static std::string agent_ad_id = "3";
 
 	  std::vector<std::string> parseString(std::string str)
@@ -144,16 +154,16 @@ namespace RTBKIT {
 			config.exchangeFilter.include.push_back("adx");
 			for (auto & c: config.creatives) {
 				c.exchangeFilter.include.push_back("adx");
-				c.providerConfig["adx"]["externalId"] = "1234";
+				c.providerConfig["adx"]["externalId"] = "PlannTo-Creative-1-" + RTBKIT::agent_ad_id;
 				c.providerConfig["adx"]["htmlTemplate"] = 
-					"<html><body><iframe src=\"http://www.plannto.com/advertisments/show_ads?item_id=%{meta.item_ids}&ads_id=%{meta.advertisementids}&size=%{creative.width}x%{creative.height}&click_url=%%CLICK_URL_UNESC%%&wp=%%WINNING_PRICE%%&ref_url=%{bidrequest.url}\" width=\"%{creative.width}\" height=\"%{creative.height}\" style=\"border:0px;\"/></body></html>";
+					"<html><body><iframe src=\"http://www.plannto.com/advertisments/show_ads?item_id=%{meta.item_ids}&ads_id=%{meta.advertisementids}&size=%{creative.width}x%{creative.height}&click_url=%%CLICK_URL_UNESC%%&wp=%%WINNING_PRICE%%&sid=%{meta.tagid}&ref_url=%{bidrequest.url}\" width=\"%{creative.width}\" height=\"%{creative.height}\" style=\"border:0px;\"/></body></html>";
 				c.providerConfig["adx"]["clickThroughUrl"] = "%{meta.click_url}";
 				c.providerConfig["adx"]["agencyId"] = 59;
 				c.providerConfig["adx"]["vendorType"] = "113";
 				c.providerConfig["adx"]["attribute"]  = "";
 				c.providerConfig["adx"]["restrictedCategories"]  = "0";
 				c.providerConfig["adx"]["sensitiveCategory"]  = "0";
-				c.providerConfig["adx"]["adGroupId"]  = 1643;
+			//	c.providerConfig["adx"]["adGroupId"]  = 1643;
 				c.providerConfig["adx"]["sensitiveCategory"]  = "0";
 			}
 
@@ -184,7 +194,7 @@ namespace RTBKIT {
 				// been tagged by our frequency cap augmentor.
 				//augConfig.filters.include.push_back("pass-frequency-cap-ex");
 				// "urlMatcher"
-				augConfig.filters.include.push_back("UrlMatch");
+				augConfig.filters.include.push_back("Advertisment-" + agent_ad_id);
 
 				config.addAugmentation(augConfig);
 			}
@@ -206,31 +216,34 @@ namespace RTBKIT {
 
 			
 			std::string urltemp = br->url.toString();
+			Json::Value val = br->toJson();
    			std::string item_ids="";
 			std::string advertisementid="";
    			std::string eCPM="";
    			std::string click_url="";
    			std::string priority = "";
+   			std::string tagid="";
    			std::vector<string> vAdIDs;
-   			int position=0;
-   			bool match= false;
+   			//int position=0;
+   			int pri =1;
+   			bool match= true;
    			
    			advertisementid = augmentations["urlMatcher"]["data"]["adsid"].asString();
 
 
-   		
+				// vAdIDs = parseString(advertisementid) ;
+			
+	   // 			for (unsigned int i = 0; i < vAdIDs.size(); i++)
+				// {
+				// 	if(vAdIDs[i] == agent_ad_id)
+				// 	{
+				// 		position = i;
+				// 		match = true;
+				// 		pri = vAdIDs.size() - position;
+				// 		break;
+				// 	}
+				// }
 
-			vAdIDs = parseString(advertisementid) ;
-		
-   			for (unsigned int i = 0; i < vAdIDs.size(); i++)
-			{
-				if(vAdIDs[i] == agent_ad_id)
-				{
-					position = i;
-					match = true;
-					break;
-				}
-			}
 
 			if(match)
 			{
@@ -241,21 +254,22 @@ namespace RTBKIT {
 	   			priority = augmentations["urlMatcher"]["data"]["priority"].asString();
 	   			item_ids = augmentations["urlMatcher"]["data"]["item_ids"].asString();
 	   			click_url = augmentations["urlMatcher"]["data"]["click_url"].asString();
-
-	   			veCPMs = parseString(eCPM);
-	   			vclick_urls = parseString(click_url);
-	   			 
-				cout << "advertisments from augmentor id - " << augmentations << endl;
-	   			cout << "advertisments from augmentor id - " << augmentations["urlMatcher"]["data"] << endl;
-				cout << "ads from augmentor id - " << augmentations["urlMatcher"]["data"]["ads"] << endl;
+	   			if(!val["imp"][0]["tagid"].isNull())
+	   			{
+	   				tagid = val["imp"][0]["tagid"].asString();
+	   			}
 
 				Json::Value metadata;
-	    		metadata["advertisementids"] = vAdIDs[position];
-	    		metadata["click_url"] = vclick_urls[position];
+	    		metadata["advertisementids"] = advertisementid;
+	    		metadata["click_url"] = click_url;
 				metadata["item_ids"] = item_ids;
-				float bidValueforsingleImpression = stof(veCPMs[position])/1000 ;
+				float bidValueforsingleImpression = stof(eCPM)/1000 ;
 
-
+				std::string group_id = br->toJson()["imp"][0]["pmp"]["ext"]["adgroup_id"].asString();
+				//metadata["group_id"] = std::stoi(group_id);
+				
+				cout << "url:" <<  urltemp << "-->" << advertisementid << endl;
+				
 				for (Bid& bid : bids) 
 				{
 
@@ -271,20 +285,22 @@ namespace RTBKIT {
 					(void) br->imp[bid.spotIndex];
 					(void) config.creatives[availableCreative];
 
-					cout << "auction id - " << id << endl;
+					/*cout << "auction id - " << id << endl;
 					cout << "adspot id - " << bid.spotIndex << endl;
-
+					*/
 					// Create a 0.0001$ CPM bid with our available creative.
 					// Note that by default, the bid price is set to 0 which indicates
 					// that we don't wish to bid on the given spot.
-					if(bid.spotIndex <= position)
-					{
-						bid.bid(availableCreative, USD(bidValueforsingleImpression));
-					}
+					//if(bid.spotIndex <= position)
+					//{
+						bid.bid(availableCreative, USD(bidValueforsingleImpression),pri);
+						
+					//}
 				}
 
 				// Send our bid back to the agent.
 				doBid(id, bids, metadata);
+
 
 			}
 		}
