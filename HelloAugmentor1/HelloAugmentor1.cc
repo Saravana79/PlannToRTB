@@ -121,6 +121,8 @@ redisContext* FrequencyCapAugmentor::connectRedisSvr()
 		agentConfig.init(getServices()->config);
 		addSource("FrequencyCapAugmentor::agentConfig", agentConfig);
 
+		cout << "Augment Init" << endl;
+
 		palEvents.init(getServices()->config);
 
 		/* This lambda will get called when the post auction loop receives a win

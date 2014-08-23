@@ -151,19 +151,20 @@ namespace RTBKIT {
 			config.creatives.push_back(Creative::sampleBB);
 			config.creatives.push_back(Creative::sampleWS);
 			config.creatives.push_back(Creative::sampleLB);
+			config.creatives.push_back(Creative::sampleBBB);
 			config.exchangeFilter.include.push_back("adx");
 			for (auto & c: config.creatives) {
 				c.exchangeFilter.include.push_back("adx");
 				c.providerConfig["adx"]["externalId"] = "PlannTo-Creative-1-" + RTBKIT::agent_ad_id;
 				c.providerConfig["adx"]["htmlTemplate"] = 
-					"<html><body><iframe src=\"http://www.plannto.com/advertisments/show_ads?item_id=%{meta.item_ids}&ads_id=%{meta.advertisementids}&size=%{creative.width}x%{creative.height}&click_url=%%CLICK_URL_UNESC%%&wp=%%WINNING_PRICE%%&sid=%{meta.tagid}&ref_url=%{bidrequest.url}\" width=\"%{creative.width}\" height=\"%{creative.height}\" style=\"border:0px;\"/></body></html>";
+					"<html><body><iframe src=\"http://www.plannto.com/advertisments/show_ads?item_id=%{meta.item_ids}&ads_id=%{meta.advertisementids}&size=%{creative.width}x%{creative.height}&click_url=%%CLICK_URL_ESC%%&wp=%%WINNING_PRICE%%&sid=%{meta.tagid}&ref_url=%{bidrequest.url}&cb=%%CACHEBUSTER%%\" width=\"%{creative.width}\" height=\"%{creative.height}\" style=\"border:0px;\"/></body></html>";
 				c.providerConfig["adx"]["clickThroughUrl"] = "%{meta.click_url}";
 				c.providerConfig["adx"]["agencyId"] = 59;
 				c.providerConfig["adx"]["vendorType"] = "113";
-				c.providerConfig["adx"]["attribute"]  = "";
+				c.providerConfig["adx"]["attribute"]  = "%{meta.attribute}";
 				c.providerConfig["adx"]["restrictedCategories"]  = "0";
 				c.providerConfig["adx"]["sensitiveCategory"]  = "0";
-			//	c.providerConfig["adx"]["adGroupId"]  = 1643;
+				//c.providerConfig["adx"]["adGroupId"]  = 16025452000;
 				c.providerConfig["adx"]["sensitiveCategory"]  = "0";
 			}
 
@@ -254,15 +255,14 @@ namespace RTBKIT {
 	   			priority = augmentations["urlMatcher"]["data"]["priority"].asString();
 	   			item_ids = augmentations["urlMatcher"]["data"]["item_ids"].asString();
 	   			click_url = augmentations["urlMatcher"]["data"]["click_url"].asString();
-	   			if(!val["imp"][0]["tagid"].isNull())
-	   			{
-	   				tagid = val["imp"][0]["tagid"].asString();
-	   			}
-
+	   			tagid = val["imp"][0]["tagid"].asString();
+	   			
 				Json::Value metadata;
 	    		metadata["advertisementids"] = advertisementid;
 	    		metadata["click_url"] = click_url;
 				metadata["item_ids"] = item_ids;
+				metadata["tagid"] = tagid;
+				metadata["attribute"] = "";
 				float bidValueforsingleImpression = stof(eCPM)/1000 ;
 
 				std::string group_id = br->toJson()["imp"][0]["pmp"]["ext"]["adgroup_id"].asString();
@@ -316,7 +316,7 @@ namespace RTBKIT {
 			}
 
 			// Make sure we have 1$ to spend for the next period.
-			budgetController.topupTransferSync(config.account, USD(2));
+			budgetController.topupTransferSync(config.account, USD(4));
 		}
 
 
