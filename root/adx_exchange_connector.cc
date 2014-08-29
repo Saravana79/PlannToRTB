@@ -20,7 +20,7 @@
 #include "rtbkit/plugins/exchange/http_auction_handler.h"
 #include "rtbkit/plugins/exchange/realtime-bidding.pb.h"
 #include "rtbkit/core/agent_configuration/agent_config.h"
-#include "openrtb/openrtb_parsing.h"
+#include "rtbkit/openrtb/openrtb_parsing.h"
 #include "soa/types/json_printing.h"
 
 using namespace std;
@@ -167,7 +167,7 @@ AdXExchangeConnector::init()
                 info.adgroup_id_ = std::to_string(adGroupId);
                 return true;
             }
-    ).optional();
+    ).optional().snippet();
 
 
     /*
@@ -387,7 +387,10 @@ ParseGbrGeoCriteria (const GoogleBidRequest& gbr, BidRequest& br)
 
 //
 void
-ParseGbrAdSlot (const GoogleBidRequest& gbr, BidRequest& br)
+ParseGbrAdSlot (const std::string currency,
+               const CurrencyCode currencyCode,
+               const GoogleBidRequest& gbr,
+               BidRequest& br)
 {
     auto& imp = br.imp;
     imp.clear ();
@@ -413,10 +416,16 @@ ParseGbrAdSlot (const GoogleBidRequest& gbr, BidRequest& br)
          *   slot, page) combinations. This new field allows you to track the performance
          *    of specific adblock-ad combinations to make better bidding decisions."
          */
+        
+        //cout << "slot details : " << slot << endl;
+
         if (slot.has_ad_block_key())
             spot.tagid = to_string(slot.ad_block_key());
 
-        // Parse restrictions ;
+        if(slot.matching_ad_data(0).has_minimum_cpm_micros()){
+                    spot.reservePrice = Amount(currencyCode,slot.matching_ad_data(0).minimum_cpm_micros());
+                }
+               // Parse restrictions ;
         {
             vector<int> tmp ;
             for (auto i: boost::irange(0,slot.allowed_vendor_type_size()))
@@ -461,6 +470,39 @@ ParseGbrAdSlot (const GoogleBidRequest& gbr, BidRequest& br)
                 break;
             default:
                 break;
+            }
+        }
+
+        {
+            spot.pmp.emplace();
+
+            for (auto const & matchingAdData : slot.matching_ad_data()) {
+
+                if (matchingAdData.has_adgroup_id())
+                {
+                    spot.pmp->ext["adgroup_id"] =
+                        std::to_string(matchingAdData.adgroup_id());
+                }
+
+                for (auto const & directDeal : matchingAdData.direct_deal()) {
+
+                    double amountInCpm =
+                        getAmountIn<CPM>(RTBKIT::createAmount<MicroCPM>(
+                            directDeal.fixed_cpm_micros(), currencyCode));
+
+                    static const int SECOND_PRICE_AUCTION = 2;
+                    OpenRTB::Deal deal
+                    {
+                        Id(directDeal.direct_deal_id()),
+                        amountInCpm,
+                        currency,
+                        List<std::string>{},
+                        SECOND_PRICE_AUCTION,
+                        Json::Value::null
+                    };
+
+                    spot.pmp->deals.emplace_back(std::move(deal));
+                }
             }
         }
     }
@@ -592,7 +634,7 @@ parseBidRequest(HttpAuctionHandler & connection,
     {
         // Always create an OpenRTB::User object, since it's recommended
         // in the spec. All top level recommended objects are always created.
-    	br.user.emplace();
+        br.user.emplace();
     }
 
     bool has_google_user_id = gbr.has_google_user_id();
@@ -600,10 +642,10 @@ parseBidRequest(HttpAuctionHandler & connection,
 
     if (has_google_user_id)
     {
-    	// google_user_id
+        // google_user_id
         // TODO: fix Id() so that it can parse 27 char Google ID into GOOG128
         // for now, fall back on STR type
-    	br.user->id = Id (gbr.google_user_id());
+        br.user->id = Id (gbr.google_user_id());
         br.userIds.add(br.user->id, ID_EXCHANGE);
     }
 
@@ -619,10 +661,10 @@ parseBidRequest(HttpAuctionHandler & connection,
             // We'll use the google user id for the provider ID
             br.userIds.add(br.user->id, ID_PROVIDER);
         }
-        if (gbr.has_ip() && has_user_agent){
+        else if (gbr.has_ip() && has_user_agent){
             // Use a hashing function of IP + User Agent concatenation
-            br.userAgentIPHash = CityHash64((gbr.ip() + gbr.user_agent()).c_str(),(gbr.ip() + gbr.user_agent()).length());
-            br.userIds.add(Id(br.userAgentIPHash), ID_PROVIDER);
+            br.userAgentIPHash = Id(CityHash64((gbr.ip() + gbr.user_agent()).c_str(),(gbr.ip() + gbr.user_agent()).length()));
+            br.userIds.add(br.userAgentIPHash, ID_PROVIDER);
         }
         else {
             // Set provider ID to 0
@@ -640,8 +682,8 @@ parseBidRequest(HttpAuctionHandler & connection,
     {
 
 #if 0
-    	// we need to strip funny spurious strings inserted
-    	//   ... ,gzip(gfe)[,gzip(gfe)]
+        // we need to strip funny spurious strings inserted
+        //   ... ,gzip(gfe)[,gzip(gfe)]
         static sregex oe = sregex::compile("(,gzip\\(gfe\\))+$") ;
         device.ua = regex_replace (gbr.user_agent(), oe, string());
 #else
@@ -673,7 +715,7 @@ parseBidRequest(HttpAuctionHandler & connection,
     }
 
     // parse Impression array
-    ParseGbrAdSlot(gbr, br);
+    ParseGbrAdSlot(getCurrencyAsString(), getCurrency(), gbr, br);
 
     if (gbr.detected_language_size())
     {   // TODO when gbr.detected_language_size()>1
@@ -744,12 +786,10 @@ getResponse(const HttpAuctionHandler & connection,
         ad->set_width(creative.format.width);
         ad->set_height(creative.format.height);
 
+        const BidRequest & br = *auction.request;
+
         // handle macros.
-        AdxCreativeConfiguration::Context ctx {
-            creative,
-            resp,
-            *auction.request
-        };
+        AdxCreativeConfiguration::Context ctx { creative, resp, br };
 
         // populate, substituting whenever necessary
         ad->set_html_snippet(
@@ -761,6 +801,37 @@ getResponse(const HttpAuctionHandler & connection,
             ad->add_vendor_type(vt);
         adslot->set_max_cpm_micros(getAmountIn<MicroCPM>(resp.price.maxPrice));
         adslot->set_id(auction.request->imp[spotNum].id.toInt());
+
+        { // handle direct deals
+            auto imp = br.imp[spotNum];
+            if (imp.pmp) {
+                auto const & pmp = *imp.pmp;
+                if (pmp.privateAuction.val != 0) {
+
+                    Json::Value meta;
+                    Json::Reader reader;
+                    if (!reader.parse(resp.meta, meta)) {
+                        return getErrorResponse(
+                                connection,
+                                auction,
+                                "Cannot decode meta information");
+                    }
+
+                    if (meta.isMember("deal_id")) {
+                        Id dealId = Id(meta["deal_id"].asString());
+                        adslot->set_deal_id(dealId.toInt());
+                    } else {
+                        adslot->set_deal_id(1); // open auction
+                    }
+
+                    if (meta.isMember("adgroup_id")) {
+                        int64_t adgroup_id = stoll(meta["adgroup_id"].asString());
+                        adslot->set_adgroup_id(adgroup_id);
+                    }
+                }
+            }
+        }
+
         if(!crinfo->adgroup_id_.empty()) {
             adslot->set_adgroup_id(
                 boost::lexical_cast<uint64_t>(crinfo->adgroup_id_));
@@ -840,12 +911,15 @@ bidRequestCreativeFilter(const BidRequest & request,
 
         const auto& allowed_vendor_type_seg =
             spot.restrictions.get("allowed_vendor_type");
-        for (auto atr: crinfo->vendor_type_)
-            if (!allowed_vendor_type_seg.contains(atr))
-            {
-                this->recordHit ("vendor_type_not_allowed");
-                return false ;
-            }
+    if (!allowed_vendor_type_seg.empty())
+        {
+            for (auto atr: crinfo->vendor_type_)
+                if (!allowed_vendor_type_seg.contains(atr))
+                {
+                    this->recordHit ("vendor_type_not_allowed");
+                    return false ;
+                }
+    }
 
         const auto& allowed_adgroup_seg =
             spot.restrictions.get("allowed_adgroup");
@@ -875,4 +949,3 @@ bidRequestCreativeFilter(const BidRequest & request,
 }
 
 } // namespace RTBKIT
-
