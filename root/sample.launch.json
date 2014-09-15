@@ -105,10 +105,55 @@
                     ],
                     "log": true
                 },
-                {
-                    "name": "HelloRTBKit-agent-6",
+                             {
+                    "name": "HelloRTBKit-agent-1-S",
                     "root": ".",
-                    "path": "build/x86_64/bin/HelloRTBKit-6",
+                    "path": "build/x86_64/bin/HelloRTBKit-1-S",
+                    "arg": [
+                        "-B", "rtbkit/sample.bootstrap.json"
+                    ],
+                    "log": true
+                },
+                {
+                    "name": "HelloRTBKit-agent-3-S",
+                    "root": ".",
+                    "path": "build/x86_64/bin/HelloRTBKit-3-S",
+                    "arg": [
+                        "-B", "rtbkit/sample.bootstrap.json"
+                    ],
+                    "log": true
+                },
+                {
+                    "name": "HelloRTBKit-agent-5-S",
+                    "root": ".",
+                    "path": "build/x86_64/bin/HelloRTBKit-5-S",
+                    "arg": [
+                        "-B", "rtbkit/sample.bootstrap.json"
+                    ],
+                    "log": true
+                },
+                      {
+                    "name": "HelloRTBKit-agent-10",
+                    "root": ".",
+                    "path": "build/x86_64/bin/HelloRTBKit-10",
+                    "arg": [
+                        "-B", "rtbkit/sample.bootstrap.json"
+                    ],
+                    "log": true
+                },
+                {
+                    "name": "HelloRTBKit-agent-11",
+                    "root": ".",
+                    "path": "build/x86_64/bin/HelloRTBKit-11",
+                    "arg": [
+                        "-B", "rtbkit/sample.bootstrap.json"
+                    ],
+                    "log": true
+                },
+                {
+                    "name": "HelloRTBKit-agent-12",
+                    "root": ".",
+                    "path": "build/x86_64/bin/HelloRTBKit-12",
                     "arg": [
                         "-B", "rtbkit/sample.bootstrap.json"
                     ],

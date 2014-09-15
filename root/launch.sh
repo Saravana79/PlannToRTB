@@ -14,7 +14,11 @@ tmux new-window -d -t rtb:8 -n 'post-auction' 'tail -F ./logs/post-auction.log'
 tmux new-window -d -t rtb:9 -n 'HelloRTBKit-agent-1' 'tail -F ./logs/HelloRTBKit-agent.log'
 tmux new-window -d -t rtb:10 -n 'HelloRTBKit-agent-3' 'tail -F ./logs/HelloRTBKit-agent.log'
 tmux new-window -d -t rtb:11 -n 'HelloRTBKit-agent-5' 'tail -F ./logs/HelloRTBKit-agent.log'
-tmux new-window -d -t rtb:12 -n 'HelloRTBKit-agent-6' 'tail -F ./logs/HelloRTBKit-agent.log'
+tmux new-window -d -t rtb:12 -n 'HelloRTBKit-agent-1-S' 'tail -F ./logs/HelloRTBKit-agent.log'
+tmux new-window -d -t rtb:13 -n 'HelloRTBKit-agent-3-S' 'tail -F ./logs/HelloRTBKit-agent.log'
+tmux new-window -d -t rtb:14 -n 'HelloRTBKit-agent-10' 'tail -F ./logs/HelloRTBKit-agent.log'
+tmux new-window -d -t rtb:15 -n 'HelloRTBKit-agent-11' 'tail -F ./logs/HelloRTBKit-agent.log'
+tmux new-window -d -t rtb:16 -n 'HelloRTBKit-agent-12' 'tail -F ./logs/HelloRTBKit-agent.log'
 if [[ "$*" != *--quiet* ]]
 then
     tmux attach -t rtb

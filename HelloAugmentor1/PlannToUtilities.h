@@ -1,6 +1,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <exception>
 #include <map>
 #include "hiredis-master/hiredis.h"
 
@@ -95,6 +96,8 @@ public:
 	std::string dailybudget;
 	std::string click_url;
 	std::string enabled;
+	std::string excluded_item_ids;
+	std::string excluded_sites;
 	float val;
 
 	// index
@@ -268,6 +271,8 @@ bool getProbability(double check)
 					const char *hostname = "127.0.0.1";
 					int port = 6379;
 					
+					try
+        			{	
 					vector<CAdDataSorter> *vDS = new vector<CAdDataSorter>();
 					struct timeval timeout = { 1, 500000 }; // 1.5 seconds
 					m_redisContext = redisConnectWithTimeout(hostname, port, timeout);
@@ -280,7 +285,7 @@ bool getProbability(double check)
 						}
 					}
 
-						
+					
 						std::string prfx = "url:";
 						std::string urlKey = "";
 						std::map<int,Item> items;
@@ -296,6 +301,14 @@ bool getProbability(double check)
 		        		std::string tagid;
 		        		userid = bidrequestjson["user"]["id"].asString();
 		        		tagid = bidrequestjson["imp"][0]["tagid"].asString();
+		        		long reservePrice =0;
+		        		if(!bidrequestjson["imp"][0]["reservePrice"].isNull())
+		        		{
+		        		
+		        			reservePrice  = bidrequestjson["imp"][0]["reservePrice"][0].asInt();
+		        	
+		        		}
+		        		
 		        		double eCPMController = 1.0; 
 		        		
 		        		//reply= (redisReply*)redisCommand(m_redisContext, "AUTH %s", "pLanTto@Rtb");
@@ -304,10 +317,6 @@ bool getProbability(double check)
 						//}
 						//freeReplyObject(reply);
 
-			         //  	cmd = "sismember testurls " + url;
-			         //  	reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
-			        //	if (reply->type != REDIS_REPLY_NIL  && reply->integer == 1 )
-		        	//	{
 
 
 				        	cmd = "HMGET " + urlKey + " item_ids article_type";
@@ -317,25 +326,34 @@ bool getProbability(double check)
 					            item_ids = reply->element[0]->type != REDIS_REPLY_NIL ? reply->element[0]->str : "";
 					        	std::string article_type = reply->element[1]->type != REDIS_REPLY_NIL ? reply->element[1]->str : "";
 
+					        // domain specific tagging needs to be capture here.. for now its commented as its not required.	
+					        //	if(url.find("gadgets.ndtv.com") != std::string::npos)
+					        //	{
+					        //		cmd = "HSET spottags-special  siddetails \"" + ReplaceAll(ReplaceAll(jsonstring,"\"","\\\"")," ","") + "\"";	
+			        		//		reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
+			        			
+					        //	}
+
 				        		if (article_type != "HowTo/Guide" && article_type != "Apps")
 				        		{	
 						        	cmd = "HMGET spottags:" + tagid + " sid_details ectr";	
 			        				reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
 			        			
-			        				if(reply->element[0]->type == REDIS_REPLY_NIL)
+			        				if(m_redisContext->err == 0  && reply->element[0]->type == REDIS_REPLY_NIL)
 			        				{
-			        					cmd = "HSET spottags:" + tagid + " sid_details \"" + ReplaceAll(ReplaceAll(jsonstring,"\"","\\\"")," ","") + "\"";	
-										reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
+			        				//	cmd = "HSET spottags:" + tagid + " sid_details \"" + ReplaceAll(ReplaceAll(jsonstring,"\"","\\\"")," ","") + "\"";	
+									//	reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
 			        				}
 			        			
-			        				if(reply->type == REDIS_REPLY_ARRAY && reply->element[1]->type != REDIS_REPLY_NIL)
+			        				if(m_redisContext->err == 0  && reply->type == REDIS_REPLY_ARRAY && reply->element[1]->type != REDIS_REPLY_NIL)
 			        				{
 
 			        					eCPMController = atof(reply->element[1]->str) ;
 			        						
 											if(eCPMController == 0)
 						   					{
-						   						cout << "Low Probability" << endl;
+						   						// cout << "Low Probability" << " - url - " <<  url << endl;
+						   						redisFree(m_redisContext);
 						   						return false;
 						   					}
 						   			
@@ -351,7 +369,7 @@ bool getProbability(double check)
 								        	reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
 
 								        
-								        	if (reply->type == REDIS_REPLY_ARRAY)
+								        	if (m_redisContext->err == 0  && reply->type == REDIS_REPLY_ARRAY)
 							        		{
 							        			Item item;
 							        			item.id = atoi(vItemIDs[i].c_str());
@@ -396,19 +414,19 @@ bool getProbability(double check)
 						        		}
 
 								    }
-
 								    if(!adIdsStr.empty())
 										{
 											std::vector <std::string> vAdIDs;
 											vAdIDs = parseString(adIdsStr);
 												// HGET advertisments:1 eCPM
-											for (unsigned int i = 0; i < vAdIDs.size(); i++)
+										//	for (unsigned int i = 0; i < vAdIDs.size(); i++)
+											for (unsigned int i = 0; i < 1; i++)
 											{
 												if(ads.find(atoi(vAdIDs[i].c_str())) == ads.end())
 												{
-													cmd = "HMGET advertisments:" + vAdIDs[i] + " type vendor_id dailybudget ecpm click_url enabled";
+													cmd = "HMGET advertisments:" + vAdIDs[i] + " type vendor_id dailybudget ecpm click_url enabled exclusive_item_ids excluded_sites";
 													reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
-													if (reply->type == REDIS_REPLY_ARRAY)
+													if (m_redisContext->err == 0  && reply->type == REDIS_REPLY_ARRAY)
 									        		{
 									        			Advertisement ad;
 									        			ad.id = atoi(vAdIDs[i].c_str());
@@ -418,15 +436,30 @@ bool getProbability(double check)
 									        			ad.eCPM = reply->element[3]->type != REDIS_REPLY_NIL ? reply->element[3]->str : "0";
 									        			ad.click_url = reply->element[4]->type != REDIS_REPLY_NIL ? reply->element[4]->str : "";
 									        			ad.enabled = reply->element[5]->type != REDIS_REPLY_NIL ? reply->element[5]->str : "";
-
+									        			ad.excluded_item_ids = reply->element[6]->type != REDIS_REPLY_NIL ? reply->element[6]->str : "";
+									        			ad.excluded_sites = reply->element[7]->type != REDIS_REPLY_NIL ? reply->element[7]->str : "";
 								    	    			if(ad.enabled == "true")
 									        			{
+									        				string domainstr ="";
+									        				if(ad.excluded_sites !="")
+									        				{
+									        					char domain[250];
+																sscanf(url.c_str(), "http://%[^/]", domain);
+																string domainstr = string(domain);
+																if(domainstr.find("www.") != std::string::npos)
+																{
+																	domainstr = domainstr.substr(4);
+																}
+															}
+								        					if (domainstr =="" || ad.excluded_sites.find(domainstr) == std::string::npos) 
+															{
 
-								    						ads[ad.id] = ad;
-									        				CAdDataSorter ds;
-															ds.id = ad.id;
-															ds.val = stof(ad.eCPM);
-															vDS->push_back(ds);
+									    						ads[ad.id] = ad;
+										        				CAdDataSorter ds;
+																ds.id = ad.id;
+																ds.val = stof(ad.eCPM);
+																vDS->push_back(ds);
+															}
 														}
 										        	} 
 
@@ -449,70 +482,88 @@ bool getProbability(double check)
 											{
 												
 												Advertisement ad = ads[It->id];
-												if(ad.type == "dynamic")
-												{	
-													if (vendorIDString.find(ad.vendor_id) != std::string::npos) 
-														{
 
-														    //advertisementid = appendStringswithComma(advertisementid,std::to_string(It->id));
-															//eCPM = appendStringswithComma(eCPM,std::to_string(It->val));
-															//click_url = appendStringswithComma(click_url,ad.click_url);
+												int count = 0 ;
+												if(ad.excluded_item_ids != "")
+												{
+													std::vector <std::string> eItemIDs;
+											    	eItemIDs = parseString(ad.excluded_item_ids);
+										    		
+											    	for (unsigned int i = 0; i < eItemIDs.size(); i++)
+							   		    			{	
+							   		    				if(item_ids.find(eItemIDs[i]) != std::string::npos)
+							   		    				{
+							   		    					count = count +1;
+							   		    				}
+
+							   		    			}
+
+							   		    				
+												
+										    	}
+										    	if(count != vItemIDs.size())
+										    	{
+													if(ad.type == "dynamic")
+													{	
+														if (vendorIDString.find(ad.vendor_id) != std::string::npos) 
+															{
+
+																admatch = true;
+																
+															}		
+													}
+
+													if(ad.type == "dynamicpc")
+													{
+															if (pcvendorIDString.find(ad.vendor_id) != std::string::npos) 
+															{
+																		admatch = true;
+														   	   
+															}
+													}
+
+													if(ad.type == "static")
+													{
 															admatch = true;
-															
-														}		
-												}
-
-												if(ad.type == "dynamicpc")
-												{
-														if (pcvendorIDString.find(ad.vendor_id) != std::string::npos) 
-														{
-														   //advertisementid = appendStringswithComma(advertisementid,std::to_string(It->id));
-														   //eCPM = appendStringswithComma(eCPM,std::to_string(It->val));
-														   //click_url = appendStringswithComma(click_url,ad.click_url);
-
-													   			if(( It->id != 8) && (item_ids.find("19676") != std::string::npos))
-													   			{
-													   				admatch = false;
-													   		
-													   			}
-													   			else
-													   			{
-													   				admatch = true;
-													   			}	
-
-													
-
-														   
-														}
-												}
-
-												if(ad.type == "static")
-												{
-												       //advertisementid = appendStringswithComma(advertisementid,std::to_string(It->id));
-														//eCPM = appendStringswithComma(eCPM,std::to_string(It->val));
-														//click_url = appendStringswithComma(click_url,ad.click_url);
-														admatch = true;
-												}
-
+													}
+												 }
 												if(admatch)
 												{
 													cmd = "EXISTS " + userid + "-Advertisement-" + std::to_string(It->id);
 										        	reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
-										        	if (reply->type != REDIS_REPLY_NIL  && reply->integer == 0)
+										        	if (m_redisContext->err == 0  && reply->type != REDIS_REPLY_NIL  && reply->integer == 0)
 			        				        		{
 									        			advertisementid = std::to_string(It->id);
 														eCPM = std::to_string(It->val * eCPMController);
-														click_url = ad.click_url;	
-														cmd = "SETEX " + userid + "-Advertisement-" + std::to_string(It->id) + " 3 Yes";
-										        	    reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());		
-														break;
+														click_url = ad.click_url;
+														
+														float bpfloat = It->val*eCPMController;
+														float rpfloat = reservePrice/(1000000.0);
+														if((reservePrice > 0) && ((bpfloat) < rpfloat))
+														{
+															// if(eCPMController > .9 && rpfloat < 150)
+															// {
+															// 	eCPM = 	std::to_string(ceil(rpfloat));
+															// }
+															// else
+															// {
+																admatch = false;
+																admissingduetouser = true;
+																cout << "Missing due to high minimum cpm - " << rpfloat <<" - " << bpfloat << " - url - " << url << endl;
+																break;
+															// }
+														}
+													 cout << "Bid Price" << bpfloat << " Reserver Price " << rpfloat << " Final eCPM" << eCPM << " - url - " << url << endl;
+													cmd = "SETEX " + userid + "-Advertisement-" + std::to_string(It->id) + " 5 Yes";
+									        	    reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());		
+													break;
 
 									        		}
 									        		else
 									        		{
 									        			admatch = false;
 									        			admissingduetouser = true;
-									        			cout << "Missing ad due to user match" << endl;
+									        		//	 cout << "Missing ad due to user match" << endl;
 									        		}
 												}
 											
@@ -522,9 +573,9 @@ bool getProbability(double check)
 									
 										if(admatch)
 										{
-												cmd = "HINCRBY " + urlKey + " count 1";
-									        	reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
-									        	cout << " AdMatch Id " << advertisementid << endl;
+											//	cmd = "HINCRBY " + urlKey + " count 1";
+									        //	reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
+									        	// cout << " AdMatch Id " << advertisementid << endl;;
 										}	
 										else
 										{
@@ -534,9 +585,9 @@ bool getProbability(double check)
 											}
 											else
 											{		
-												cmd = "HINCRBY missingad:" + url  + " count 1";	
-									        	reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
-									        	cout << "missing ad" << endl;
+											 //	cmd = "HINCRBY missingad:" + url  + " count 1";	
+									         //	reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
+									        //	 cout << "missing ad" << endl;
 									        }
 										}	
 										
@@ -546,7 +597,8 @@ bool getProbability(double check)
 								}
 							else
 							{
-								cout << "Skip this tag or article type" << endl;
+								 //cout << "Skip this tag or article type" << endl;
+								 redisFree(m_redisContext);
 								return false;
 							}		
 			   				
@@ -559,9 +611,9 @@ bool getProbability(double check)
 		         				{	
 									cmd = "HINCRBY missingurl:" + url  + " count 1";	
 				        			reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
-				        			cout << "No Match" << endl;
+				        			//cout << "No Match" << endl;
 
-			        				if (reply->type != REDIS_REPLY_NIL  && reply->integer > 500)
+			        				if (m_redisContext->err == 0  && reply->type != REDIS_REPLY_NIL  && reply->integer > 150)
 					        		{
 					        			/*string curTime = getCurrentTime();
 					        			cmd = "SADD missingurl-" + curTime  + " " + url;	
@@ -574,36 +626,54 @@ bool getProbability(double check)
 				        				reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
 
 					        		}
+					        		else	
+					        		{
+
+									 if(m_redisContext->err == 0  && reply->type != REDIS_REPLY_NIL  && reply->integer > 30 && url.find("youtube.com") != std::string::npos )						        		
+				        				{
+			        					cmd = "SADD missingurl-toplist "  + url;	
+				        				reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
+				        				}
+					        		}
 					        	}
 					        	else
 					        	{
-					        		cout << "Anonymous or empty url" << endl;
+					        	//	cout << "Anonymous or empty url" << endl;
 					        	}	
 
-			        			std::string site;
-			        			
-			        			
-			        			site = to_string(bidrequestjson["site"]["id"].asInt());
 			        			
 
-			        			if (tagid == "")
-			        			{
-			        				tagid = "NoTag";
-			        			}
+					        	/*	
 
-			        			
+									//storing the site related information.
+			        				std::string site;
+									site = to_string(bidrequestjson["site"]["id"].asInt());
+			        					if (tagid == "")
+					        			{
+					        				tagid = "NoTag";
+					        			}
+	
+					        		cmd = "SADD site:" + site  + " " + tagid;	
+					        			reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
 
-			        	/*		cmd = "SADD site:" + site  + " " + tagid;	
-			        			reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
-
-		        			cmd = "SETNX spottags:" + tagid + " \"" + ReplaceAll(ReplaceAll(jsonstring,"\"","\\\"")," ","") + "\"";	
-		        			reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());*/
+				        			cmd = "SETNX spottags:" + tagid + " \"" + ReplaceAll(ReplaceAll(jsonstring,"\"","\\\"")," ","") + "\"";	
+				        			reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());*/
 
 
 			        			redisFree(m_redisContext);
 			        			return false;
 
 		         		}	
+
+		         	}
+		         	catch(std::exception& e)
+		         	{
+		         		cout << "*****Exception******" << e.what() << endl;
+		         		cout << "Exception url : - " << url << endl;
+		         		return false;
+		         	}
+
+
 
 		}
 

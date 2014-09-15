@@ -22,67 +22,18 @@ CHANNELS = ['12345']
 # The below are example values for these fields that are used to populate
 # publisher info.
 BRANDED_PUB_DATA = [
-    ('http://www.igyaan.in/51349/lava-iris-504q-full-review', 502, 32423234, 'NDTV'),
-   ('http://www.fonearena.com/blog/101795/htc-one-m8-becomes-official-phone-of-delhi-daredevils.html', 502, 32423234, 'FoneAre'),
-    ('http://news.google.com', 10001, 56751341, 'Google News'),
+    ('http://www.cnet.com/how-to/10-killer-tips-for-your-samsung-galaxy-note-3/', 502, 32423234, 'NDTV'),
+    ('http://www.fonearena.com/blog/101795/htc-one-m8-becomes-official-phone-of-delhi-daredevils.html', 502, 32423234, 'FoneAre'),
+    (' http://gadgetstouse.com/full-reviews/micromax-canvas-nitro-review/24964', 10001, 56751341, 'Google News'),
+    ('http://phandroid.com/2014/07/18/cool-tricks-every-android-phone-user-should-know/', 10001, 56751341, 'Google News'),
+    ('http://www.igyaan.in/71117/motorola-moto-g-hands/', 10001, 56751341, 'Google News'),
     ('http://gadgetstouse.com/featured/top-5-smartphones-6-inch-display/18459', 10001, 12672383,
      'gadgetstouse'),
     ('http://tech.firstpost.com/reviews/sony-xperia-t2-ultra-dual-review-righting-the-wrongs-of-the-z-ultra-222504.html', 1528, 84485234,
      'Tech First'),
-     ('http://gadgets.ndtv.com/mobiles/reviews/spice-mi-425-review-234332', 1528, 84485234,
-     'Tech First'),
-     ('http://www.techtree.com/content/features/5802/gaming-smartphones-india.html', 1528, 84485234,
-     'Tech First'),
-      ('http://www.fonearena.com/blog/104879/lava-iris-x1-benchmarks.html', 1528, 84485234,
-     'Tech First'),
-
-      ('http://gadgetstouse.com/comparison/gionee-elife-e7-vs-oppo-find-7a/21344', 1528, 84485234,
-     'Tech First'),
-         ('http://www.gizbot.com/mobile/gionee-elife-s5-5-vs-panasonic-p81-which-octa-core-specs-comparison-017597.html', 1528, 84485234,
-     'Tech First'),
-     ('http://nothingwired.com/lg-l90-dual-review-full-depth-hands/', 1528, 84485234,
-     'Tech First'),
-      ('http://gadgetstouse.com/comparison/micromax-unite-2-vs-micromax-unite-a092-specifications-comparison/21367', 1528, 84485234,
-     'Tech First'),
-
-      ('http://gadgets.ndtv.com/mobiles/news/alcatel-one-touch-idol-x-now-officially-available-at-rs-16999-535376', 1528, 84485234,
-     'Tech First'),
-         ('http://www.gizbot.com/mobile/huawei-honor-3c-5-inch-2gb-ram-smartphone-now-sale-in-india-at-rs-14898-top-5-deals-017554-pg1.html', 1528, 84485234,
-     'Tech First'),
-     ('http://gadgets.ndtv.com/mobiles/news/motorola-moto-e-back-in-stock-on-flipkart-in-limited-quantities-536372', 1528, 84485234,
-     'Tech First'),
-      ('http://www.fonearena.com/blog/104962/sony-xperia-z2-camera-samples.html', 1528, 84485234,
-     'Tech First'),
-
-      ('http://gadgets.ndtv.com/tablets/news/lenovo-a7-50-voice-calling-tablet-launched-at-rs-15499-536647', 1528, 84485234,
-     'Tech First'),
-         ('http://www.fonearena.com/blog/105046/nokia-lumia-630-camera-samples.html', 1528, 84485234,
-     'Tech First'),
-     ('http://www.mobigyaan.com/samsung-galaxy-tab-4-8-inch-10-1-inch-variants-listed-samsung-estore', 1528, 84485234,
-     'Tech First'),
-      ('http://gadgetstouse.com/featured/top-5-nfc-phones-rs-20000/20303', 1528, 84485234,
-     'Tech First'),
-
-      ('http://gadgetstouse.com/news/lenovo-a750-launch-price-india/21007', 1528, 84485234,
-     'Tech First'),
-         ('http://nothingwired.com/sony-xperia-z2-review-full-depth-hands/', 1528, 84485234,
-     'Tech First'),
-     ('http://www.fonearena.com/blog/103344/oppo-find-7a-review.html', 1528, 84485234,
-     'Tech First'),
-      ('http://androidadvices.com/samsung-galaxy-note-n7000-review/', 1528, 84485234,
-     'Tech First'),
-
-      ('http://nothingwired.com/panasonic-p81-review-full-depth-hands/', 1528, 84485234,
-     'Tech First'),
-         ('http://nothingwired.com/motorola-moto-g-review-complete-in-depth-hands-on/', 1528, 84485234,
-     'Tech First'),
-     ('http://www.igyaan.in/17846/sony-ericsson-xperia-neo-review/', 1528, 84485234,
-     'Tech First'),
-      ('http://androidadvices.com/gionee-elife-e7-vs-e7-mini-comparison/', 1528, 84485234,
-     'Tech First'),
-
-      ('http://gadgets.ndtv.com/tablets/reviews/hp-elitepad-900-review-354260', 1528, 84485234,
-     'Tech First'),
+    ('http://www.nytimes.com/pages/technology/index.html', 936, 9034124,
+     'New York Times'),
+    ('http://some.gcn.site.com', 10002, 12002392, 'GCN'),
 ]
 
 # Data for anonymous publishers.
@@ -383,7 +334,7 @@ class DefaultBidGenerator(object):
       bid_request: a realtime_bidding_pb2.BidRequest instance
     """
     # 50% chance of anonymous ID/branded URL.
-    if random.choice([True, False]):
+    if random.choice([True]):
       url, seller_id, pub_id, seller = random.choice(BRANDED_PUB_DATA)
       bid_request.url = url
       bid_request.seller_network_id = seller_id
@@ -467,10 +418,11 @@ class DefaultBidGenerator(object):
       ad_data.adgroup_id = generated_id
 
       # 10% of adgroup requests will have a direct deal enabled
-      if random.random() < 0.10:
+      if random.random() < 0.90:
         direct_deal = ad_data.direct_deal.add()
         direct_deal.direct_deal_id = random.randint(1, MAX_DIRECT_DEAL_ID)
-        direct_deal.fixed_cpm_micros = random.randint(1, 99) * 10000
+        #direct_deal.fixed_cpm_micros = random.randint(1, 99) * 10000
+        direct_deal.fixed_cpm_micros = 75670000
         ad_data.minimum_cpm_micros = direct_deal.fixed_cpm_micros
 
   def _GenerateVerticals(self, bid_request):
@@ -649,6 +601,5 @@ class MobileBidGenerator(DefaultBidGenerator):
 
     self._GenerateUserInfo(bid_request)
     self._GenerateAdSlot(bid_request)
-    self._GenerateAdSlot(bid_request)
-
+    
     return bid_request

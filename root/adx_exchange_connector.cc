@@ -422,8 +422,16 @@ ParseGbrAdSlot (const std::string currency,
         if (slot.has_ad_block_key())
             spot.tagid = to_string(slot.ad_block_key());
 
+        //plannto added this to populate reserverprice which was missing.
         if(slot.matching_ad_data(0).has_minimum_cpm_micros()){
-                    spot.reservePrice = Amount(currencyCode,slot.matching_ad_data(0).minimum_cpm_micros());
+                    if( slot.matching_ad_data(0).minimum_cpm_micros() > 2147483647)
+                    {
+                        spot.reservePrice = Amount(currencyCode,2147483647);
+                    }
+                    else
+                    {
+                        spot.reservePrice = Amount(currencyCode,slot.matching_ad_data(0).minimum_cpm_micros());
+                    }
                 }
                // Parse restrictions ;
         {
@@ -441,6 +449,12 @@ ParseGbrAdSlot (const std::string currency,
             for (auto i: boost::irange(0,slot.excluded_sensitive_category_size()))
                 tmp.push_back(slot.excluded_sensitive_category(i));
             spot.restrictions.addInts("excluded_sensitive_category", tmp);
+
+            //plannto added it.
+          //  tmp.clear();
+          //  for (auto i: boost::irange(0,slot.excluded_product_category_size()))
+          //      tmp.push_back(slot.excluded_product_category(i));
+          //  spot.restrictions.addInts("excluded_product_category", tmp);
 
             vector<std::string> adg_ids;
             for (auto i: boost::irange(0,slot.matching_ad_data_size())){

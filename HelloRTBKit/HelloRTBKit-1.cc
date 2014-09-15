@@ -112,7 +112,15 @@ namespace RTBKIT {
 
 			onBidRequest = bind(
 				&FixedPriceBiddingAgent::bid, this, _1, _2, _3, _4, _5, _6);
-
+		/*	onWin = bind(
+				&FixedPriceBiddingAgent::defaultWin, this, _1);
+			onLoss = bind(  
+				&FixedPriceBiddingAgent::defaultLoss, this, _1);
+			onNoBudget = bind(
+				&FixedPriceBiddingAgent::defaultNoBudget, this, _1);
+			onTooLate = bind(
+				&FixedPriceBiddingAgent::defaultTooLate, this, _1);
+		*/
 			// This component is used to speak with the master banker and pace the
 			// rate at which we spend our budget.
 			budgetController.init(getServices()->config);
@@ -161,10 +169,10 @@ namespace RTBKIT {
 				c.providerConfig["adx"]["clickThroughUrl"] = "%{meta.click_url}";
 				c.providerConfig["adx"]["agencyId"] = 59;
 				c.providerConfig["adx"]["vendorType"] = "113";
-				c.providerConfig["adx"]["attribute"]  = "%{meta.attribute}";
+				c.providerConfig["adx"]["attribute"]  = "";
 				c.providerConfig["adx"]["restrictedCategories"]  = "0";
 				c.providerConfig["adx"]["sensitiveCategory"]  = "0";
-				//c.providerConfig["adx"]["adGroupId"]  = 16025452000;
+				//c.providerConfig["adx"]["adGroupId"]  = "%{meta.group_id}";
 				c.providerConfig["adx"]["sensitiveCategory"]  = "0";
 			}
 
@@ -205,6 +213,32 @@ namespace RTBKIT {
 			doConfig(config);
 		}
 
+
+	  /*  void defaultWin(const BidResult & args)
+	    {
+	        cout << "onwin" << endl;
+	    }
+
+        void defaultLoss(const BidResult & args)
+	    {
+	        cout << "onloss" << endl;
+	        cout << "bid status " << args.result << endl;
+	        cout << "second price " <<args.secondPrice << endl;
+	        cout << "bid " << args.request->url.c_str() << endl;
+	         cout << "bid price" << args.ourBid[0].price << endl;
+	    }
+
+	    void defaultNoBudget(const BidResult & args)
+		{
+			cout << "on default no bugder"<< endl;
+		}
+
+	    void defaultTooLate(const BidResult & args)
+		{
+			cout << "on default late"<< endl;
+		}
+
+*/
 		void bid(
 			double timestamp,
 			const Id & id,
@@ -262,7 +296,8 @@ namespace RTBKIT {
 	    		metadata["click_url"] = click_url;
 				metadata["item_ids"] = item_ids;
 				metadata["tagid"] = tagid;
-				metadata["attribute"] = "";
+				metadata["attribute"] = "1";
+				//metadata["group_id"] = 16025452000;
 				float bidValueforsingleImpression = stof(eCPM)/1000 ;
 
 				std::string group_id = br->toJson()["imp"][0]["pmp"]["ext"]["adgroup_id"].asString();
@@ -316,7 +351,7 @@ namespace RTBKIT {
 			}
 
 			// Make sure we have 1$ to spend for the next period.
-			budgetController.topupTransferSync(config.account, USD(4));
+			budgetController.topupTransferSync(config.account, USD(12));
 		}
 
 

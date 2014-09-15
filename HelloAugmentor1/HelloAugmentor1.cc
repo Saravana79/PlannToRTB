@@ -170,15 +170,17 @@ redisContext* FrequencyCapAugmentor::connectRedisSvr()
 		//std::string prfx = "url:";
 		Helper helper;
 		//urlName = prfx + urlName;
-		cout << "\t\t URL  --> " << urlName << endl;
+		//cout << "\t\t URL  --> " << urlName << endl;
 
 		std::string item_ids="";
    		std::string advertisementid="";
    		std::string eCPM="";
    		std::string click_url = "";
    		//std::string tagid = val["imp"][0]["tagid"].asString();
-
-		gotIDs = helper.processBidURL(urlName, item_ids, advertisementid,eCPM, click_url,val,request.bidRequest->toJsonStr());
+   		if(urlName !="" || urlName.find("anonymous") == std::string::npos)
+		{
+			gotIDs = helper.processBidURL(urlName, item_ids, advertisementid,eCPM, click_url,val,request.bidRequest->toJsonStr());
+		}
 		
 
 		if (gotIDs)
@@ -204,7 +206,30 @@ redisContext* FrequencyCapAugmentor::connectRedisSvr()
 				// VICKY: Feb-05-2014: START
 				if (gotIDs)
 				{
-					result[account].tags.insert("Advertisment-" + advertisementid);
+					if(urlName.find("youtube.com") != std::string::npos)
+					{
+						//pass ssl data
+
+						if(advertisementid == "10")
+						{
+							advertisementid = 1;
+						}
+
+						if(advertisementid == "11")
+						{
+							advertisementid = 5;
+						}
+
+						if(advertisementid == "12")
+						{
+							advertisementid = 3;
+						}
+						result[account].tags.insert("Advertisment-" + advertisementid + "-S");
+					}
+					else
+					{
+						result[account].tags.insert("Advertisment-" + advertisementid);
+					}
 					recordHit("accounts." + account[0] + ".UrlMatch");
 					Json::Value metadata;
 					metadata["adsid"] = advertisementid;
