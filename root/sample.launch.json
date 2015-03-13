@@ -87,25 +87,8 @@
                     ],
                     "log": true
                 },
+
                 {
-                    "name": "HelloRTBKit-agent-3",
-                    "root": ".",
-                    "path": "build/x86_64/bin/HelloRTBKit-3",
-                    "arg": [
-                        "-B", "rtbkit/sample.bootstrap.json"
-                    ],
-                    "log": true
-                },
-                {
-                    "name": "HelloRTBKit-agent-5",
-                    "root": ".",
-                    "path": "build/x86_64/bin/HelloRTBKit-5",
-                    "arg": [
-                        "-B", "rtbkit/sample.bootstrap.json"
-                    ],
-                    "log": true
-                },
-                             {
                     "name": "HelloRTBKit-agent-1-S",
                     "root": ".",
                     "path": "build/x86_64/bin/HelloRTBKit-1-S",
@@ -113,53 +96,54 @@
                         "-B", "rtbkit/sample.bootstrap.json"
                     ],
                     "log": true
-                },
-                {
-                    "name": "HelloRTBKit-agent-3-S",
+                }
+                ,
+                  {
+                    "name": "HelloRTBKit-agent-1-B",
                     "root": ".",
-                    "path": "build/x86_64/bin/HelloRTBKit-3-S",
+                    "path": "build/x86_64/bin/HelloRTBKit-1-B",
                     "arg": [
                         "-B", "rtbkit/sample.bootstrap.json"
                     ],
                     "log": true
                 },
                 {
-                    "name": "HelloRTBKit-agent-5-S",
+                    "name": "HelloRTBKit-agent-1-S-B",
                     "root": ".",
-                    "path": "build/x86_64/bin/HelloRTBKit-5-S",
-                    "arg": [
-                        "-B", "rtbkit/sample.bootstrap.json"
-                    ],
-                    "log": true
-                },
-                      {
-                    "name": "HelloRTBKit-agent-10",
-                    "root": ".",
-                    "path": "build/x86_64/bin/HelloRTBKit-10",
-                    "arg": [
-                        "-B", "rtbkit/sample.bootstrap.json"
-                    ],
-                    "log": true
-                },
-                {
-                    "name": "HelloRTBKit-agent-11",
-                    "root": ".",
-                    "path": "build/x86_64/bin/HelloRTBKit-11",
-                    "arg": [
-                        "-B", "rtbkit/sample.bootstrap.json"
-                    ],
-                    "log": true
-                },
-                {
-                    "name": "HelloRTBKit-agent-12",
-                    "root": ".",
-                    "path": "build/x86_64/bin/HelloRTBKit-12",
+                    "path": "build/x86_64/bin/HelloRTBKit-1-S-B",
                     "arg": [
                         "-B", "rtbkit/sample.bootstrap.json"
                     ],
                     "log": true
                 }
-
+                 ,
+                  {
+                    "name": "HelloRTBKit-agent-1-R",
+                    "root": ".",
+                    "path": "build/x86_64/bin/HelloRTBKit-1-R",
+                    "arg": [
+                        "-B", "rtbkit/sample.bootstrap.json"
+                    ],
+                    "log": true
+                },
+                {
+                    "name": "HelloRTBKit-agent-1-S-R",
+                    "root": ".",
+                    "path": "build/x86_64/bin/HelloRTBKit-1-S-R",
+                    "arg": [
+                        "-B", "rtbkit/sample.bootstrap.json"
+                    ],
+                    "log": true
+                },
+                {
+                    "name": "HelloRTBKit-agent-1-V",
+                    "root": ".",
+                    "path": "build/x86_64/bin/HelloRTBKit-1-V",
+                    "arg": [
+                        "-B", "rtbkit/sample.bootstrap.json"
+                    ],
+                    "log": true
+                }
             ]
         }
     ]

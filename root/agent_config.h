@@ -39,6 +39,13 @@ struct Creative {
     static const Creative sampleBB;
     static const Creative sampleWS;
     static const Creative sampleBBB;
+    static const Creative sampleLBS;
+    static const Creative sample336;
+    static const Creative sample200;
+    static const Creative sample250;
+    static const Creative sample160;
+    
+    static const Creative videoAd;
     
     void fromJson(const Json::Value & val);
     Json::Value toJson() const;

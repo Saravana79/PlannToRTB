@@ -86,6 +86,18 @@ const Creative Creative::sampleLB
     (728, 90,  "LeaderBoard", 2);
 const Creative Creative::sampleBBB
     (300, 600,  "BigBigBox", 3);
+const Creative Creative::sampleLBS
+    (468, 60,  "BigBigBox", 4); 
+const Creative Creative::videoAd
+    (0, 0,  "VideoAd", 5);    
+const Creative Creative::sample336
+    (336, 280,  "Createive336", 6);
+const Creative Creative::sample200
+    (200, 200,  "Createive200", 7);
+const Creative Creative::sample250
+    (250, 250,  "Createive250", 8);
+const Creative Creative::sample160
+    (160, 600,  "Createive160", 9);
 
 bool
 Creative::

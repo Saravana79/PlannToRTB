@@ -982,7 +982,8 @@ checkDeadAgents()
         this->recordLevel(timeSinceHeartbeat,
                           "accounts.%s.timeSinceHeartbeat", account);
 
-        if (timeSinceHeartbeat > 5.0) {
+        //increased the last timeout to 11 secs
+        if (timeSinceHeartbeat > 11.0) {
             info.status->dead = true;
             if (it->second.numBidsInFlight() != 0) {
                 cerr << "agent " << it->first
@@ -1184,13 +1185,14 @@ augmentAuction(const std::shared_ptr<AugmentationInfo> & info)
         return;
     }
     //plannto change this from 0.005 to 0.040 
-    double augmentationWindow = 0.060; // 5ms available to augment
+    double augmentationWindow = 0.070; // 5ms available to augment
 
     auto onDoneAugmenting = [=] (const std::shared_ptr<AugmentationInfo> & info)
         {
             info->auction->doneAugmenting = Date::now();
 
             if (info->auction->tooLate()) {
+                cout << "Too Late in augmentor - " << info->auction->request->url << endl;
                 this->recordHit("tooLateAfterAugmenting");
                 return;
             }
@@ -1262,7 +1264,7 @@ preprocessAuction(const std::shared_ptr<Auction> & auction)
                     doFilterStat(*info.config, "intoStaticFilters");
                 });
     }
-
+  
     // Do the actual filtering.
     auto biddableConfigs = filters.filter(*auction->request, exchangeConnector);
 
@@ -1273,11 +1275,13 @@ preprocessAuction(const std::shared_ptr<Auction> & auction)
         {
             if (status.dead || status.lastHeartbeat.secondsSince(now) > 2.0) {
                 doFilterStat(config, "static.agentAppearsDead");
+       
                 return false;
             }
 
             if (status.numBidsInFlight >= config.maxInFlight) {
                 doFilterStat(config, "static.earlyTooManyInFlight");
+         
                 return false;
             }
 
@@ -1287,16 +1291,16 @@ preprocessAuction(const std::shared_ptr<Auction> & auction)
             {
                 ML::atomic_inc(stats.notEnoughTime);
                 doFilterStat(config, "static.notEnoughTime");
+
                 return false;
             }
 
             return true;
         };
-
+ 
     for (const auto& entry : biddableConfigs) {
         if (entry.biddableSpots.empty()) continue;
         if (!checkAgent(*entry.config, *entry.status, *entry.stats)) continue;
-
         ML::atomic_inc(entry.stats->passedStaticFilters);
         doFilterStat(*entry.config, "passedStaticFilters");
 
@@ -1308,11 +1312,9 @@ preprocessAuction(const std::shared_ptr<Auction> & auction)
         bidder.config = entry.config;
         bidder.stats = entry.stats;
         bidder.imp = std::move(entry.biddableSpots);
-
         groupAgents[rrGroup].push_back(bidder);
         groupAgents[rrGroup].totalBidProbability += entry.config->bidProbability;
     }
-
 
     std::vector<GroupPotentialBidders> validGroups;
 
@@ -1337,21 +1339,18 @@ preprocessAuction(const std::shared_ptr<Auction> & auction)
         // request
         validGroups.push_back(it->second);
     }
-
+    
     if (validGroups.empty()) {
         // Now we need to end the auction
         //inFlight.erase(auctionId);
         if (!auction->finish()) {
             recordHit("tooLateToFinish");
         }
-
         //cerr << "no valid groups " << endl;
         return std::shared_ptr<AugmentationInfo>();
     }
-
     auto info = std::make_shared<AugmentationInfo>(auction, lossTimeout);
     info->potentialGroups.swap(validGroups);
-
     auction->outOfPrepro = Date::now();
 
     recordOutcome(auction->outOfPrepro.secondsSince(auction->inPrepro) * 1000.0,
@@ -1895,7 +1894,7 @@ doBid(const std::vector<std::string> & message)
             continue;
         }
 
-        if (bid.price.isNegative() || bid.price > maxBidAmount) {
+        if (bid.price.isNegative() /*|| bid.price > maxBidAmount*/) {
             returnInvalidBid(i, "invalidPrice",
                     "bid price of %s is outside range of $0-%s parsing bid %s",
                     bid.price.toString().c_str(),
@@ -2314,8 +2313,8 @@ onNewAuction(std::shared_ptr<Auction> auction)
         else {
             slowModeCount++;
         }
-
-        if (slowModeCount > 100) {
+        //plannto increased the slow mode count
+        if (slowModeCount > 1000) {
             /* we only let the first 100 auctions take place each second */
             recordHit("monitor.ignoredAuctions");
             auction->finish();

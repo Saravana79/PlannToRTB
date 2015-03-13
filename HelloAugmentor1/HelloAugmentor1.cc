@@ -105,6 +105,27 @@ redisContext* FrequencyCapAugmentor::connectRedisSvr()
         return c;
 }
 
+bool getProbability(double check)
+{
+	double val = (double)rand() / RAND_MAX;
+
+	//int random;
+
+	if(val < check)
+		{ return true;}
+	else
+		{return false;}
+
+	// if (val < 0.05)       //  5%
+	//     random = 0;
+	// else if (val < 0.25)  //  5% + 20%
+	//     random = 1;
+	// else if (val < 0.55)  //  5% + 20% + 30%
+	//     random = 2;
+	// else
+	//     random = 3;
+}
+
 	/** Sets up the internal components of the augmentor.
 
 	Note that SyncAugmentorBase is a MessageLoop so we can attach all our
@@ -176,16 +197,74 @@ redisContext* FrequencyCapAugmentor::connectRedisSvr()
    		std::string advertisementid="";
    		std::string eCPM="";
    		std::string click_url = "";
+   		bool hastaggingrestricted = false;
+		bool isSSLRequired = false;
+
+   		bool isRemarketingBlocked = false;
    		//std::string tagid = val["imp"][0]["tagid"].asString();
-   		if(urlName !="" || urlName.find("anonymous") == std::string::npos)
+
+
+		auto& pmpNode = request.bidRequest->imp[0].pmp;
+
+		string groupid="";
+		bool addressRemarketing = true;
+		// if(!val["imp"][0]["pmp"]["ext"]["adgroup_id"].isNull())
+		// {
+			groupid = val["imp"][0]["pmp"]["ext"]["adgroup_id"].asString();
+
+			if((groupid == "20841722560") && urlName.find("youtube.com") != std::string::npos)
+		
+			{
+				//cout << "excluded attribute " << request.bidRequest->imp[0].pmp->ext["excluded_attribute"] << endl;	
+			}	
+
+		// }
+		
+		
+		for (auto i = 0; pmpNode->ext["excluded_attribute"].size() > i; i += 1) 
 		{
-			gotIDs = helper.processBidURL(urlName, item_ids, advertisementid,eCPM, click_url,val,request.bidRequest->toJsonStr());
+        	if (pmpNode->ext["excluded_attribute"][i] == "7") {
+             hastaggingrestricted =  true;
+        	}
+
+        	if (pmpNode->ext["excluded_attribute"][i] == "48") {
+        	//	cout << "****** URL  that requires SSS ******--> " << urlName << endl; 
+             isSSLRequired =  true;
+        	}
+
+    		//if (pmpNode->ext["excluded_attribute"][i] == "34") {
+        	//	cout << "****** URL  that disables flash ******--> " << urlName << endl; 
+             
+        	//}
+
+    		if (pmpNode->ext["excluded_attribute"][i] == "8") {
+        	//	cout << "****** URL  that requires SSS ******--> " << urlName << endl; 
+             isRemarketingBlocked =  true;
+        	}
+
+
+    	}
+    	bool bidthroughRemarketing = false;
+    	string add_details="";
+   		if(urlName !="" && urlName.find("anonymous") == std::string::npos)
+		{
+			//cout << "\t\t URL  --> " << urlName << endl;
+			
+		}
+
+		if(addressRemarketing)
+		{
+			gotIDs = helper.processBidURLWrapper(urlName, item_ids, advertisementid,eCPM, click_url,val,request.bidRequest->toJsonStr(),isRemarketingBlocked,bidthroughRemarketing,hastaggingrestricted,add_details);
 		}
 		
+		
+     
+
 
 		if (gotIDs)
 		{
-
+			//cout << "\t\t URL  --> " << urlName << "publiser settings id "<< pmpNode->ext["publisher_settings_list_id"] << endl;
+			
 			for (const string& agent : request.agents) 
 			{
 
@@ -201,41 +280,75 @@ redisContext* FrequencyCapAugmentor::connectRedisSvr()
 				}
 
 				const RTBKIT::AccountKey& account = config.config->account;
-
+		
 				
 				// VICKY: Feb-05-2014: START
+
 				if (gotIDs)
 				{
-					if(urlName.find("youtube.com") != std::string::npos)
+
+				    if(request.bidRequest->imp[0].video == NULL)
+				    {
+						if(isSSLRequired)
+						{
+							if(bidthroughRemarketing)
+							{
+								result[account].tags.insert("Advertisment-1-S-R");
+							}
+							else
+							{
+								if(hastaggingrestricted)
+								{
+									result[account].tags.insert("Advertisment-1-S");
+								}
+								else
+								{
+									result[account].tags.insert("Advertisment-1-S-B");
+								}
+
+							}
+						
+						}
+						else
+						{
+							if(bidthroughRemarketing)
+							{
+								result[account].tags.insert("Advertisment-1-R");
+							}
+							else
+							{
+								if(hastaggingrestricted)
+								{
+									result[account].tags.insert("Advertisment-1");
+								}
+								else
+								{
+									result[account].tags.insert("Advertisment-1-B");
+								}
+							}
+							
+						}
+					}	
+					else
 					{
-						//pass ssl data
+						cout << "video bidding" << urlName << endl;
+						result[account].tags.insert("Advertisment-1-V");	
+					}
 
-						if(advertisementid == "10")
-						{
-							advertisementid = 1;
-						}
-
-						if(advertisementid == "11")
-						{
-							advertisementid = 5;
-						}
-
-						if(advertisementid == "12")
-						{
-							advertisementid = 3;
-						}
-						result[account].tags.insert("Advertisment-" + advertisementid + "-S");
+					recordHit("accounts." + account[0] + ".UrlMatch");
+					Json::Value metadata;
+					if((bidthroughRemarketing) && (advertisementid == "21"))
+					{
+						metadata["adsid"] = "23";
 					}
 					else
 					{
-						result[account].tags.insert("Advertisment-" + advertisementid);
-					}
-					recordHit("accounts." + account[0] + ".UrlMatch");
-					Json::Value metadata;
-					metadata["adsid"] = advertisementid;
+						metadata["adsid"] = advertisementid;
+					}	
 					metadata["item_ids"] = item_ids;
 					metadata["eCPM"] = eCPM;
 					metadata["click_url"] = click_url;
+					metadata["add_details"] = add_details;
 					//metadata["tagid"] = tagid;
 					result[account].data = metadata;
 

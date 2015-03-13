@@ -499,7 +499,7 @@ reauthorizeBudget(uint64_t numTimeoutsExpired)
                 + "/balance";
             request.params = { { "accountType", "spend" } };
             //plannto incresed this from 0.1 USD to 5 USD per sec.
-            Json::Value payload = CurrencyPool(USD(5)).toJson();
+            Json::Value payload = CurrencyPool(USD(10)).toJson();
             request.payload = payload.toString();
             
             //cerr << "sending out request " << request << endl;

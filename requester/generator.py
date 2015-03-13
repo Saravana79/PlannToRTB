@@ -22,18 +22,17 @@ CHANNELS = ['12345']
 # The below are example values for these fields that are used to populate
 # publisher info.
 BRANDED_PUB_DATA = [
-    ('http://www.cnet.com/how-to/10-killer-tips-for-your-samsung-galaxy-note-3/', 502, 32423234, 'NDTV'),
-    ('http://www.fonearena.com/blog/101795/htc-one-m8-becomes-official-phone-of-delhi-daredevils.html', 502, 32423234, 'FoneAre'),
-    (' http://gadgetstouse.com/full-reviews/micromax-canvas-nitro-review/24964', 10001, 56751341, 'Google News'),
-    ('http://phandroid.com/2014/07/18/cool-tricks-every-android-phone-user-should-know/', 10001, 56751341, 'Google News'),
-    ('http://www.igyaan.in/71117/motorola-moto-g-hands/', 10001, 56751341, 'Google News'),
-    ('http://gadgetstouse.com/featured/top-5-smartphones-6-inch-display/18459', 10001, 12672383,
-     'gadgetstouse'),
-    ('http://tech.firstpost.com/reviews/sony-xperia-t2-ultra-dual-review-righting-the-wrongs-of-the-z-ultra-222504.html', 1528, 84485234,
-     'Tech First'),
-    ('http://www.nytimes.com/pages/technology/index.html', 936, 9034124,
-     'New York Times'),
-    ('http://some.gcn.site.com', 10002, 12002392, 'GCN'),
+  #  ('http://www.cnet.com/how-to/10-killer-tips-for-your-samsung-galaxy-note-3/', 502, 32423234, 'NDTV'),
+ #  ('http://snapsort.com/compare/Canon-EOS-1200D-vs-Nikon-D3200', 502, 32423234, 'FoneAre'),
+ #  (' http://gadgetstouse.com/full-reviews/micromax-canvas-nitro-review/24964', 10001, 56751341, 'Google News'),
+#    ('http://phandroid.com/2014/07/18/cool-tricks-every-android-phone-user-should-know/', 10001, 56751341, 'Google News'),
+ #   ('http://www.igyaan.in/71117/motorola-moto-g-hands/', 10001, 56751341, 'Google News'),
+  #  ('http://gadgetstouse.com/featured/top-5-smartphones-6-inch-display/18459', 10001, 12672383, 'gadgetstouse'),
+    ('http://www.youtube.com/video/Z_7oN4FwCko', 1528, 84485234, 'Tech First'),
+ #   ('http://www.youtube.com/video/gJ3Ds6uf0Yg', 1528, 84485234, 'Tech First'),
+    
+#    ('http://www.nytimes.com/pages/technology/index.html', 936, 9034124,'New York Times'),
+    #('http://some.gcn.site.com', 10002, 12002392, 'GCN'),
 ]
 
 # Data for anonymous publishers.
@@ -51,9 +50,7 @@ MAX_DIRECT_DEAL_ID = 1 << 62
 MAX_MATCHING_ADGROUPS = 3
 
 DIMENSIONS = [
-    (300, 250),
-    (120, 600),
-    (728, 90),
+    (468, 60),
 ]
 
 MAX_SLOT_ID = 200
@@ -379,6 +376,7 @@ class DefaultBidGenerator(object):
     for creative_attribute in self._GenerateSet(
         CREATIVE_ATTRIBUTES, num_excluded_creative_attributes):
       ad_slot.excluded_attribute.append(creative_attribute)
+      ad_slot.excluded_attribute.append(48)
 
     # Generate excluded categories for 20% of requests.
     if random.random() < 0.2:
@@ -421,8 +419,8 @@ class DefaultBidGenerator(object):
       if random.random() < 0.90:
         direct_deal = ad_data.direct_deal.add()
         direct_deal.direct_deal_id = random.randint(1, MAX_DIRECT_DEAL_ID)
-        #direct_deal.fixed_cpm_micros = random.randint(1, 99) * 10000
-        direct_deal.fixed_cpm_micros = 75670000
+        direct_deal.fixed_cpm_micros = random.randint(1, 99) * 10000
+        #direct_deal.fixed_cpm_micros = 75670000
         ad_data.minimum_cpm_micros = direct_deal.fixed_cpm_micros
 
   def _GenerateVerticals(self, bid_request):

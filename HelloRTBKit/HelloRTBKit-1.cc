@@ -160,16 +160,24 @@ namespace RTBKIT {
 			config.creatives.push_back(Creative::sampleWS);
 			config.creatives.push_back(Creative::sampleLB);
 			config.creatives.push_back(Creative::sampleBBB);
+			config.creatives.push_back(Creative::sampleLBS);
+			config.creatives.push_back(Creative::sample336);
+			config.creatives.push_back(Creative::sample200);
+			config.creatives.push_back(Creative::sample250);
+			config.creatives.push_back(Creative::sample160);
+		//	config.creatives.push_back(Creative::videoAd);
 			config.exchangeFilter.include.push_back("adx");
 			for (auto & c: config.creatives) {
 				c.exchangeFilter.include.push_back("adx");
-				c.providerConfig["adx"]["externalId"] = "PlannTo-Creative-1-" + RTBKIT::agent_ad_id;
+				c.providerConfig["adx"]["externalId"] = "PlannTo-Creative-%{meta.advertisementids}-" + RTBKIT::agent_ad_id;
 				c.providerConfig["adx"]["htmlTemplate"] = 
-					"<html><body><iframe src=\"http://www.plannto.com/advertisments/show_ads?item_id=%{meta.item_ids}&ads_id=%{meta.advertisementids}&size=%{creative.width}x%{creative.height}&click_url=%%CLICK_URL_ESC%%&wp=%%WINNING_PRICE%%&sid=%{meta.tagid}&ref_url=%{bidrequest.url}&cb=%%CACHEBUSTER%%\" width=\"%{creative.width}\" height=\"%{creative.height}\" style=\"border:0px;\"/></body></html>";
+					"<html><body><iframe src=\"http://www.plannto.com/advertisments/show_ads?item_id=%{meta.item_ids}&ads_id=%{meta.advertisementids}&size=%{creative.width}x%{creative.height}&click_url=%%CLICK_URL_ESC%%&wp=%%WINNING_PRICE%%&sid=%{meta.tagid}&ref_url=%{bidrequest.url}&device=%{meta.device}&v=%{meta.viewability}&cb=%%CACHEBUSTER%%&a=%{meta.add_details}\" width=\"%{creative.width}\" height=\"%{creative.height}\" style=\"border:0px;\"/></body></html>";
+				c.providerConfig["adx"]["videoUrl"] = 
+				"<html><body><iframe src=\"http://www.plannto.com/advertisments/video_ads?item_id=%{meta.item_ids}&ads_id=%{meta.advertisementids}&size=%{creative.width}x%{creative.height}&click_url=%%CLICK_URL_ESC%%&wp=%%WINNING_PRICE%%&sid=%{meta.tagid}&ref_url=%{bidrequest.url}&cb=%%CACHEBUSTER%%\" width=\"%{creative.width}\" height=\"%{creative.height}\" style=\"border:0px;\"/></body></html>";	
 				c.providerConfig["adx"]["clickThroughUrl"] = "%{meta.click_url}";
 				c.providerConfig["adx"]["agencyId"] = 59;
 				c.providerConfig["adx"]["vendorType"] = "113";
-				c.providerConfig["adx"]["attribute"]  = "";
+				c.providerConfig["adx"]["attribute"]  = "50";
 				c.providerConfig["adx"]["restrictedCategories"]  = "0";
 				c.providerConfig["adx"]["sensitiveCategory"]  = "0";
 				//c.providerConfig["adx"]["adGroupId"]  = "%{meta.group_id}";
@@ -181,7 +189,7 @@ namespace RTBKIT {
 			// Accounts are used to control the allocation of spending budgets for
 			// an agent. The whole mechanism is fully generic and can be setup in
 			// whatever you feel it bests suits you.
-			config.account = {"PlannToAccount_" + agent_ad_id , "PC"};
+				config.account = {"PlannToAccount_2" , "PC"};
 
 			// Indicate to the router that we want our bid requests to be augmented
 			// with our frequency cap augmentor example.
@@ -252,6 +260,7 @@ namespace RTBKIT {
 			
 			std::string urltemp = br->url.toString();
 			Json::Value val = br->toJson();
+
    			std::string item_ids="";
 			std::string advertisementid="";
    			std::string eCPM="";
@@ -285,6 +294,8 @@ namespace RTBKIT {
 				std::vector<string> veCPMs;
 				std::vector<string> vclick_urls;
 
+
+
 	   			eCPM = augmentations["urlMatcher"]["data"]["eCPM"].asString();
 	   			priority = augmentations["urlMatcher"]["data"]["priority"].asString();
 	   			item_ids = augmentations["urlMatcher"]["data"]["item_ids"].asString();
@@ -292,15 +303,31 @@ namespace RTBKIT {
 	   			tagid = val["imp"][0]["tagid"].asString();
 	   			
 				Json::Value metadata;
+
+				string add_details = "";
+				add_details = augmentations["urlMatcher"]["data"]["add_details"].asString();
+				metadata["add_details"] = add_details;
 	    		metadata["advertisementids"] = advertisementid;
 	    		metadata["click_url"] = click_url;
 				metadata["item_ids"] = item_ids;
 				metadata["tagid"] = tagid;
-				metadata["attribute"] = "1";
+
+				if(!br->toJson()["device"]["devicetype"].isNull() && br->toJson()["device"]["devicetype"] == 1)
+	    		{
+	    			 metadata["device"] = "mobile";
+	    		}
+	    		else
+	    		{
+	    			metadata["device"] = "pc";	
+	    		}
+	    		metadata["viewability"] = br->toJson()["imp"][0]["pmp"]["ext"]["viewability"].asString();
+
+				//metadata["attribute"] = "1";
 				//metadata["group_id"] = 16025452000;
 				float bidValueforsingleImpression = stof(eCPM)/1000 ;
 
 				std::string group_id = br->toJson()["imp"][0]["pmp"]["ext"]["adgroup_id"].asString();
+				//std::string group_id = br->toJson()["imp"][0]["pmp"]["ext"]["adgroup_id"].asString();
 				//metadata["group_id"] = std::stoi(group_id);
 				
 				cout << "url:" <<  urltemp << "-->" << advertisementid << endl;
@@ -312,7 +339,7 @@ namespace RTBKIT {
 					// there should only ever be one biddable creative. Note that that
 					// the router won't ask for bids on imp that don't have any
 					// biddable creatives.
-					ExcAssertEqual(bid.availableCreatives.size(), 1);
+					//ExcAssertEqual(bid.availableCreatives.size(), 1);
 					int availableCreative = bid.availableCreatives.front();
 
 					// We don't really need it here but this is how you can get the

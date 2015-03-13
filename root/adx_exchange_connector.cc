@@ -91,12 +91,23 @@ AdXExchangeConnector::init()
             Datacratic::jsonDecode(value, info.buyer_creative_id_);
             return true;
         }
-    );
+    ).snippet();
 
     configuration_.addField(
         "htmlTemplate",
         [](const Json::Value & value, CreativeInfo & info) {
             Datacratic::jsonDecode(value, info.html_snippet_);
+            if (info.html_snippet_.find("%%WINNING_PRICE%%") == std::string::npos) {
+                throw std::invalid_argument("%%WINNING_PRICE%% price macro expected");
+            }
+            return true;
+        }
+    ).snippet();
+
+    configuration_.addField(
+        "videoUrl",
+        [](const Json::Value & value, CreativeInfo & info) {
+            Datacratic::jsonDecode(value, info.video_url_);
             if (info.html_snippet_.find("%%WINNING_PRICE%%") == std::string::npos) {
                 throw std::invalid_argument("%%WINNING_PRICE%% price macro expected");
             }
@@ -141,7 +152,7 @@ AdXExchangeConnector::init()
             info.attribute_ = { std::begin(ints), std::end(ints) };
             return true;
         }
-    ).snippet();
+    );
 
     configuration_.addField(
         "sensitiveCategory",
@@ -158,13 +169,14 @@ AdXExchangeConnector::init()
           be set if the BidRequest has more than one
           BidRequest.AdSlot.matching_ad_data
     */
+          
     configuration_.addField(
             "adGroupId",
             [](const Json::Value & value, CreativeInfo & info)
             {
-                int64_t adGroupId = 0;
-                Datacratic::jsonDecode(value, adGroupId);
-                info.adgroup_id_ = std::to_string(adGroupId);
+                //int64_t adGroupId = 0;
+                Datacratic::jsonDecode(value, info.adgroup_id_);
+                //info.adgroup_id_ = std::to_string(adGroupId);
                 return true;
             }
     ).optional().snippet();
@@ -333,7 +345,7 @@ GbrIsHandled (const GoogleBidRequest& gbr)
 
     // we currently don't deal with Video.
     if (gbr.has_video())
-        return false ;
+        return true ;
 
     // a bid request originated from a device, should
     // either be from an app or a web site
@@ -385,6 +397,91 @@ ParseGbrGeoCriteria (const GoogleBidRequest& gbr, BidRequest& br)
     }
 }
 
+//PlannTo support for video 
+void
+ParseGbrVideo (const GoogleBidRequest& gbr, BidRequest& br)
+{
+     auto& brvideo = br.imp[0].video;
+     brvideo.emplace();
+     const auto& gbrvideo = gbr.video();
+         if (gbrvideo.has_videoad_start_delay())
+            {
+                if(gbrvideo.videoad_start_delay() == 0 )
+                {
+                    brvideo->startdelay = OpenRTB::VideoStartDelay::PRE_ROLL;
+                }
+                if(gbrvideo.videoad_start_delay() == -1 )
+                {
+                    brvideo->startdelay = OpenRTB::VideoStartDelay::GENERIC_POST_ROLL;
+                }
+                if(gbrvideo.videoad_start_delay() > 0 )
+                {
+                    brvideo->startdelay = OpenRTB::VideoStartDelay::GENERIC_MID_ROLL;
+                }
+                
+            }
+          if(gbrvideo.has_min_ad_duration())  
+          {
+            brvideo->minduration = gbrvideo.min_ad_duration();
+          }
+          if(gbrvideo.has_max_ad_duration())  
+          {
+            brvideo->maxduration = gbrvideo.max_ad_duration();
+          }
+          if(gbrvideo.has_skippable_max_ad_duration())  
+          {
+            brvideo->ext["skippable_max_ad_duration"]= std::to_string(gbrvideo.skippable_max_ad_duration());
+          }
+        
+         if(gbrvideo.has_description_url())  
+          {
+            brvideo->ext["description_url"]= gbrvideo.description_url();
+          }
+
+          if(gbrvideo.has_inventory_type())  
+          {
+            brvideo->ext["inventory_type"]= std::to_string(gbrvideo.inventory_type());
+          }
+        
+          
+          if(gbrvideo.has_video_ad_skippable())  
+          {
+            
+            if((std::to_string(gbrvideo.video_ad_skippable()) == "REQUIRE_SKIPPABLE") || (std::to_string(gbrvideo.video_ad_skippable()) == "1"))
+            {
+                brvideo->ext["video_ad_skippable"]= "REQUIRE_SKIPPABLE";
+            }
+
+            if((std::to_string(gbrvideo.video_ad_skippable()) == "BLOCK_SKIPPABLE") || (std::to_string(gbrvideo.video_ad_skippable()) == "2"))
+            {
+                brvideo->ext["video_ad_skippable"]= "BLOCK_SKIPPABLE";
+            }
+
+            if((std::to_string(gbrvideo.video_ad_skippable()) == "ALLOW_SKIPPABLE") || (std::to_string(gbrvideo.video_ad_skippable()) == "0"))
+            {
+                brvideo->ext["video_ad_skippable"]= "ALLOW_SKIPPABLE";
+            }
+          }
+          
+          if(gbrvideo.has_is_embedded_offsite())
+          {
+
+          }
+          for (auto i: boost::irange(0, gbrvideo.companion_slot_size()))
+          {
+            const auto& cslot = gbrvideo.companion_slot(i);
+            OpenRTB::Banner banner;
+
+                for (auto i: boost::irange(0,cslot.width_size()))
+                {
+                    banner.w.push_back(cslot.width(i));
+                    banner.h.push_back(cslot.height(i));
+                }
+                brvideo->companionad.push_back(banner);
+          }  
+          
+}
+
 //
 void
 ParseGbrAdSlot (const std::string currency,
@@ -403,9 +500,19 @@ ParseGbrAdSlot (const std::string currency,
         spot.banner.emplace();
         for (auto i: boost::irange(0,slot.width_size()))
         {
-            spot.banner->w.push_back (slot.width(i));
-            spot.banner->h.push_back (slot.height(i));
-            spot.formats.push_back(Format(slot.width(i),slot.height(i)));
+        //plannto for now pushed the diemsion of ads to 0,0
+            if(gbr.has_video())
+            {
+                spot.banner->w.push_back (0);
+                spot.banner->h.push_back (0);
+                spot.formats.push_back(Format(0,0));    
+            }
+            else
+            {
+                spot.banner->w.push_back (slot.width(i));
+                spot.banner->h.push_back (slot.height(i));
+                spot.formats.push_back(Format(slot.width(i),slot.height(i)));
+            }
         }
         spot.banner->id = Id(slot.id());
 
@@ -444,6 +551,7 @@ ParseGbrAdSlot (const std::string currency,
             for (auto i: boost::irange(0,slot.excluded_attribute_size()))
                 tmp.push_back(slot.excluded_attribute(i));
             spot.restrictions.addInts("excluded_attribute", tmp);
+
 
             tmp.clear();
             for (auto i: boost::irange(0,slot.excluded_sensitive_category_size()))
@@ -490,6 +598,44 @@ ParseGbrAdSlot (const std::string currency,
         {
             spot.pmp.emplace();
 
+            //PlannTo added two lines to include excluded attributes to bid request.
+            for (auto i: boost::irange(0,slot.excluded_attribute_size()))
+                spot.pmp->ext["excluded_attribute"][i] = std::to_string(slot.excluded_attribute(i));
+
+            if (slot.has_publisher_settings_list_id())
+                spot.pmp->ext["publisher_settings_list_id"]= std::to_string(slot.publisher_settings_list_id());
+
+            //cout << gbr.bid_response_feedback_size() << " - size " << endl;
+             for (auto j: boost::irange(0, gbr.bid_response_feedback_size()))
+                {
+                    const auto& response = gbr.bid_response_feedback(j);    
+
+                      auto binary_to_hexstr = [] (const std::string& str)
+                            {
+                                std::ostringstream os;
+                                os << std::hex << std::setfill('0');
+                                const unsigned char* pc = reinterpret_cast<const unsigned char*>(str.c_str()) ;
+                                for (auto i=0 ; i<str.size(); i++,pc++) os << std::setw(2) << int(*pc) ;
+                                return os.str() ;
+                            };
+
+                    spot.pmp->ext["feedback"][j]["request_id"] = Id (binary_to_hexstr(response.request_id())).toJson() ;
+                    spot.pmp->ext["feedback"][j]["status_code"] = response.creative_status_code();
+                    spot.pmp->ext["feedback"][j]["cpm_micros"] = response.cpm_micros();
+                    
+                           
+                    // if(response.creative_status_code() == 79)
+                    // {
+                    //     cout << binary_to_hexstr(response.request_id()) << " - " << response.creative_status_code() << " - " << response.cpm_micros() << endl;
+                    //     spot.pmp->ext["publisher_settings_list_id"]= std::to_string(slot.publisher_settings_list_id());
+                    // }
+                }
+            if (slot.has_viewability())
+                spot.pmp->ext["viewability"]= std::to_string(slot.viewability());
+
+             if (gbr.has_is_predicted_to_be_ignored())
+                spot.pmp->ext["is_predicted_to_be_ignored"]= std::to_string(gbr.is_predicted_to_be_ignored());
+
             for (auto const & matchingAdData : slot.matching_ad_data()) {
 
                 if (matchingAdData.has_adgroup_id())
@@ -520,6 +666,8 @@ ParseGbrAdSlot (const std::string currency,
             }
         }
     }
+
+
 }
 
 } // anonymous NS
@@ -548,6 +696,11 @@ parseBidRequest(HttpAuctionHandler & connection,
 
     // check if this BidRequest is handled by us;
     // or it's a ping.
+
+    if (gbr.has_video())
+    {
+       // cout << "Payload" << gbr.DebugString() << endl;
+    }
     if (!GbrIsHandled(gbr) || gbr.is_ping())
     {
         auto msg = gbr.is_ping() ? "pingRequest" : "requestNotHandled" ;
@@ -571,6 +724,8 @@ parseBidRequest(HttpAuctionHandler & connection,
         return os.str() ;
     };
 
+
+
     // TODO couldn't get Id() to represent correctly [required bytes id = 2;]
     br.auctionId = Id (binary_to_hexstr(gbr.id()));
     // AdX is a second price auction type.
@@ -591,6 +746,8 @@ parseBidRequest(HttpAuctionHandler & connection,
         ParseGbrOtherDevice (gbr, br);
     }
 
+
+        
     assert (br.app || br.site);
 
     auto& device  = *br.device;
@@ -691,6 +848,33 @@ parseBidRequest(HttpAuctionHandler & connection,
         br.user->ext.atStr("cookie_age_seconds") = gbr.cookie_age_seconds();
     }
 
+    if (gbr.has_user_demographic() &&  gbr.user_demographic().has_gender())
+    {
+        br.user->ext.atStr("gender") = std::to_string(gbr.user_demographic().gender());
+    }
+    else
+    {
+       br.user->ext.atStr("gender") = "UNKNOWN";   
+    }
+
+    if (gbr.has_user_demographic() &&  gbr.user_demographic().has_age_low())
+    {
+        br.user->ext.atStr("age_low") = std::to_string(gbr.user_demographic().age_low());
+    }
+    else
+    {
+       br.user->ext.atStr("age_low") = "0";   
+    }
+
+        if (gbr.has_user_demographic() &&  gbr.user_demographic().has_age_high())
+    {
+        br.user->ext.atStr("age_high") = std::to_string(gbr.user_demographic().age_high());
+    }
+    else
+    {
+       br.user->ext.atStr("age_high") = "0";   
+    }
+
     // TODO: BidRequest.cookie_version
     if (has_user_agent)
     {
@@ -731,6 +915,12 @@ parseBidRequest(HttpAuctionHandler & connection,
     // parse Impression array
     ParseGbrAdSlot(getCurrencyAsString(), getCurrency(), gbr, br);
 
+    if (gbr.has_video())
+    {
+        ParseGbrVideo(gbr,br);
+        //cout << "test br "<< br.toJsonStr() << endl;
+    }
+  
     if (gbr.detected_language_size())
     {   // TODO when gbr.detected_language_size()>1
         device.language = gbr.detected_language(0);
@@ -796,18 +986,33 @@ getResponse(const HttpAuctionHandler & connection,
         auto adslot = ad->add_adslot() ;
 
 
-        ad->set_buyer_creative_id(crinfo->buyer_creative_id_);
-        ad->set_width(creative.format.width);
-        ad->set_height(creative.format.height);
+        
+  
 
         const BidRequest & br = *auction.request;
 
         // handle macros.
         AdxCreativeConfiguration::Context ctx { creative, resp, br };
 
+        ad->set_buyer_creative_id(configuration_.expand(crinfo->buyer_creative_id_, ctx));
         // populate, substituting whenever necessary
-        ad->set_html_snippet(
-                configuration_.expand(crinfo->html_snippet_, ctx));
+            // plannto added video url
+    
+              if(br.imp[0].video != NULL)
+                {
+                     ad->set_video_url(
+                        configuration_.expand(crinfo->video_url_, ctx));
+                }
+                else
+                {
+                     ad->set_html_snippet(
+                        configuration_.expand(crinfo->html_snippet_, ctx));
+                           ad->set_width(creative.format.width);
+                          ad->set_height(creative.format.height);
+    
+                }
+       // ad->set_html_snippet(
+       //         configuration_.expand(crinfo->html_snippet_, ctx));
         ad->add_click_through_url(
                 configuration_.expand(crinfo->click_through_url_, ctx));
 
@@ -848,10 +1053,19 @@ getResponse(const HttpAuctionHandler & connection,
 
         if(!crinfo->adgroup_id_.empty()) {
             adslot->set_adgroup_id(
-                boost::lexical_cast<uint64_t>(crinfo->adgroup_id_));
+                boost::lexical_cast<uint64_t>(configuration_.expand(crinfo->adgroup_id_,ctx)));
         }
+        else
+        {
+            int64_t adgroup_id = stoll(auction.request->imp[0].pmp->ext["adgroup_id"].asString());
+            adslot->set_adgroup_id(adgroup_id);
+        }
+
         for(const auto& cat : crinfo->restricted_category_)
             ad->add_restricted_category(cat);
+
+        for(const auto& att : crinfo->attribute_)
+            ad->add_attribute(att);
     }
     return HttpResponse(200, "application/octet-stream", gresp.SerializeAsString());
 }
@@ -910,8 +1124,12 @@ bidRequestCreativeFilter(const BidRequest & request,
         for (auto atr: crinfo->attribute_)
             if (excluded_attribute_seg.contains(atr))
             {
-                this->recordHit ("attribute_excluded");
-                return false ;
+                if(atr!=7 && atr !=8 && atr != 22)
+               {
+                    cout << "excluded attribute - " << atr << " - " << request.url << endl;
+                    this->recordHit ("attribute_excluded");
+                    return false ;
+               }
             }
 
         const auto& excluded_sensitive_category_seg =

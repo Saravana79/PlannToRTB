@@ -152,12 +152,16 @@ namespace RTBKIT {
 			config.creatives.push_back(Creative::sampleWS);
 			config.creatives.push_back(Creative::sampleLB);
 			config.creatives.push_back(Creative::sampleBBB);
+			config.creatives.push_back(Creative::sampleLBS);
+		//	config.creatives.push_back(Creative::videoAd);
 			config.exchangeFilter.include.push_back("adx");
 			for (auto & c: config.creatives) {
 				c.exchangeFilter.include.push_back("adx");
 				c.providerConfig["adx"]["externalId"] = "PlannTo-Creative-1-" + RTBKIT::agent_ad_id;
 				c.providerConfig["adx"]["htmlTemplate"] = 
 					"<html><body><iframe src=\"http://www.plannto.com/advertisments/show_ads?item_id=%{meta.item_ids}&ads_id=%{meta.advertisementids}&size=%{creative.width}x%{creative.height}&click_url=%%CLICK_URL_ESC%%&wp=%%WINNING_PRICE%%&sid=%{meta.tagid}&ref_url=%{bidrequest.url}&cb=%%CACHEBUSTER%%\" width=\"%{creative.width}\" height=\"%{creative.height}\" style=\"border:0px;\"/></body></html>";
+				c.providerConfig["adx"]["videoUrl"] = 
+					"<html><body><iframe src=\"http://www.plannto.com/advertisments/video_ads?item_id=%{meta.item_ids}&ads_id=%{meta.advertisementids}&size=%{creative.width}x%{creative.height}&click_url=%%CLICK_URL_ESC%%&wp=%%WINNING_PRICE%%&sid=%{meta.tagid}&ref_url=%{bidrequest.url}&cb=%%CACHEBUSTER%%\" width=\"%{creative.width}\" height=\"%{creative.height}\" style=\"border:0px;\"/></body></html>";	
 				c.providerConfig["adx"]["clickThroughUrl"] = "%{meta.click_url}";
 				c.providerConfig["adx"]["agencyId"] = 59;
 				c.providerConfig["adx"]["vendorType"] = "113";
@@ -315,7 +319,7 @@ namespace RTBKIT {
 			}
 
 			// Make sure we have 1$ to spend for the next period.
-			budgetController.topupTransferSync(config.account, USD(4));
+			budgetController.topupTransferSync(config.account, USD(12));
 		}
 
 
