@@ -98,6 +98,8 @@ const Creative Creative::sample250
     (250, 250,  "Createive250", 8);
 const Creative Creative::sample160
     (160, 600,  "Createive160", 9);
+const Creative Creative::sample320
+    (320, 50,  "Createive160", 10);    
 
 bool
 Creative::

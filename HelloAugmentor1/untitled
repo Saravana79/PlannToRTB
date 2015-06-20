@@ -1,0 +1,8 @@
+
+<html>
+<div id="where_to_buy_items">
+</div>
+
+<script async src="http://localhost:3000/javascripts/plannto.women.widget.js?ref_url=&item_id=&show_details=true&element_id=where_to_buy_items&is_test=&page_type=type_1&geo=in"></script>
+
+</html>

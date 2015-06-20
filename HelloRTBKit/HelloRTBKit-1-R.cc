@@ -172,13 +172,13 @@ namespace RTBKIT {
 				c.exchangeFilter.include.push_back("adx");
 				c.providerConfig["adx"]["externalId"] = "PlannTo-Creative-%{meta.advertisementids}-" + RTBKIT::agent_ad_id;
 				c.providerConfig["adx"]["htmlTemplate"] = 
-					"<html><body><iframe src=\"http://www.plannto.com/advertisments/show_ads?item_id=%{meta.item_ids}&ads_id=%{meta.advertisementids}&size=%{creative.width}x%{creative.height}&click_url=%%CLICK_URL_ESC%%&wp=%%WINNING_PRICE%%&sid=%{meta.tagid}&ref_url=%{bidrequest.url}&device=%{meta.device}&v=%{meta.viewability}&cb=%%CACHEBUSTER%%&a=%{meta.add_details}&gid=%{meta.user_id}&l=%{meta.geo_id}\" width=\"%{creative.width}\" height=\"%{creative.height}\" style=\"border:0px;\"/></body></html>";
+					"<html><body><iframe src=\"http://www.plannto.com/advertisments/show_ads?item_id=%{meta.item_ids}&ads_id=%{meta.advertisementids}&size=%{creative.width}x%{creative.height}&click_url=%%CLICK_URL_ESC%%&wp=%%WINNING_PRICE%%&sid=%{meta.tagid}&ref_url=%{bidrequest.url}&device=%{meta.device}&v=%{meta.viewability}&cb=%%CACHEBUSTER%%&r=1&a=%{meta.add_details}&gid=%{meta.user_id}&l=%{meta.geo_id}\" width=\"%{creative.width}\" height=\"%{creative.height}\" style=\"border:0px;\"/></body></html>";
 				c.providerConfig["adx"]["videoUrl"] = 
-				"<html><body><iframe src=\"http://www.plannto.com/advertisments/video_ads?item_id=%{meta.item_ids}&ads_id=%{meta.advertisementids}&size=%{creative.width}x%{creative.height}&click_url=%%CLICK_URL_ESC%%&wp=%%WINNING_PRICE%%&sid=%{meta.tagid}&ref_url=%{bidrequest.url}&cb=%%CACHEBUSTER%%&gid=%{meta.user_id}\" width=\"%{creative.width}\" height=\"%{creative.height}\" style=\"border:0px;\"/></body></html>";	
+				"<html><body><iframe src=\"http://www.plannto.com/advertisments/video_ads?item_id=%{meta.item_ids}&ads_id=%{meta.advertisementids}&size=%{creative.width}x%{creative.height}&click_url=%%CLICK_URL_ESC%%&wp=%%WINNING_PRICE%%&sid=%{meta.tagid}&ref_url=%{bidrequest.url}&cb=%%CACHEBUSTER%%\" width=\"%{creative.width}\" height=\"%{creative.height}\" style=\"border:0px;\"/></body></html>";	
 				c.providerConfig["adx"]["clickThroughUrl"] = "%{meta.click_url}";
 				c.providerConfig["adx"]["agencyId"] = 59;
 				c.providerConfig["adx"]["vendorType"] = "113";
-				c.providerConfig["adx"]["attribute"]  = "50";
+				c.providerConfig["adx"]["attribute"]  = "8 50";
 				c.providerConfig["adx"]["restrictedCategories"]  = "0";
 				c.providerConfig["adx"]["sensitiveCategory"]  = "0";
 				//c.providerConfig["adx"]["adGroupId"]  = "%{meta.group_id}";
@@ -190,7 +190,7 @@ namespace RTBKIT {
 			// Accounts are used to control the allocation of spending budgets for
 			// an agent. The whole mechanism is fully generic and can be setup in
 			// whatever you feel it bests suits you.
-				config.account = {"PlannToAccount_1" , "PC"};
+				config.account = {"PlannToAccount_6" , "PC"};
 
 			// Indicate to the router that we want our bid requests to be augmented
 			// with our frequency cap augmentor example.
@@ -212,7 +212,7 @@ namespace RTBKIT {
 				// been tagged by our frequency cap augmentor.
 				//augConfig.filters.include.push_back("pass-frequency-cap-ex");
 				// "urlMatcher"
-				augConfig.filters.include.push_back("Advertisment-" + agent_ad_id);
+				augConfig.filters.include.push_back("Advertisment-" + agent_ad_id + "-R");
 
 				config.addAugmentation(augConfig);
 			}
@@ -261,7 +261,7 @@ namespace RTBKIT {
 			
 			std::string urltemp = br->url.toString();
 			Json::Value val = br->toJson();
-
+			//cout << val << endl;
    			std::string item_ids="";
 			std::string advertisementid="";
    			std::string eCPM="";
@@ -272,7 +272,7 @@ namespace RTBKIT {
    			//int position=0;
    			int pri =1;
    			bool match= true;
-   			
+   			string user  = br->toJson()["user"]["id"].asString();
    			advertisementid = augmentations["urlMatcher"]["data"]["adsid"].asString();
 
 
@@ -295,24 +295,22 @@ namespace RTBKIT {
 				std::vector<string> veCPMs;
 				std::vector<string> vclick_urls;
 
-
-
 	   			eCPM = augmentations["urlMatcher"]["data"]["eCPM"].asString();
 	   			priority = augmentations["urlMatcher"]["data"]["priority"].asString();
 	   			item_ids = augmentations["urlMatcher"]["data"]["item_ids"].asString();
 	   			click_url = augmentations["urlMatcher"]["data"]["click_url"].asString();
 	   			tagid = val["imp"][0]["tagid"].asString();
-	   			Json::Value metadata;
-
-				string add_details = "";
-				add_details = augmentations["urlMatcher"]["data"]["add_details"].asString();
-				metadata["add_details"] = add_details;
+	   			
+				Json::Value metadata;
 	    		metadata["advertisementids"] = advertisementid;
 	    		metadata["click_url"] = click_url;
 				metadata["item_ids"] = item_ids;
 				metadata["tagid"] = tagid;
 				metadata["user_id"] = val["user"]["id"].asString();
 
+				string add_details = "";
+				add_details = augmentations["urlMatcher"]["data"]["add_details"].asString();
+				metadata["add_details"] = add_details;
 				if(!br->toJson()["device"]["devicetype"].isNull() && br->toJson()["device"]["devicetype"] == 1)
 	    		{
 	    			 metadata["device"] = "mobile";
@@ -321,9 +319,8 @@ namespace RTBKIT {
 	    		{
 	    			metadata["device"] = "pc";	
 	    		}
-	    		metadata["viewability"] = br->toJson()["imp"][0]["pmp"]["ext"]["viewability"].asString();
+				metadata["viewability"] = br->toJson()["imp"][0]["pmp"]["ext"]["viewability"].asString();
 
-		   		
 				if(!br->toJson()["device"]["ext"]["geo_criteria_id"].isNull())
 	    		{
 	    			metadata["geo_id"] = br->toJson()["device"]["ext"]["geo_criteria_id"].asInt();
@@ -334,10 +331,9 @@ namespace RTBKIT {
 				float bidValueforsingleImpression = stof(eCPM)/1000 ;
 
 				std::string group_id = br->toJson()["imp"][0]["pmp"]["ext"]["adgroup_id"].asString();
-				//std::string group_id = br->toJson()["imp"][0]["pmp"]["ext"]["adgroup_id"].asString();
 				//metadata["group_id"] = std::stoi(group_id);
 				
-				cout << "url:" <<  urltemp << "-->" << advertisementid << endl;
+				cout << "url:" <<  urltemp << "-->" << advertisementid <<  "-->" << user <<  "-->" <<item_ids <<  "-->" <<eCPM << endl;
 
 				for (Bid& bid : bids) 
 				{

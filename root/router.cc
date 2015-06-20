@@ -1185,7 +1185,7 @@ augmentAuction(const std::shared_ptr<AugmentationInfo> & info)
         return;
     }
     //plannto change this from 0.005 to 0.040 
-    double augmentationWindow = 0.070; // 5ms available to augment
+    double augmentationWindow = 0.030; // 5ms available to augment
 
     auto onDoneAugmenting = [=] (const std::shared_ptr<AugmentationInfo> & info)
         {

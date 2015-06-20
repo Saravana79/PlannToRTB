@@ -26,6 +26,23 @@ public:
 	
 };
 
+class Vertical
+{
+	public:
+		Vertical(void){};
+		~Vertical(void){};
+
+		int id;
+		float weight;
+};
+
+struct greater_than_key_vertical
+{
+    inline bool operator() (const Vertical& struct1, const Vertical& struct2)
+    {
+        return (struct1.weight > struct2.weight);
+    }
+};
 
 
 struct greater_than_key
@@ -283,6 +300,62 @@ std::string UriDecode(const std::string & sSrc)
 					return finalstr;
 			}
 
+
+ void updateLocationItemsids(std::string & item_ids, int geo_id)
+  			{
+			//Advertisment which as associated direclty to that type is taken based on item's type.
+						    std::string root_item_id;
+						    if (geo_id == 1007809)
+						    {
+						    	//chennai
+						    	if(item_ids.find("29673") == std::string::npos)
+						    	{
+						    		item_ids = item_ids + ",29673";
+						    	}
+						    }
+				    	 	if (geo_id == 1007768)
+				    	 	{
+				    	 		////bangalore
+					    		if(item_ids.find("29574") == std::string::npos)
+						    	{
+						    		item_ids = item_ids + ",29574";
+						    	}
+							}
+						 	if (geo_id == 1007740)
+				    	 	{
+				    	 		//hyd
+							    if(item_ids.find("29461") == std::string::npos)
+						    	{
+						    		item_ids = item_ids + ",29461";
+						    	}
+							}
+						 	if (geo_id == 1007788)
+				    	 	{
+				    	 		//pune
+					    		if(item_ids.find("29729") == std::string::npos)
+						    	{
+						    		item_ids = item_ids + ",29729";
+						    	}
+							}
+						 	if (geo_id == 1007785)
+				    	 	{
+				    	 		//mumbai
+							    if(item_ids.find("29858") == std::string::npos)
+						    	{
+						    		item_ids = item_ids + ",29858";
+						    	}
+							}
+							if (geo_id == 1007751)
+				    	 	{
+				    	 		//delhi
+				    	 		if(item_ids.find("29758") == std::string::npos)
+						    	{
+						    		item_ids = item_ids + ",29758";
+						    	}
+
+				    	 	}
+
+			}
   std::string getRootItemID(const std::string itemtype)
   			{
 			//Advertisment which as associated direclty to that type is taken based on item's type.
@@ -450,6 +523,48 @@ void getRequestAndUserDetails(redisContext* m_redisContext, PlannToUser & puser,
 	
 }
 
+string getRemarketingItemids(PlannToUser & puser, GoogleUser & guser)
+{
+
+	string puseritemids = puser.all_item_ids;
+	string guseritemids = guser.all_item_ids;
+	std::vector <std::string> pItemIDs = parseString(puser.all_item_ids,",");
+	std::vector <std::string> gItemIDs = parseString(guser.all_item_ids,",");
+
+	size_t gsize = gItemIDs.size();
+	size_t psize = pItemIDs.size();
+	size_t size = 0;
+	string r_item_ids ="";
+	if(gsize > psize)
+	{
+		size = gsize;
+	}
+	else
+	{
+		size = psize;
+	}
+
+
+	if(size > 20)
+	{
+		size = 20;
+	}
+
+	for (unsigned int i = 0; i < size; i++)
+    {
+    	if((gsize > i) && (r_item_ids.find(gItemIDs[i]) == std::string::npos))
+    	{
+    		r_item_ids = r_item_ids + gItemIDs[i] + ",";
+    	}
+
+		if((psize > i) && (r_item_ids.find(pItemIDs[i]) == std::string::npos))
+    	{
+    		r_item_ids = r_item_ids + pItemIDs[i] + ",";
+    	}
+
+    }
+    return r_item_ids;
+}
 
 string getItemsAndDetails(redisContext* m_redisContext,std::vector <std::string> vItemIDs,bool & hasorders, bool & highectr,string & itemtype,std::string & vendorIDString, std::string & pcvendorIDString, GoogleUser guser, bool & userexistswithitemid)
 {
@@ -507,7 +622,8 @@ string getItemsAndDetails(redisContext* m_redisContext,std::vector <std::string>
 		        			if(!item.pc_vendor_id.empty())
 		        			{
 		        				pcvendorIDString = appendStringswithComma(pcvendorIDString,item.pc_vendor_id);
-
+		        			
+		        			
 		        			}
 
 		        			if(atoi(item.impressions.c_str()) > 500)
@@ -533,7 +649,7 @@ string getItemsAndDetails(redisContext* m_redisContext,std::vector <std::string>
 		        			}	
 		        			
 		        			items[item.id] = item;
-		        			if(item.type != "CarGroup")
+		        			if(item.type != "CarGroup" && item.type != "CarGroup")
 		        			{
 		        				itemtype = item.type;
 		        			}
@@ -596,28 +712,28 @@ bool checkSpotTagsPerformance(redisContext* m_redisContext,string & tagid,double
 	}
 	else
 	{
-		if(viewability >= 90 and viewability < 101)
+		if(viewability >= 90 && viewability < 101)
 		{
 			eCPMController = eCPMController + 0.25;
 		}
 
-		if(viewability >= 70 and viewability < 90)
+		if(viewability >= 70 && viewability < 90)
 		{
 			eCPMController = eCPMController + 0.2;
 		}
 
-		if(viewability >= 50 and viewability < 70)
+		if(viewability >= 50 && viewability < 70)
 		{
 			eCPMController = eCPMController + 0.1;
 		}
 
 
-		if(viewability >= 30 and viewability < 50)
+		if((viewability >= 30 && viewability < 50) && url.find("fonearena.com") != std::string::npos && url.find("gsmarena.com") != std::string::npos )
 		{
 			eCPMController = eCPMController -  0.15;
 		}
 
-		if(viewability >= 20 and viewability < 30 and url.find("fonearena.com") != std::string::npos )
+		if((viewability >= 20 && viewability < 30) && url.find("fonearena.com") != std::string::npos && url.find("gsmarena.com") != std::string::npos )
 		{
 			eCPMController = eCPMController -  0.25;
 		}
@@ -627,6 +743,11 @@ bool checkSpotTagsPerformance(redisContext* m_redisContext,string & tagid,double
 	if(url.find("fonearena.com") != std::string::npos || url.find("youtube.com") != std::string::npos || url.find("mysmartprice.com") != std::string::npos || url.find("smartprix.com") != std::string::npos || url.find("pricebaba.com") != std::string::npos || url.find("snapsort.com") != std::string::npos)
 	{
 		eCPMController = eCPMController + 0.15;
+	}
+
+	if(url.find("gsmarena.com") != std::string::npos || url.find("m.gsmarena.com") != std::string::npos )
+	{
+		eCPMController = eCPMController + 0.25;
 	}
 
 	return true;
@@ -762,7 +883,7 @@ void getAdvertisements(redisContext* m_redisContext,std::map<int,Advertisement> 
 	   } 	
 }													
 
-bool processAdvertisement(redisContext* m_redisContext,std::map<int,Advertisement> ads, vector<CAdDataSorter> *vDS,string vendorIDString,string pcvendorIDString, bool highectr, bool hasorders,double eCPMController, double reservePrice, string & item_ids, std::vector <std::string> vItemIDs,string & eCPM, string & advertisementid, string & click_url,string url, GoogleUser guser,PlannToUser puser,std::string & returnValue, bool isRemarketing, string add_details)
+bool processAdvertisement(redisContext* m_redisContext,std::map<int,Advertisement> ads, vector<CAdDataSorter> *vDS,string vendorIDString,string pcvendorIDString, bool highectr, bool hasorders,double eCPMController, double reservePrice, string & item_ids, std::vector <std::string> vItemIDs,string & eCPM, string & advertisementid, string & click_url,string url, GoogleUser guser,PlannToUser puser,std::string & returnValue, bool isRemarketing, string add_details, string & article_type)
 {
 	redisReply *reply = 0;
 	string cmd ="";
@@ -801,38 +922,63 @@ bool processAdvertisement(redisContext* m_redisContext,std::map<int,Advertisemen
 						admatch = true;
 					}	
 
-				if(isRemarketing)
+				if(isRemarketing && admatch)
 				{
 				//	cout << "remark item id actual " << ad.remarketing_item_ids << endl;
 					if(ad.remarketing_item_ids != "")
 						{
-							bool remarketingmatch = false;
-					    	std::string r_new_item_ids ="";
-				    		
-					    	for (unsigned int i = 0; i < vItemIDs.size(); i++)
-				    			{	
-				    				if(ad.remarketing_item_ids.find(vItemIDs[i]) != std::string::npos)
-				    				{
-			    						if(vItemIDs[i] != "")
-				    					{
-				    						remarketingmatch = true;
-				    						if(r_new_item_ids.find(vItemIDs[i]) == std::string::npos)
-				    						{
-				    							r_new_item_ids = r_new_item_ids + vItemIDs[i] + ",";
-				    						}
-				    					}
-				    				}
-
-				    			}
-							admatch = remarketingmatch;
-
-							//cout <<  " ad match for remarketing " << admatch << r_new_item_ids << endl;
-
-							if(admatch == true)
+							if(ad.remarketing_item_ids.find("3215") == std::string::npos && ad.remarketing_item_ids.find("3216") == std::string::npos && ad.remarketing_item_ids.find("3217") == std::string::npos && ad.remarketing_item_ids.find("15412") == std::string::npos && ad.remarketing_item_ids.find("22649") == std::string::npos && ad.remarketing_item_ids.find("15431") == std::string::npos && ad.remarketing_item_ids.find("4126") == std::string::npos)
 							{
-								item_ids = r_new_item_ids;
+								bool remarketingmatch = false;
+						    	std::string r_new_item_ids ="";
+					    		
+						    	for (unsigned int i = 0; i < vItemIDs.size(); i++)
+					    			{	
+					    				if(ad.remarketing_item_ids.find(vItemIDs[i]) != std::string::npos)
+					    				{
+				    						if(vItemIDs[i] != "")
+					    					{
+					    						remarketingmatch = true;
+					    						if(r_new_item_ids.find(vItemIDs[i]) == std::string::npos)
+					    						{
+					    							r_new_item_ids = r_new_item_ids + vItemIDs[i] + ",";
+					    						}
+					    					}
+					    				}
+
+					    			}
+									admatch = remarketingmatch;
+
+									//cout <<  " ad match for remarketing " << admatch << r_new_item_ids << endl;
+
+								if(admatch == true)
+								{
+									item_ids = r_new_item_ids;
+								}
 							}
-				    	}
+							else
+							{
+								admatch = true;
+							}
+			    	}
+
+
+			       std::vector <std::string> vReItemIDs;
+          		   vReItemIDs = parseString(item_ids,",");
+
+          		  size_t size = vReItemIDs.size();
+				  string f_new_item_ids = "";
+				  if(size > 6)
+					{
+
+						for (unsigned int i = 0; i < 6; i++)
+	    					{
+	    						f_new_item_ids = f_new_item_ids + vReItemIDs[i] + ",";
+	    					}
+
+	    				item_ids =f_new_item_ids;	
+	    			}
+
 				}	
 			}
 
@@ -891,6 +1037,16 @@ bool processAdvertisement(redisContext* m_redisContext,std::map<int,Advertisemen
 			{
 				admatch = true;
 			}
+
+
+			if(ad.type == "resale" )
+			{
+				if(article_type == "Resale")
+				{
+					admatch = true;
+				}
+			}
+
 		}
 		
 		if(admatch)
@@ -915,7 +1071,10 @@ bool processAdvertisement(redisContext* m_redisContext,std::map<int,Advertisemen
 					{
 							admatch = false;
 					//		admissingduetouser = true;
-							cout << "Missing due to high minimum cpm - " << rpfloat <<" - " << bpfloat << " - url - " << url << " - id - " << std::to_string(It->id) << endl;
+							if(It->id < 40)
+							{
+								cout << "Missing due to high minimum cpm - " << rpfloat <<" - " << bpfloat << " - url - " << url << " - id - " << std::to_string(It->id) << endl;
+							}
 							returnValue  = "MissingDueHighCPM";
 							break;
 					}
@@ -949,9 +1108,9 @@ bool processAdvertisement(redisContext* m_redisContext,std::map<int,Advertisemen
 						int count  = reply->element[1]->type != REDIS_REPLY_NIL ? atoi(reply->element[1]->str) : 0;
 						int maxcount = 1;
 
-						if(It->id == 21 )
+						if(It->id == 21)
 						{
-							maxcount = 2;
+						//	maxcount = 2;
 						}
 
 					 if(prevurl != tempurl || count < maxcount)
@@ -1093,6 +1252,32 @@ bool processAdvertisement(redisContext* m_redisContext,std::map<int,Advertisemen
 }
 
 
+string getItemIDForFashion(string url)
+{
+	string temp_item_ids = "";
+	if(url.find("saree") != std::string::npos || url.find("blouse") != std::string::npos)
+	{
+		temp_item_ids = "72274";
+	}
+	else
+	{
+		if(url.find("salwar") != std::string::npos || url.find("anarkali") != std::string::npos || url.find("patiala") != std::string::npos)
+		{
+			temp_item_ids = "72275" ;
+		}
+		else
+		{
+			if(url.find("sneaker") != std::string::npos || url.find("foot-wear") != std::string::npos)
+			{
+				temp_item_ids = "72353";
+			}
+		}
+	}
+
+	return temp_item_ids;
+}
+
+
 bool canRemarketingPossible(GoogleUser guser,PlannToUser puser,bool & isRemarketingBlocked)
 {
 	if(!isRemarketingBlocked)
@@ -1105,7 +1290,7 @@ bool canRemarketingPossible(GoogleUser guser,PlannToUser puser,bool & isRemarket
 
 				    	if((guser.last_appearance != "" && getDiffInDays(guser.last_appearance) <= 3) || (puser.last_appearance != "" && getDiffInDays(puser.last_appearance) <= 3) )
 				    	{	
-				    		if(puser.top_item_ids !="" && (puser.last_appearance != "" && getDiffInDays(puser.last_appearance) <= 2))
+				    		if((puser.top_item_ids !="" || guser.top_item_ids !=""))
 							{
 								return true;
 							}
@@ -1155,11 +1340,17 @@ bool canHousingRemarketing(GoogleUser guser,PlannToUser puser,bool & isRemarketi
 	
 }
 
-void processMissingURL(redisContext* m_redisContext,string url,string & returnValue, string groupid)
+void processMissingURL(redisContext* m_redisContext,string url,string & returnValue, string groupid,string strverticals)
 {
+
+	if((url.find("gsmarena.com") == std::string::npos) && (groupid =="16025452000"))
+	{
+	//	cout << "Inside missing url - " << url << endl;
+	}
 
 	redisReply *reply = 0;
 	string cmd;
+	bool processmissing = false;
 	if(m_redisContext->err == 0)
 		{
 			if(url !="" && url.find("anonymous") == std::string::npos)
@@ -1168,7 +1359,7 @@ void processMissingURL(redisContext* m_redisContext,string url,string & returnVa
 			reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
 			//cout << "Missing url - " << url << endl;
 
-			if (m_redisContext->err == 0  && reply->type == REDIS_REPLY_INTEGER  && reply->integer > 80)
+			if (m_redisContext->err == 0  && reply->type == REDIS_REPLY_INTEGER  && reply->integer > 30)
     		{
     			/*string curTime = getCurrentTime();
     			cmd = "SADD missingurl-" + curTime  + " " + url;	
@@ -1177,29 +1368,48 @@ void processMissingURL(redisContext* m_redisContext,string url,string & returnVa
 				cmd = "EXPIRE missingurl-" + curTime  + " " + "86400";	
 				reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());*/
 
-				cmd = "SADD missingurl-toplist "  + url;	
-				reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
+				processmissing = true;
 				
     		}
     		else	
     		{
 
-			 if(m_redisContext->err == 0  && reply->type == REDIS_REPLY_INTEGER  && reply->integer > 25 && (url.find("youtube.com") != std::string::npos || url.find("review") != std::string::npos || url.find("vs") != std::string::npos ))						        		
+			 if(m_redisContext->err == 0  && reply->type == REDIS_REPLY_INTEGER  && reply->integer > 15 && (url.find("youtube.com") != std::string::npos || url.find("review") != std::string::npos || url.find("vs") != std::string::npos ))						        		
 				{
-				cmd = "SADD missingurl-toplist "  + url;	
-				reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
+					processmissing = true;
 				
 				}
 
 			 else
 			 {
-			 	// if(m_redisContext->err == 0  && reply->type == REDIS_REPLY_INTEGER  && reply->integer > 1 &&  (groupid == "18102001720"))
-			 	// {
-			 	// 	cmd = "SADD missingurl-toplist "  + url;	
-					// reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
-			 	// }
+			 	if(m_redisContext->err == 0  && reply->type == REDIS_REPLY_INTEGER  && reply->integer > 10 && groupid == "20616639040"  && (url.find("used") != std::string::npos || url.find("second-hand") != std::string::npos || url.find("classified") != std::string::npos ))						        		
+				{
+				
+					processmissing = true;
+				}
 			 }
     		}
+
+    		if(processmissing)
+    		{
+				cmd = "HGET missingurl:" + url  + " feed_url_id";	
+				reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());
+
+				if(m_redisContext->err == 0  && reply->type == REDIS_REPLY_NIL )						        		
+				{	
+	    			cmd = "SADD missingurl-toplist "  + url;	
+					redisAppendCommand(m_redisContext,cmd.c_str());
+
+					cmd = "HSET missingurl:" + url + " verticals " + strverticals;
+					redisAppendCommand(m_redisContext,cmd.c_str());
+
+					redisGetReply(m_redisContext,(void**)&reply);
+					redisGetReply(m_redisContext,(void**)&reply);
+				}
+    		}
+
+
+
 
     		freeReplyObject(reply);
     		returnValue = "MissingUrlImpressions";
@@ -1238,8 +1448,10 @@ bool processBidURLWrapper(std::string url, std::string & item_ids, std::string &
 			
 	std::string returnValue = "";
 	bool isRemarketingPossible = false;
+	//	cout << "URL - start " <<  url << endl;
 	bool admatch = processBidURL(m_redisContext,url, item_ids, advertisementid,eCPM, click_url,bidrequestjson,jsonstring,returnValue,isRemarketingBlocked,isRemarketingPossible, bidthroughRemarketing,hastaggingrestricted,add_details);
 
+	//cout << "URL - end" << url << endl;
 	// //Update statistics
 	// int counter = 1;
 	 redisReply *reply = 0;
@@ -1400,11 +1612,11 @@ bool processBidURLWrapper(std::string url, std::string & item_ids, std::string &
 				{
 					   string tempstr = reply->str;
 
-					 //  if(tempstr.find("<<35<<") != std::string::npos)
-					 //  {
+					   //if(tempstr.find("<<43<<") != std::string::npos || tempstr.find("<<44<<") != std::string::npos)
+					   {
 					   	
 					  		cout  << "Feedback  - "  << tempstr<< " - status code - "  << status_code  << " - wp - " << pmpNode[0]["cpm_micros"] << endl;
-					 // 	}
+					  	}
 				}
 
 				freeReplyObject(reply);	
@@ -1419,7 +1631,6 @@ bool processBidURLWrapper(std::string url, std::string & item_ids, std::string &
 bool bidforrealestate(string & item_ids, string groupid, int geo_id, string url,string & add_details, double & eCPMController)
 {
 	return false;
-
 	if(groupid == "18102001720")
 	{
         
@@ -1430,64 +1641,73 @@ bool bidforrealestate(string & item_ids, string groupid, int geo_id, string url,
 				&& url.find("gossip") ==  std::string::npos && url.find("trips") ==  std::string::npos && url.find("celebrit") ==  std::string::npos && url.find("pharma") ==  std::string::npos && url.find("Cinema") ==  std::string::npos))
 		{
 
-	
-			if(item_ids.find("29574") == std::string::npos && item_ids.find("29575") == std::string::npos)
-			{
-				add_details = "BangGeneric";
-				if(url.find("apartment") == std::string::npos)
-				{
-					eCPMController = eCPMController - 0.3;
-				}
 
-				if(item_ids == "")
-				{
-					item_ids = "29574";
 
-				}
-				else
-				{
+			// cout << "real estate" <<  url << geo_id << endl;
 
-					item_ids = item_ids + ",29574" ;
-				}
-			}
-			else
-			{
-				eCPMController = eCPMController + 0.3;
-				add_details = "BangSpecific";
-			}
+		    if(url.find("commonfloor") != std::string::npos  || url.find("rentals.sulekha.com") != std::string::npos || url.find("olx.in") != std::string::npos )
+		    {
+		    	item_ids = "29574";
+		    	cout << "bidding for real estate " << url << " - "  << geo_id << endl;
+		    }
 
-			if(item_ids.find("29979") != std::string::npos || item_ids.find("60109") != std::string::npos || item_ids.find("67548") != std::string::npos || item_ids.find("60021") != std::string::npos)
-			{
-				eCPMController = eCPMController + 0.3;
-				add_details = "BangVerySpecific";
-			}	
-			return true;
+			// if(item_ids.find("29574") == std::string::npos && item_ids.find("29575") == std::string::npos)
+			// {
+			// 	add_details = "BangGeneric";
+			// 	if(url.find("apartment") == std::string::npos)
+			// 	{
+			// 		eCPMController = eCPMController - 0.3;
+			// 	}
+
+			// 	if(item_ids == "")
+			// 	{
+			// 		item_ids = "29574";
+
+			// 	}
+			// 	else
+			// 	{
+
+			// 		item_ids = item_ids + ",29574" ;
+			// 	}
+			// }
+			// else
+			// {
+			// 	eCPMController = eCPMController + 0.3;
+			// 	add_details = "BangSpecific";
+			// }
+
+			// if(item_ids.find("29979") != std::string::npos || item_ids.find("60109") != std::string::npos || item_ids.find("67548") != std::string::npos || item_ids.find("60021") != std::string::npos)
+			// {
+			// 	eCPMController = eCPMController + 0.3;
+			// 	add_details = "BangVerySpecific";
+			// }	
+			// return true;
 		}	
 
-		if(item_ids.find("35284") != std::string::npos || item_ids.find("35236") != std::string::npos || item_ids.find("35318") != std::string::npos || item_ids.find("71602") != std::string::npos)
-		{
-			add_details = "VerySpecific";
-			return true;
-		}
-	}
-	else
-	{
-		if(geo_id == 1007768 && (url.find("bang") != std::string::npos || url.find("bangalore") != std::string::npos || url.find("house") != std::string::npos || url.find("land") != std::string::npos || url.find("apartment") != std::string::npos))
-		{
-			add_details = "TooGeneric";
+		// if(item_ids.find("35284") != std::string::npos || item_ids.find("35236") != std::string::npos || item_ids.find("35318") != std::string::npos || item_ids.find("71602") != std::string::npos)
+		// {
+		// 	add_details = "VerySpecific";
+		// 	return true;
+		// }
+	// }
+	// else
+	// {
+	// 	if(geo_id == 1007768 && (url.find("bang") != std::string::npos || url.find("bangalore") != std::string::npos || url.find("house") != std::string::npos || url.find("land") != std::string::npos || url.find("apartment") != std::string::npos))
+	// 	{
+	// 		add_details = "TooGeneric";
 
-				if(item_ids == "")
-				{
-					item_ids = "29574";
+	// 			if(item_ids == "")
+	// 			{
+	// 				item_ids = "29574";
 
-				}
-				else
-				{
+	// 			}
+	// 			else
+	// 			{
 
-					item_ids = item_ids + ",29574" ;
-				}
-			return true;
-		}
+	// 				item_ids = item_ids + ",29574" ;
+	// 			}
+	// 		return true;
+	// 	}
 	}
 	
 	return false;
@@ -1500,6 +1720,7 @@ bool processBidURL(redisContext* m_redisContext,std::string url, std::string & i
 			
 			std::map<int,Advertisement> ads;
 			vector<CAdDataSorter> *vDS = new vector<CAdDataSorter>();
+			vector<Vertical> *verticals = new std::vector<Vertical>();
 			PlannToUser puser ;
 			GoogleUser guser;
 			std::string adIdsStr ;
@@ -1523,7 +1744,8 @@ bool processBidURL(redisContext* m_redisContext,std::string url, std::string & i
     		videodetails  vdetails;
     		vdetails.isVideo = false;
     		string format = "1x1";
-
+    		string strverticals  ="";
+    		string org_item_ids ="";
 
     		guser.id  = bidrequestjson["user"]["id"].asString();
     		tagid = bidrequestjson["imp"][0]["tagid"].asString();
@@ -1532,11 +1754,66 @@ bool processBidURL(redisContext* m_redisContext,std::string url, std::string & i
     		{
     			reservePrice  = bidrequestjson["imp"][0]["reservePrice"][0].asInt();
     		}
+
+    		if(!bidrequestjson["segments"]["AdxDetectedVerticals"].isNull())
+    		{
+    			if(bidrequestjson["segments"]["AdxDetectedVerticals"].size() > 0)
+    			{
+    						Vertical ver;
+
+
+    					for (unsigned int i = 0; i < bidrequestjson["segments"]["AdxDetectedVerticals"].size(); i++)
+						    {
+							if(bidrequestjson["segments"]["AdxDetectedVerticals"][i].isString())
+						    	{
+							    	std::string str = bidrequestjson["segments"]["AdxDetectedVerticals"][i].asString();
+							    	size_t pos = str.find(":", 0);
+									std::string tmp = str.substr(0, pos);
+									str.erase(0, pos + 1);
+									ver.id = stoi(tmp);
+	    							ver.weight = stof(str);
+	    							verticals->push_back(ver);
+    							}
+    							else
+    							{
+    								if(bidrequestjson["segments"]["AdxDetectedVerticals"][i].isInt())
+						    		{
+						    			ver.id = bidrequestjson["segments"]["AdxDetectedVerticals"][i].asInt();
+	    								ver.weight = 1.0;
+	    								verticals->push_back(ver);
+
+						    		}
+						    		else
+						    		{
+						    			cout << "Invalid verticals" << url << " - " <<  bidrequestjson["segments"]["AdxDetectedVerticals"][i] << endl;
+    								}
+    							}
+    						}	
+    						sort(verticals->begin(),verticals->end(),greater_than_key_vertical());
+							for (std::vector<Vertical>::iterator It = verticals->begin();  It != verticals->end(); ++It)
+								{
+									strverticals = strverticals + to_string(It->id) + ",";
+    							}
+    			}
+
+    		}
+    	
+
     		string groupid="";
     		if(!bidrequestjson["imp"][0]["pmp"]["ext"]["adgroup_id"].isNull())
     		{
     			groupid = bidrequestjson["imp"][0]["pmp"]["ext"]["adgroup_id"].asString();
     		}
+
+    			if((url.find("used") != std::string::npos || url.find("second-hand") != std::string::npos || url.find("classified") != std::string::npos) && groupid == "20616639040")  
+    		{
+    			//cout << "used cars  -  " << url << " - " << strverticals << " - " << groupid << " - " << guser.id << endl;; 
+    		}
+
+
+    		//	cout << "All items  -  " << url << " - " << strverticals << " - " << groupid << endl;
+    		
+    		
     		
     		if(!bidrequestjson["device"]["devicetype"].isNull() && bidrequestjson["device"]["devicetype"] == 1)
     		{
@@ -1554,9 +1831,18 @@ bool processBidURL(redisContext* m_redisContext,std::string url, std::string & i
     			{
 						cout << " Fashion User details - " << url << " - " << bidrequestjson["user"]["ext"]["gender"].asString() << " - " << bidrequestjson["user"]["ext"]["age_low"].asString() << " - " << bidrequestjson["user"]["ext"]["age_high"].asString() << endl;
 				}	
-
+				//cout << " Fashion " << url << endl;
 				isFashion = true;
 
+			}
+
+
+
+			if((!bidrequestjson["user"]["ext"]["gender"].isNull()) && (bidrequestjson["user"]["ext"]["gender"] != "UNKNOWN"))
+			{
+				//	cout << " ***********************" << endl;
+				//	cout << " Gender available - " << url << " - " << bidrequestjson["user"]["ext"]["gender"].asString() << " - " << bidrequestjson["user"]["ext"]["age_low"].asString() << " - " << bidrequestjson["user"]["ext"]["age_high"].asString() << endl;
+				//	cout << " ***********************" << endl;
 			}
 
     
@@ -1617,6 +1903,8 @@ bool processBidURL(redisContext* m_redisContext,std::string url, std::string & i
 
     		getRequestAndUserDetails(m_redisContext,puser,guser,url,item_ids,article_type);
 
+    		org_item_ids = item_ids;
+
     		isRemarketingPossible = canRemarketingPossible(guser,puser,isRemarketingBlocked);
 
     		//isRemarketingPossible = false;
@@ -1630,22 +1918,27 @@ bool processBidURL(redisContext* m_redisContext,std::string url, std::string & i
     			geo_id = bidrequestjson["device"]["ext"]["geo_criteria_id"].asInt();
     		}
 
+			if(groupid =="22314286720" && url != "")
+			{
+				//cout << " Insurance Details - " << url << " - geo - " <<  geo_id << " - format - " <<  format << endl;
+			}
+
 			if(groupid == "18102001720" &&  url != "" && url.find("anonymous") == std::string::npos && url.find("commonfloor") == std::string::npos && url.find("sulekha.com") == std::string::npos && (url.find("propertywala") != std::string::npos || url.find("gharabari.com") != std::string::npos || url.find("harshasagar.com") != std::string::npos || url.find("realestatehungama.com") != std::string::npos || url.find("bangalorenest.com") != std::string::npos || url.find("indianrealestateboard.com") != std::string::npos || url.find("indiarealestateinfo.com") != std::string::npos || url.find("anandproperties.com") != std::string::npos || url.find("property.mitula.in") != std::string::npos || url.find("property.trovit.co.in") != std::string::npos || url.find("bangalore.locanto.in") != std::string::npos || url.find("bangalore.click.in") != std::string::npos ))
 				//&& url.find("commonfloor") == std::string::npos && url.find("sulekha.com") == std::string::npos && (url.find("propertywala") != std::string::npos || url.find("gharabari.com") != std::string::npos || url.find("harshasagar.com") != std::string::npos))
 			{	 			
 				//	cout << " Real estate url - " << url <<  " - geo - " << geo_id << endl;
 			}
-		
+				
 
 			if(groupid == "18102001720" &&  geo_id == 1007768)
 			{
 				//cout << " Bangalore Real estate url - " << url <<  " - geo - "  << geo_id << endl;
 			}
 
-			if(groupid == "20841722560")
+			if(groupid == "20616639040")
 				//&& url.find("commonfloor") == std::string::npos && url.find("sulekha.com") == std::string::npos && (url.find("propertywala") != std::string::npos || url.find("gharabari.com") != std::string::npos || url.find("harshasagar.com") != std::string::npos))
 			{	 			
-				//	cout << " Car  - " << url <<  " - geo - " << isVideo << " - text - " << bidrequestjson["imp"][0]["video"] << endl;
+				//	cout << " Car  - " << url << endl;
 			}
 
 			if(isRemarketingPossible)
@@ -1677,6 +1970,12 @@ bool processBidURL(redisContext* m_redisContext,std::string url, std::string & i
     		//{
     		//	item_ids = item_ids + ",3214";
     		//}
+
+    		//for now blocking mysmartprice 250x250 ads.
+    		if(url.find("mysmartprice.com") && format == "250x250")
+    		{
+    			return false;
+    		}
     		
 	        if(item_ids != "" || isRemarketingPossible || canbidforrealesate  || isFashion)
 	        {	
@@ -1710,9 +2009,9 @@ bool processBidURL(redisContext* m_redisContext,std::string url, std::string & i
 
         				if(!goodSpotTag)
 			   	    	{	
-			   	    		if(guser.id != "" && (itemtype == "Mobile" || itemtype == "Tablet" || itemtype == "Car" || itemtype == "Bike" || itemtype == "Tablet" || itemtype == "Laptop" || itemtype == "Television" || itemtype == "Lens" || itemtype == "WearableGadget" || itemtype == "Console"))
+			   	    		if(guser.id != "" && ((itemtype == "Mobile" || itemtype == "Tablet" || itemtype == "Car" || itemtype == "Bike" || itemtype == "Tablet" || itemtype == "Laptop" || itemtype == "Television" || itemtype == "Lens" || itemtype == "WearableGadget" || itemtype == "Console") || (url.find("makeupandbeauty.com") != std::string::npos || url.find("stylecraze.com") != std::string::npos || url.find("southindiafashion.com") != std::string::npos || url.find("wiseshe.com") != std::string::npos)))
 							{
-								cmd = "RPUSH users:visits "  + guser.id + "<<" + url + "<<" + article_type + "<<" + item_ids + "<<" + "";
+								cmd = "RPUSH users:visits "  + guser.id + "<<" + url + "<<" + article_type + "<<" + item_ids + "<<" + "" + "<<" + itemtype + "<<" + puser.id + "<<" + to_string(geo_id);
 			     				reply = (redisReply*)redisCommand(m_redisContext, cmd.c_str());		
 			     				freeReplyObject(reply);
 			        	    }
@@ -1728,6 +2027,11 @@ bool processBidURL(redisContext* m_redisContext,std::string url, std::string & i
         					std::vector <std::string> vItemIDs;
         					if(!isFashion)
         					{
+
+        					if(article_type == "Resale")	
+        					{
+        						updateLocationItemsids(item_ids,geo_id);
+        					}
 				    		vItemIDs = parseString(item_ids,",");
 				   			adIdsStr = getItemsAndDetails(m_redisContext,vItemIDs,hasorders,highectr,itemtype,vendorIDString, pcvendorIDString,guser, userexistswithitemid);
 
@@ -1739,9 +2043,10 @@ bool processBidURL(redisContext* m_redisContext,std::string url, std::string & i
 				   			}
 				   			else
 				   			{
-				   				item_ids = "";
+				   				
+				   				item_ids = getItemIDForFashion(url);
 				   				vItemIDs = parseString(item_ids,",");
-				   				adIdsStr = "40";
+				   				adIdsStr = "40,47";
 				   			}	
 
 				   			if(!adIdsStr.empty())
@@ -1750,11 +2055,15 @@ bool processBidURL(redisContext* m_redisContext,std::string url, std::string & i
 								
 							}
 							
-						
+								if(groupid == "20616639040")
+									//&& url.find("commonfloor") == std::string::npos && url.find("sulekha.com") == std::string::npos && (url.find("propertywala") != std::string::npos || url.find("gharabari.com") != std::string::npos || url.find("harshasagar.com") != std::string::npos))
+								{	 			
+									//	cout << " Car  - " << url << " - " << item_ids  << " - " << article_type << " - "  << adIdsStr <<  " - "  << format << endl;
+								}
+						 	
 							//bool admissingduetouser = false; 
 							if(vDS->size() > 0)
 							{    
-
 								//adjusting eCPM with buyer list.
 								if(guser.top_item_ids != "")
 		        				{
@@ -1768,7 +2077,7 @@ bool processBidURL(redisContext* m_redisContext,std::string url, std::string & i
 								}
 
 
-								if(item_ids.find("28712") != std::string::npos || item_ids.find("18093") != std::string::npos)
+								if(item_ids.find("28712") != std::string::npos || item_ids.find("18093") != std::string::npos || item_ids.find("73319") != std::string::npos || item_ids.find("28947") != std::string::npos || item_ids.find("73841") != std::string::npos || item_ids.find("74790") != std::string::npos || item_ids.find("73841") != std::string::npos)
 			    				{
 				    					eCPMController = eCPMController + 0.2;
 			    				}
@@ -1778,9 +2087,34 @@ bool processBidURL(redisContext* m_redisContext,std::string url, std::string & i
 									eCPMController = eCPMController + 0.2;
 								}     	
 
-								admatch =  processAdvertisement(m_redisContext,ads,vDS,vendorIDString,pcvendorIDString,highectr,hasorders,eCPMController, reservePrice, item_ids,vItemIDs,eCPM,advertisementid, click_url, url, guser,puser,returnValue,false,add_details);
+								admatch =  processAdvertisement(m_redisContext,ads,vDS,vendorIDString,pcvendorIDString,highectr,hasorders,eCPMController, reservePrice, item_ids,vItemIDs,eCPM,advertisementid, click_url, url, guser,puser,returnValue,false,add_details,article_type);
 
-								
+								//cout << "advertisementid " << advertisementid << endl;
+
+								if(admatch && (advertisementid == "43" || advertisementid == "44" ))
+								{
+								//	cout << "admatch " << admatch << endl;
+								//	cout << "geo " << geo_id << endl;
+								//	cout << " item id" << item_ids << endl;
+								//			cout << " article type" << article_type << endl;
+									if(//(geo_id != 1007768 && geo_id != 1007809 && geo_id != 1007740 && geo_id != 1007785 && geo_id != 1007788 && geo_id != 1007751 && geo_id != 1007765 && geo_id != 1007826 && geo_id != 1007753 && geo_id != 1007828 && geo_id != 1007760 && geo_id != 1007801)
+										//|| 
+										((item_ids.find("72892") == std::string::npos  && item_ids.find("72893") == std::string::npos) && (article_type != "Reviews"  && article_type != "Comparisons" && article_type != "Spec" && article_type != "Photo" /*&& article_type != "News" && article_type != "Others"*/)))
+									{
+										cout << "inside fail case " <<  url << " - " << geo_id << " - " << article_type <<  " - " << bidrequestjson["imp"][0]["pmp"]["ext"]["is_predicted_to_be_ignored"] << endl;
+												admatch	 = false;
+												item_ids = "";
+												advertisementid = "";
+												eCPM = 0.0;
+									}
+									else
+
+									{
+										//cout << "inside pass case " <<  url << " - " << geo_id << " - " << article_type <<  " - " << bidrequestjson["imp"][0]["pmp"]["ext"]["is_predicted_to_be_ignored"] << endl;
+									}
+
+								}
+
 								//for realestate
 
 								// if((advertisementid == "32") && (item_ids.find("29979") != std::string::npos || item_ids.find("60109") != std::string::npos || item_ids.find("67548") != std::string::npos))
@@ -1815,13 +2149,20 @@ bool processBidURL(redisContext* m_redisContext,std::string url, std::string & i
 						
 			   	    	}
 
+			   	    	if((guser.id != "") && ((itemtype == "Mobile" || itemtype == "Tablet" || itemtype == "Car" || itemtype == "Bike" || itemtype == "Tablet" || itemtype == "Laptop" || itemtype == "Television" || itemtype == "Lens" || itemtype == "WearableGadget" || itemtype == "Console") || (url.find("makeupandbeauty.com") != std::string::npos || url.find("stylecraze.com") != std::string::npos || url.find("southindiafashion.com") != std::string::npos || url.find("wiseshe.com") != std::string::npos)))
+						{
+							cmd = "RPUSH users:visits "  + guser.id + "<<" + url + "<<" + article_type + "<<" + org_item_ids + "<<" + advertisementid + "<<" + itemtype + "<<" + puser.id + "<<" + to_string(geo_id);
+							redisAppendCommand(m_redisContext,cmd.c_str());
+			        		redisGetReply(m_redisContext,(void**)&reply);	
+		        	    	freeReplyObject(reply);
+		        		}
 
 						if((!admatch) && (isRemarketingPossible))
 						{
 							//cout << "Remareting happening " << url << endl;
-							if(item_ids=="" && ((groupid == "16951559440" || groupid =="20841722560" || groupid == "20616639040") || ((groupid == "18102001720") && (url.find("propertywala") != std::string::npos || url.find("gharabari.com") != std::string::npos || url.find("harshasagar.com") != std::string::npos || url.find("realestatehungama.com") != std::string::npos || url.find("bangalorenest.com") != std::string::npos || url.find("indianrealestateboard.com") != std::string::npos || url.find("indiarealestateinfo.com") != std::string::npos || url.find("anandproperties.com") != std::string::npos || url.find("property.mitula.in") != std::string::npos || url.find("property.trovit.co.in") != std::string::npos || url.find("bangalore.locanto.in") != std::string::npos || url.find("bangalore.click.in") != std::string::npos))))
+							if(item_ids=="" && ((groupid == "16951559440" || groupid =="20841722560" || groupid == "20616639040" || groupid == "16025452000") || ((groupid == "18102001720") && (url.find("propertywala") != std::string::npos || url.find("gharabari.com") != std::string::npos || url.find("harshasagar.com") != std::string::npos || url.find("realestatehungama.com") != std::string::npos || url.find("bangalorenest.com") != std::string::npos || url.find("indianrealestateboard.com") != std::string::npos || url.find("indiarealestateinfo.com") != std::string::npos || url.find("anandproperties.com") != std::string::npos || url.find("property.mitula.in") != std::string::npos || url.find("property.trovit.co.in") != std::string::npos || url.find("bangalore.locanto.in") != std::string::npos || url.find("bangalore.click.in") != std::string::npos))))
 							{
-								processMissingURL(m_redisContext,url,returnValue,groupid);
+								processMissingURL(m_redisContext,url,returnValue,groupid,strverticals);
 							}
 							std::vector <std::string> vItemIDs;
 							string tempIDs ="";
@@ -1842,7 +2183,7 @@ bool processBidURL(redisContext* m_redisContext,std::string url, std::string & i
 						
 							
 							
-			    			item_ids = guser.all_item_ids + "," + puser.all_item_ids;
+			    			item_ids = getRemarketingItemids(puser,guser);
 							vItemIDs = parseString(item_ids,",");
 
 							//cout << "remark item ids " << item_ids  << endl;
@@ -1865,7 +2206,7 @@ bool processBidURL(redisContext* m_redisContext,std::string url, std::string & i
 							
 							if(vDS->size() > 0)
 							{         	
-								admatch =  processAdvertisement(m_redisContext,ads,vDS,vendorIDString,pcvendorIDString,highectr,hasorders,eCPMController, reservePrice, item_ids,vItemIDs,eCPM,advertisementid, click_url, url, guser,puser,returnValue,true,add_details);
+								admatch =  processAdvertisement(m_redisContext,ads,vDS,vendorIDString,pcvendorIDString,highectr,hasorders,eCPMController, reservePrice, item_ids,vItemIDs,eCPM,advertisementid, click_url, url, guser,puser,returnValue,true,add_details,article_type);
 
 							}
 
@@ -1888,13 +2229,7 @@ bool processBidURL(redisContext* m_redisContext,std::string url, std::string & i
 						
 						}
 						
-						if((guser.id != "") && (!bidthroughRemarketing) && (itemtype == "Mobile" || itemtype == "Tablet" || itemtype == "Car" || itemtype == "Bike" || itemtype == "Tablet" || itemtype == "Laptop" || itemtype == "Television" || itemtype == "Lens" || itemtype == "WearableGadget" || itemtype == "Console"))
-						{
-							cmd = "RPUSH users:visits "  + guser.id + "<<" + url + "<<" + article_type + "<<" + item_ids + "<<" + advertisementid;
-							redisAppendCommand(m_redisContext,cmd.c_str());
-			        		redisGetReply(m_redisContext,(void**)&reply);	
-		        	    	freeReplyObject(reply);
-		        		}
+						
 					
 						if(returnValue == "")
 						{	
@@ -1916,9 +2251,9 @@ bool processBidURL(redisContext* m_redisContext,std::string url, std::string & i
 
 				
 
-					if((groupid == "16951559440" || groupid == "20841722560" || groupid == "20616639040") || ((groupid == "18102001720") && (url.find("propertywala") != std::string::npos || url.find("gharabari.com") != std::string::npos || url.find("harshasagar.com") != std::string::npos || url.find("realestatehungama.com") != std::string::npos || url.find("bangalorenest.com") != std::string::npos || url.find("indianrealestateboard.com") != std::string::npos || url.find("indiarealestateinfo.com") != std::string::npos || url.find("anandproperties.com") != std::string::npos || url.find("property.mitula.in") != std::string::npos || url.find("property.trovit.co.in") != std::string::npos || url.find("bangalore.locanto.in") != std::string::npos || url.find("bangalore.click.in") != std::string::npos )))
+					if((groupid == "16951559440" || groupid == "20841722560" || groupid == "20616639040" || groupid =="16025452000") || ((groupid == "18102001720") && (url.find("propertywala") != std::string::npos || url.find("gharabari.com") != std::string::npos || url.find("harshasagar.com") != std::string::npos || url.find("realestatehungama.com") != std::string::npos || url.find("bangalorenest.com") != std::string::npos || url.find("indianrealestateboard.com") != std::string::npos || url.find("indiarealestateinfo.com") != std::string::npos || url.find("anandproperties.com") != std::string::npos || url.find("property.mitula.in") != std::string::npos || url.find("property.trovit.co.in") != std::string::npos || url.find("bangalore.locanto.in") != std::string::npos || url.find("bangalore.click.in") != std::string::npos )))
 					{
-						processMissingURL(m_redisContext,url,returnValue,groupid);
+						processMissingURL(m_redisContext,url,returnValue,groupid,strverticals);
 
 					}
 					else

@@ -252,7 +252,7 @@ bool getProbability(double check)
 			
 		}
 
-		if(addressRemarketing)
+		if(addressRemarketing && urlName.find("%") == std::string::npos )
 		{
 			gotIDs = helper.processBidURLWrapper(urlName, item_ids, advertisementid,eCPM, click_url,val,request.bidRequest->toJsonStr(),isRemarketingBlocked,bidthroughRemarketing,hastaggingrestricted,add_details);
 		}

@@ -44,6 +44,7 @@ struct Creative {
     static const Creative sample200;
     static const Creative sample250;
     static const Creative sample160;
+    static const Creative sample320;
     
     static const Creative videoAd;
     

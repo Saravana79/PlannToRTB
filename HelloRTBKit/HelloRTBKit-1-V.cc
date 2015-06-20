@@ -156,33 +156,26 @@ namespace RTBKIT {
 		{
 			config = AgentConfig();
 
-			config.creatives.push_back(Creative::sampleBB);
-			config.creatives.push_back(Creative::sampleWS);
-			config.creatives.push_back(Creative::sampleLB);
-			config.creatives.push_back(Creative::sampleBBB);
-			config.creatives.push_back(Creative::sampleLBS);
-			config.creatives.push_back(Creative::sample336);
-			config.creatives.push_back(Creative::sample200);
-			config.creatives.push_back(Creative::sample250);
-			config.creatives.push_back(Creative::sample160);
-			config.creatives.push_back(Creative::sample320);
-		//	config.creatives.push_back(Creative::videoAd);
+		
+			config.creatives.push_back(Creative::videoAd);
 			config.exchangeFilter.include.push_back("adx");
 			for (auto & c: config.creatives) {
 				c.exchangeFilter.include.push_back("adx");
-				c.providerConfig["adx"]["externalId"] = "PlannTo-Creative-%{meta.advertisementids}-" + RTBKIT::agent_ad_id;
-				c.providerConfig["adx"]["htmlTemplate"] = 
-					"<html><body><iframe src=\"http://www.plannto.com/advertisments/show_ads?item_id=%{meta.item_ids}&ads_id=%{meta.advertisementids}&size=%{creative.width}x%{creative.height}&click_url=%%CLICK_URL_ESC%%&wp=%%WINNING_PRICE%%&sid=%{meta.tagid}&ref_url=%{bidrequest.url}&device=%{meta.device}&v=%{meta.viewability}&cb=%%CACHEBUSTER%%&a=%{meta.add_details}&gid=%{meta.user_id}&l=%{meta.geo_id}\" width=\"%{creative.width}\" height=\"%{creative.height}\" style=\"border:0px;\"/></body></html>";
+				c.providerConfig["adx"]["externalId"] = "PlannTo-Creative-%{meta.advertisementids}-V-1-" + RTBKIT::agent_ad_id;
 				c.providerConfig["adx"]["videoUrl"] = 
-				"<html><body><iframe src=\"http://www.plannto.com/advertisments/video_ads?item_id=%{meta.item_ids}&ads_id=%{meta.advertisementids}&size=%{creative.width}x%{creative.height}&click_url=%%CLICK_URL_ESC%%&wp=%%WINNING_PRICE%%&sid=%{meta.tagid}&ref_url=%{bidrequest.url}&cb=%%CACHEBUSTER%%&gid=%{meta.user_id}\" width=\"%{creative.width}\" height=\"%{creative.height}\" style=\"border:0px;\"/></body></html>";	
+				"https://www.plannto.com/advertisements/video_ads.xml?item_id=%{meta.item_ids}&ads_id=%{meta.advertisementids}&size=%{meta.width}x%{meta.height}&click_url=%%CLICK_URL_ESC%%&wp=%%WINNING_PRICE%%&sid=%{meta.tagid}&ref_url=%{bidrequest.url}&device=%{meta.device}&cb=%%CACHEBUSTER%%&a=%{meta.add_details}&gid=%{meta.user_id}&l=%{meta.geo_id}&vskip=%{meta.add_v_skip}&vdur=%{meta.add_v_duration}";	
+				c.providerConfig["adx"]["htmlTemplate"] = 
+					"<html><body><iframe src=\"http://www.plannto.com/advertisments/show_ads?item_id=%{meta.item_ids}&ads_id=%{meta.advertisementids}&size=%{creative.width}x%{creative.height}&click_url=%%CLICK_URL_ESC%%&wp=%%WINNING_PRICE%%&sid=%{meta.tagid}&ref_url=%{bidrequest.url}&device=%{meta.device}&cb=%%CACHEBUSTER%%&a=%{meta.add_details}\" width=\"%{creative.width}\" height=\"%{creative.height}\" style=\"border:0px;\"/></body></html>";
 				c.providerConfig["adx"]["clickThroughUrl"] = "%{meta.click_url}";
 				c.providerConfig["adx"]["agencyId"] = 59;
 				c.providerConfig["adx"]["vendorType"] = "113";
-				c.providerConfig["adx"]["attribute"]  = "50";
+				c.providerConfig["adx"]["attribute"]  = "47 22";
+				//c.providerConfig["adx"]["attribute"]  = "22";
+				//c.providerConfig["adx"]["attribute"]  = "";
 				c.providerConfig["adx"]["restrictedCategories"]  = "0";
 				c.providerConfig["adx"]["sensitiveCategory"]  = "0";
 				//c.providerConfig["adx"]["adGroupId"]  = "%{meta.group_id}";
-				c.providerConfig["adx"]["sensitiveCategory"]  = "0";
+				//c.providerConfig["adx"]["sensitiveCategory"]  = "0";
 			}
 
 
@@ -190,7 +183,7 @@ namespace RTBKIT {
 			// Accounts are used to control the allocation of spending budgets for
 			// an agent. The whole mechanism is fully generic and can be setup in
 			// whatever you feel it bests suits you.
-				config.account = {"PlannToAccount_1" , "PC"};
+					config.account = {"PlannToAccount_7" , "PC"};
 
 			// Indicate to the router that we want our bid requests to be augmented
 			// with our frequency cap augmentor example.
@@ -212,7 +205,7 @@ namespace RTBKIT {
 				// been tagged by our frequency cap augmentor.
 				//augConfig.filters.include.push_back("pass-frequency-cap-ex");
 				// "urlMatcher"
-				augConfig.filters.include.push_back("Advertisment-" + agent_ad_id);
+				augConfig.filters.include.push_back("Advertisment-" + agent_ad_id + "-V");
 
 				config.addAugmentation(augConfig);
 			}
@@ -261,7 +254,6 @@ namespace RTBKIT {
 			
 			std::string urltemp = br->url.toString();
 			Json::Value val = br->toJson();
-
    			std::string item_ids="";
 			std::string advertisementid="";
    			std::string eCPM="";
@@ -295,25 +287,25 @@ namespace RTBKIT {
 				std::vector<string> veCPMs;
 				std::vector<string> vclick_urls;
 
-
-
 	   			eCPM = augmentations["urlMatcher"]["data"]["eCPM"].asString();
 	   			priority = augmentations["urlMatcher"]["data"]["priority"].asString();
 	   			item_ids = augmentations["urlMatcher"]["data"]["item_ids"].asString();
 	   			click_url = augmentations["urlMatcher"]["data"]["click_url"].asString();
 	   			tagid = val["imp"][0]["tagid"].asString();
-	   			Json::Value metadata;
+	   			
+				Json::Value metadata;
 
 				string add_details = "";
 				add_details = augmentations["urlMatcher"]["data"]["add_details"].asString();
 				metadata["add_details"] = add_details;
+
 	    		metadata["advertisementids"] = advertisementid;
 	    		metadata["click_url"] = click_url;
 				metadata["item_ids"] = item_ids;
 				metadata["tagid"] = tagid;
-				metadata["user_id"] = val["user"]["id"].asString();
 
-				if(!br->toJson()["device"]["devicetype"].isNull() && br->toJson()["device"]["devicetype"] == 1)
+
+				if(!val["device"]["devicetype"].isNull() && br->toJson()["device"]["devicetype"] == 1)
 	    		{
 	    			 metadata["device"] = "mobile";
 	    		}
@@ -323,21 +315,65 @@ namespace RTBKIT {
 	    		}
 	    		metadata["viewability"] = br->toJson()["imp"][0]["pmp"]["ext"]["viewability"].asString();
 
-		   		
-				if(!br->toJson()["device"]["ext"]["geo_criteria_id"].isNull())
+	    		if(!val["imp"][0]["video"]["ext"]["video_ad_skippable"].isNull())
+	    		{
+	    			metadata["add_v_skip"] = val["imp"][0]["video"]["ext"]["video_ad_skippable"];
+	    		}
+	    		else
+	    		{
+	    			metadata["add_v_skip"] ="";
+	    		}
+
+    			if(!val["imp"][0]["video"]["max_ad_duration"].isNull())
+	    		{
+	    			metadata["add_v_duration"] = val["imp"][0]["video"]["max_ad_duration"];
+	    		}
+	    		else
+	    		{
+	    			metadata["add_v_duration"] = "";
+	    		}
+
+	    		if(!br->toJson()["device"]["ext"]["geo_criteria_id"].isNull())
 	    		{
 	    			metadata["geo_id"] = br->toJson()["device"]["ext"]["geo_criteria_id"].asInt();
 	    		}
+
+	    		metadata["width"] = "300";
+	    		metadata["height"] = "60";
+	    		metadata["user_id"] = val["user"]["id"].asString();
+	    		
+	    		// if(!val["imp"][0]["video"]["companionad"][0]["w"].isNull())
+	    		// {
+	    		// 	metadata["width"] = std::to_string(val["imp"][0]["video"]["companionad"][0]["w"].asInt());
+	    		// }
+	    		// else
+	    		// {
+	    		// 	metadata["width"] = "0";
+	    		// }
+
+	    		// if(!val["imp"][0]["video"]["companionad"][0]["h"].isNull())
+	    		// {
+	    		// 	metadata["height"] = std::to_string(val["imp"][0]["video"]["companionad"][0]["h"].asInt());
+
+	    		// 	if(metadata["height"] == "250" && !val["imp"][0]["video"]["companionad"][1]["h"].isNull())
+	    		// 	{
+	    		// 		metadata["height"] = std::to_string(val["imp"][0]["video"]["companionad"][1]["h"].asInt());
+	    		// 	}
+	    		// }
+	    		// else
+	    		// {
+	    		// 	metadata["height"] = "0";
+	    		// }
+
 
 				//metadata["attribute"] = "1";
 				//metadata["group_id"] = 16025452000;
 				float bidValueforsingleImpression = stof(eCPM)/1000 ;
 
 				std::string group_id = br->toJson()["imp"][0]["pmp"]["ext"]["adgroup_id"].asString();
-				//std::string group_id = br->toJson()["imp"][0]["pmp"]["ext"]["adgroup_id"].asString();
 				//metadata["group_id"] = std::stoi(group_id);
 				
-				cout << "url:" <<  urltemp << "-->" << advertisementid << endl;
+				cout << "url:" <<  urltemp << "-->" << advertisementid << " _ " << metadata["width"].asString() << "x" << metadata["height"].asString() << endl;
 
 				for (Bid& bid : bids) 
 				{
@@ -346,7 +382,7 @@ namespace RTBKIT {
 					// there should only ever be one biddable creative. Note that that
 					// the router won't ask for bids on imp that don't have any
 					// biddable creatives.
-					//ExcAssertEqual(bid.availableCreatives.size(), 1);
+					ExcAssertEqual(bid.availableCreatives.size(), 1);
 					int availableCreative = bid.availableCreatives.front();
 
 					// We don't really need it here but this is how you can get the

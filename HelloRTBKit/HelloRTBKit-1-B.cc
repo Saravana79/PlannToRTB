@@ -31,7 +31,7 @@ namespace RTBKIT {
 		std::string group_id;
 	};
 
-	static std::string agent_ad_id = "6";
+	static std::string agent_ad_id = "1";
 
 	  std::vector<std::string> parseString(std::string str)
 		{
@@ -112,7 +112,15 @@ namespace RTBKIT {
 
 			onBidRequest = bind(
 				&FixedPriceBiddingAgent::bid, this, _1, _2, _3, _4, _5, _6);
-
+		/*	onWin = bind(
+				&FixedPriceBiddingAgent::defaultWin, this, _1);
+			onLoss = bind(  
+				&FixedPriceBiddingAgent::defaultLoss, this, _1);
+			onNoBudget = bind(
+				&FixedPriceBiddingAgent::defaultNoBudget, this, _1);
+			onTooLate = bind(
+				&FixedPriceBiddingAgent::defaultTooLate, this, _1);
+		*/
 			// This component is used to speak with the master banker and pace the
 			// rate at which we spend our budget.
 			budgetController.init(getServices()->config);
@@ -152,19 +160,29 @@ namespace RTBKIT {
 			config.creatives.push_back(Creative::sampleWS);
 			config.creatives.push_back(Creative::sampleLB);
 			config.creatives.push_back(Creative::sampleBBB);
+			config.creatives.push_back(Creative::sampleLBS);
+			config.creatives.push_back(Creative::sample336);
+			config.creatives.push_back(Creative::sample200);
+			config.creatives.push_back(Creative::sample250);
+			config.creatives.push_back(Creative::sample160);
+			config.creatives.push_back(Creative::sample320);
+			
+		//	config.creatives.push_back(Creative::videoAd);
 			config.exchangeFilter.include.push_back("adx");
 			for (auto & c: config.creatives) {
 				c.exchangeFilter.include.push_back("adx");
-				c.providerConfig["adx"]["externalId"] = "PlannTo-Creative-1-" + RTBKIT::agent_ad_id;
+				c.providerConfig["adx"]["externalId"] = "PlannTo-Creative-%{meta.advertisementids}-" + RTBKIT::agent_ad_id;
 				c.providerConfig["adx"]["htmlTemplate"] = 
-					"<html><body><iframe src=\"http://www.plannto.com/advertisments/show_ads?item_id=%{meta.item_ids}&ads_id=%{meta.advertisementids}&size=%{creative.width}x%{creative.height}&click_url=%%CLICK_URL_ESC%%&wp=%%WINNING_PRICE%%&sid=%{meta.tagid}&ref_url=%{bidrequest.url}&cb=%%CACHEBUSTER%%\" width=\"%{creative.width}\" height=\"%{creative.height}\" style=\"border:0px;\"/></body></html>";
+					"<html><body><iframe src=\"http://www.plannto.com/advertisments/show_ads?item_id=%{meta.item_ids}&ads_id=%{meta.advertisementids}&size=%{creative.width}x%{creative.height}&click_url=%%CLICK_URL_ESC%%&wp=%%WINNING_PRICE%%&sid=%{meta.tagid}&ref_url=%{bidrequest.url}&device=%{meta.device}&v=%{meta.viewability}&cb=%%CACHEBUSTER%%&t=1&a=%{meta.add_details}&gid=%{meta.user_id}&l=%{meta.geo_id}\" width=\"%{creative.width}\" height=\"%{creative.height}\" style=\"border:0px;\"/></body></html>";
+				c.providerConfig["adx"]["videoUrl"] = 
+				"<html><body><iframe src=\"http://www.plannto.com/advertisments/video_ads?item_id=%{meta.item_ids}&ads_id=%{meta.advertisementids}&size=%{creative.width}x%{creative.height}&click_url=%%CLICK_URL_ESC%%&wp=%%WINNING_PRICE%%&sid=%{meta.tagid}&ref_url=%{bidrequest.url}&cb=%%CACHEBUSTER&a=%{meta.add_details}%%\" width=\"%{creative.width}\" height=\"%{creative.height}\" style=\"border:0px;\"/></body></html>";	
 				c.providerConfig["adx"]["clickThroughUrl"] = "%{meta.click_url}";
 				c.providerConfig["adx"]["agencyId"] = 59;
 				c.providerConfig["adx"]["vendorType"] = "113";
-				c.providerConfig["adx"]["attribute"]  = "";
+				c.providerConfig["adx"]["attribute"]  = "7 50";
 				c.providerConfig["adx"]["restrictedCategories"]  = "0";
 				c.providerConfig["adx"]["sensitiveCategory"]  = "0";
-			//	c.providerConfig["adx"]["adGroupId"]  = 16025452000;
+				//c.providerConfig["adx"]["adGroupId"]  = "%{meta.group_id}";
 				c.providerConfig["adx"]["sensitiveCategory"]  = "0";
 			}
 
@@ -173,7 +191,7 @@ namespace RTBKIT {
 			// Accounts are used to control the allocation of spending budgets for
 			// an agent. The whole mechanism is fully generic and can be setup in
 			// whatever you feel it bests suits you.
-			config.account = {"PlannToAccount_" + agent_ad_id , "PC"};
+			config.account = {"PlannToAccount_5", "PC"};
 
 			// Indicate to the router that we want our bid requests to be augmented
 			// with our frequency cap augmentor example.
@@ -195,7 +213,7 @@ namespace RTBKIT {
 				// been tagged by our frequency cap augmentor.
 				//augConfig.filters.include.push_back("pass-frequency-cap-ex");
 				// "urlMatcher"
-				augConfig.filters.include.push_back("Advertisment-" + agent_ad_id);
+				augConfig.filters.include.push_back("Advertisment-" + agent_ad_id + "-B");
 
 				config.addAugmentation(augConfig);
 			}
@@ -205,6 +223,32 @@ namespace RTBKIT {
 			doConfig(config);
 		}
 
+
+	  /*  void defaultWin(const BidResult & args)
+	    {
+	        cout << "onwin" << endl;
+	    }
+
+        void defaultLoss(const BidResult & args)
+	    {
+	        cout << "onloss" << endl;
+	        cout << "bid status " << args.result << endl;
+	        cout << "second price " <<args.secondPrice << endl;
+	        cout << "bid " << args.request->url.c_str() << endl;
+	         cout << "bid price" << args.ourBid[0].price << endl;
+	    }
+
+	    void defaultNoBudget(const BidResult & args)
+		{
+			cout << "on default no bugder"<< endl;
+		}
+
+	    void defaultTooLate(const BidResult & args)
+		{
+			cout << "on default late"<< endl;
+		}
+
+*/
 		void bid(
 			double timestamp,
 			const Id & id,
@@ -218,6 +262,7 @@ namespace RTBKIT {
 			
 			std::string urltemp = br->url.toString();
 			Json::Value val = br->toJson();
+			//cout << val << endl;
    			std::string item_ids="";
 			std::string advertisementid="";
    			std::string eCPM="";
@@ -258,17 +303,39 @@ namespace RTBKIT {
 	   			tagid = val["imp"][0]["tagid"].asString();
 	   			
 				Json::Value metadata;
+				string add_details = "";
+				add_details = augmentations["urlMatcher"]["data"]["add_details"].asString();
+				metadata["add_details"] = add_details;
 	    		metadata["advertisementids"] = advertisementid;
 	    		metadata["click_url"] = click_url;
 				metadata["item_ids"] = item_ids;
 				metadata["tagid"] = tagid;
+				metadata["user_id"] = val["user"]["id"].asString();
+
+				if(!br->toJson()["device"]["devicetype"].isNull() && br->toJson()["device"]["devicetype"] == 1)
+	    		{
+	    			 metadata["device"] = "mobile";
+	    		}
+	    		else
+	    		{
+	    			metadata["device"] = "pc";	
+	    		}
+				metadata["viewability"] = br->toJson()["imp"][0]["pmp"]["ext"]["viewability"].asString();
+
+				if(!br->toJson()["device"]["ext"]["geo_criteria_id"].isNull())
+	    		{
+	    			metadata["geo_id"] = br->toJson()["device"]["ext"]["geo_criteria_id"].asInt();
+	    		}
+
+				//metadata["attribute"] = "1";
+				//metadata["group_id"] = 16025452000;
 				float bidValueforsingleImpression = stof(eCPM)/1000 ;
 
 				std::string group_id = br->toJson()["imp"][0]["pmp"]["ext"]["adgroup_id"].asString();
 				//metadata["group_id"] = std::stoi(group_id);
 				
 				cout << "url:" <<  urltemp << "-->" << advertisementid << endl;
-				
+
 				for (Bid& bid : bids) 
 				{
 
@@ -276,7 +343,7 @@ namespace RTBKIT {
 					// there should only ever be one biddable creative. Note that that
 					// the router won't ask for bids on imp that don't have any
 					// biddable creatives.
-					ExcAssertEqual(bid.availableCreatives.size(), 1);
+					//ExcAssertEqual(bid.availableCreatives.size(), 1);
 					int availableCreative = bid.availableCreatives.front();
 
 					// We don't really need it here but this is how you can get the
@@ -315,7 +382,7 @@ namespace RTBKIT {
 			}
 
 			// Make sure we have 1$ to spend for the next period.
-			budgetController.topupTransferSync(config.account, USD(4));
+			budgetController.topupTransferSync(config.account, USD(12));
 		}
 
 
