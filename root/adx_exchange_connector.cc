@@ -559,10 +559,10 @@ ParseGbrAdSlot (const std::string currency,
             spot.restrictions.addInts("excluded_sensitive_category", tmp);
 
             //plannto added it.
-          //  tmp.clear();
-          //  for (auto i: boost::irange(0,slot.excluded_product_category_size()))
-          //      tmp.push_back(slot.excluded_product_category(i));
-          //  spot.restrictions.addInts("excluded_product_category", tmp);
+           tmp.clear();
+           for (auto i: boost::irange(0,slot.excluded_product_category_size()))
+               tmp.push_back(slot.excluded_product_category(i));
+           spot.restrictions.addInts("excluded_product_category", tmp);
 
             vector<std::string> adg_ids;
             for (auto i: boost::irange(0,slot.matching_ad_data_size())){
@@ -903,6 +903,11 @@ parseBidRequest(HttpAuctionHandler & connection,
     {
         assert (gbr.has_url()||gbr.has_anonymous_id());
         br.url = Url(gbr.has_url() ? gbr.url() : gbr.anonymous_id());
+
+        if(gbr.url().find("gsmarena.com") != std::string::npos )
+        {
+            //cout << "Payload" << gbr.DebugString() << endl;
+        }
         br.site->page = br.url;
         if (gbr.has_seller_network_id())
         {
