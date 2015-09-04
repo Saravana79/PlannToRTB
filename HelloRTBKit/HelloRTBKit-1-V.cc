@@ -161,7 +161,7 @@ namespace RTBKIT {
 			config.exchangeFilter.include.push_back("adx");
 			for (auto & c: config.creatives) {
 				c.exchangeFilter.include.push_back("adx");
-				c.providerConfig["adx"]["externalId"] = "PlannTo-Creative-%{meta.advertisementids}-V-1-" + RTBKIT::agent_ad_id;
+				c.providerConfig["adx"]["externalId"] = "PlannTo-Creative-1-%{meta.advertisementids}-V-1-" + RTBKIT::agent_ad_id;
 				c.providerConfig["adx"]["videoUrl"] = 
 				"https://www.plannto.com/advertisements/video_ads.xml?item_id=%{meta.item_ids}&ads_id=%{meta.advertisementids}&size=%{meta.width}x%{meta.height}&click_url=%%CLICK_URL_ESC%%&wp=%%WINNING_PRICE%%&sid=%{meta.tagid}&ref_url=%{bidrequest.url}&device=%{meta.device}&cb=%%CACHEBUSTER%%&a=%{meta.add_details}&gid=%{meta.user_id}&l=%{meta.geo_id}&vskip=%{meta.add_v_skip}&vdur=%{meta.add_v_duration}";	
 				c.providerConfig["adx"]["htmlTemplate"] = 

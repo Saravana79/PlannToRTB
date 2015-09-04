@@ -724,7 +724,7 @@ parseBidRequest(HttpAuctionHandler & connection,
         return os.str() ;
     };
 
-
+    br.isTest = gbr.is_test() ? 1 : 0;
 
     // TODO couldn't get Id() to represent correctly [required bytes id = 2;]
     br.auctionId = Id (binary_to_hexstr(gbr.id()));

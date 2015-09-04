@@ -2314,7 +2314,7 @@ onNewAuction(std::shared_ptr<Auction> auction)
             slowModeCount++;
         }
         //plannto increased the slow mode count
-        if (slowModeCount > 1000) {
+        if (slowModeCount > 2000) {
             /* we only let the first 100 auctions take place each second */
             recordHit("monitor.ignoredAuctions");
             auction->finish();

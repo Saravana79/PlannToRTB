@@ -1,0 +1,215 @@
+connecting to Carbon at 127.0.0.1:2003 (localhost)
+VICKY: augmentor runner check
+connecting to agentConfigurationService/listen
+wexists handler returned -101
+2. returning result 
+Augment Init
+watchServiceProvider: name router.augmentationLoop not already connected 
+connecting to router.augmentationLoop/augmentors
+wexists handler returned -101
+2. returning result 
+connecting to agentConfigurationService/listen
+connected to tcp://127.0.0.1:19000
+connecting to router.augmentationLoop/augmentors
+connected to tcp://127.0.0.1:18000
+got configuration message HelloRTBKit-agent-1_23261
+got configuration message HelloRTBKit-agent-1_23273
+got configuration message HelloRTBKit-agent-1-S_23271
+got configuration message HelloRTBKit-agent-1-S-R_23275
+got configuration message HelloRTBKit-agent-1_23280
+got configuration message HelloRTBKit-agent-1_23267
+got configuration message HelloRTBKit-agent-1-S_23265
+wexists handler returned -101
+2. returning result 
+warning: could not connect to PostAuctionLoop/logger immediately
+warning: could not connect to PostAuctionLoop/logger immediately
+Missing due to high minimum cpm - 399.69 - 330 - url - http://www.androidcentral.com/best-android-phones - id - 25
+Missing due to high minimum cpm - 399.69 - 224.4 - url - http://www.androidcentral.com/best-android-phones - id - 25
+Missing due to high minimum cpm - 399.58 - 330 - url - http://www.androidcentral.com/best-android-phones - id - 25
+Feedback  - http://images.maxabout.com/misc/infographics/mobile-phone-infographics/image/microsoft-lumia-640<<26<<182.000000 - status code - 79 - wp - 235670033
+
+Feedback  - http://www.gsmarena.com/gionee_elife_s7-7032.php<<26<<218.399994 - status code - 79 - wp - 0
+
+Feedback  - http://www.mysmartprice.com/product/computer/hp-15-r204tu--k8u02pa--laptop-mst202962-other<<26<<245.699997 - status code - 79 - wp - 0
+
+Feedback  - http://tech.firstpost.com/news-analysis/oneplus-one-on-flash-sale-between-1-7-june-starting-at-249-269239.html<<25<<330.000000 - status code - 79 - wp - 0
+
+Feedback  - http://www.ibtimes.co.in/micromax-yu-yuphoria-vs-coolpad-dazen-1-vs-xiaomi-redmi-2-best-sub-7000-smartphone-your-money-634201<<37<<468.350006 - status code - 71 - wp - 0
+
+Feedback  - http://www.gsmarena.com/lenovo_a536-6674.php<<25<<330.000000 - status code - 79 - wp - 0
+
+Feedback  - http://www.ibtimes.co.in/micromax-yu-yuphoria-vs-coolpad-dazen-1-vs-xiaomi-redmi-2-best-sub-7000-smartphone-your-money-634201<<25<<382.799988 - status code - 71 - wp - 0
+
+Feedback  - http://www.gizmodo.in/indiamodo/Xiaomi-Redmi-2-Review-A-terrific-budget-phone/articleshow/46905675.cms<<25<<330.000000 - status code - 71 - wp - 0
+
+Feedback  - http://www.ibtimes.co.in/sony-xperia-m4-aqua-vs-xiaomi-mi-4i-vs-asus-zenfone-2-ze551ml-vs-zte-nubia-z9-mini-specification-634471<<25<<264.000000 - status code - 71 - wp - 0
+
+Feedback  - http://www.ibtimes.co.in/micromax-yu-yuphoria-vs-coolpad-dazen-1-vs-xiaomi-redmi-2-best-sub-7000-smartphone-your-money-634201<<26<<263.899994 - status code - 71 - wp - 0
+
+Feedback  - http://www.gsmarena.com/xiaomi_mi_4-6518.php<<25<<330.000000 - status code - 79 - wp - 332954221
+
+Feedback  - http://www.phonearena.com/phones/Microsoft-Lumia-640_id9253<<26<<227.500000 - status code - 79 - wp - 0
+
+Feedback  - http://www.mysmartprice.com/mobile/micromax-canvas-a1-msp4790<<25<<369.600006 - status code - 79 - wp - 0
+
+Feedback  - http://www.mysmartprice.com/mobile/microsoft-lumia-640-xl-msp6114<<26<<254.800003 - status code - 79 - wp - 0
+
+Feedback  - http://www.supersmartdeals.com/Deals/7778/Mi-Redmi-2-Dark-Grey-Black-<<25<<343.200012 - status code - 79 - wp - 0
+
+Feedback  - http://www.pricedealsindia.com/mobiles/compare/htc-desire-826-vs-motorola-moto-x-2nd-gen-32gb<<25<<316.799988 - status code - 71 - wp - 0
+
+Feedback  - http://www.sulekha.com/mobiles/htc-desire-626g-plus-dual-sim-mobile-prices-and-specifications<<25<<290.399994 - status code - 71 - wp - 0
+
+Feedback  - http://www.priceofmobiles.com/xiaomi-redmi-2-price-in-india.html<<25<<264.000000 - status code - 71 - wp - 0
+
+Feedback  - http://www.in.techradar.com/reviews/phones/mobile-phones/iPhone-6/articleshow/42124169.cms<<25<<224.399994 - status code - 71 - wp - 0
+
+Feedback  - http://pricebaba.com/mobile/pricelist/micromax-price-list<<25<<264.000000 - status code - 71 - wp - 0
+
+Feedback  - http://pricebaba.com/mobile/micromax-canvas-fire-4<<25<<264.000000 - status code - 71 - wp - 0
+
+Feedback  - http://souqmobi.com/mobiles/samsung-i9502-galaxy-s4/<<37<<274.549988 - status code - 79 - wp - 0
+
+Feedback  - http://www.youtube.com/video/GszKAxnDLsU<<25<<330.000000 - status code - 79 - wp - 0
+
+Feedback  - http://www.mysmartprice.com/product/mobile/microsoft-lumia-640-xl-mst6114-other<<26<<254.800003 - status code - 79 - wp - 0
+
+Feedback  - http://www.mysmartprice.com/mobile/sony-xperia-i1-msp3113<<25<<369.600006 - status code - 79 - wp - 0
+
+Feedback  - http://pricebaba.com/mobile/pricelist/micromax-price-list<<25<<264.000000 - status code - 71 - wp - 0
+
+Feedback  - http://www.digit.in/top-products/best-android-phones-2.html<<25<<330.000000 - status code - 79 - wp - 417290000
+
+Feedback  - http://www.mysmartprice.com/product/mobile/micromax-canvas-doodle-3-a102-(8-gb)-mst4990-other<<25<<264.000000 - status code - 79 - wp - 0
+
+Feedback  - http://bgr.com/2015/02/09/iphone-6-sim-unlocking/<<25<<382.799988 - status code - 15 - wp - 0
+
+Feedback  - http://www.ibtimes.co.in/install-exodus-android-5-0-2-lollipop-custom-rom-update-oneplus-one-aka-bacon-how-upgrade-634320<<25<<435.600006 - status code - 71 - wp - 0
+
+Feedback  - http://bgr.com/2015/02/09/iphone-6-sim-unlocking/<<26<<263.899994 - status code - 15 - wp - 0
+
+Feedback  - http://www.mysmartprice.com/product/mobile/microsoft-lumia-640-xl-mst6114-other<<26<<254.800003 - status code - 79 - wp - 0
+
+Feedback  - http://pricebaba.com/mobile/htc-desire-816g-dual-sim<<25<<264.000000 - status code - 71 - wp - 0
+
+Missing due to high minimum cpm - 399.58 - 339.15 - url - http://www.androidcentral.com/oneplus-one - id - 37
+Feedback  - http://pricebaba.com/mobile/xiaomi-redmi-2<<25<<264.000000 - status code - 71 - wp - 0
+
+Feedback  - http://www.ibtimes.co.in/install-exodus-android-5-0-2-lollipop-custom-rom-update-oneplus-one-aka-bacon-how-upgrade-634320<<37<<339.149994 - status code - 71 - wp - 0
+
+Feedback  - http://www.phonearena.com/phones/Microsoft-Lumia-640-XL_id9280<<26<<227.500000 - status code - 79 - wp - 0
+
+Feedback  - http://www.gsmarena.com/lenovo_vibe_z_k910-5843.php<<26<<227.500000 - status code - 79 - wp - 0
+
+Feedback  - http://www.gsmarena.com/samsung_galaxy_e5-6906.php<<26<<227.500000 - status code - 79 - wp - 249305378
+
+Feedback  - http://www.mysmartprice.com/mobile/microsoft-lumia-640-xl-msp6114<<26<<254.800003 - status code - 79 - wp - 0
+
+Missing due to high minimum cpm - 399.69 - 224.4 - url - http://www.androidcentral.com/best-android-phones - id - 25
+Missing due to high minimum cpm - 399.69 - 330 - url - http://www.androidcentral.com/best-android-phones - id - 25
+Feedback  - http://pricebaba.com/mobile/sony-xperia-m2-dual<<26<<218.399994 - status code - 71 - wp - 0
+
+Feedback  - http://pricebaba.com/mobile/pricelist/micromax-price-list<<25<<264.000000 - status code - 71 - wp - 0
+
+Feedback  - http://www.gsmarena.com/sony_xperia_e4-6882.php<<25<<330.000000 - status code - 79 - wp - 0
+
+Feedback  - http://www.mysmartprice.com/mobile/apple-iphone-6-msp4340<<25<<369.600006 - status code - 79 - wp - 0
+
+Feedback  - http://www.youtube.com/video/HiWRDwGdFC4<<26<<273.000000 - status code - 79 - wp - 0
+
+Feedback  - http://www.in.techradar.com/news/phone-and-communications/mobile-phones/Fingerprint-scanning-Nexus-5-reminds-us-why-Google-needs-to-resurrect-this-phone/articleshow/47514412.cms<<25<<330.000000 - status code - 71 - wp - 0
+
+Feedback  - http://m.gsmarena.com/sony_xperia_sp-5364.php<<25<<264.000000 - status code - 79 - wp - 0
+
+Feedback  - http://www.windowsphonelumiaapps.com/pc-suite-lumia-535-free-download-pc-lumia-pc-suite/<<25<<330.000000 - status code - 79 - wp - 0
+
+Feedback  - http://www.mysmartprice.com/product/mobile/microsoft-lumia-640-xl-mst6114-other<<26<<254.800003 - status code - 79 - wp - 0
+
+Feedback  - http://www.supersmartdeals.com/Deals/114/Apple-iPhone-5S-16GB<<37<<419.899994 - status code - 79 - wp - 0
+
+Feedback  - http://www.mysmartprice.com/mobile/micromax-canvas-unite-2-a106-msp4985<<25<<369.600006 - status code - 79 - wp - 0
+
+Feedback  - http://m.ibtimes.co.in/huawei-honor-6-plus-vs-oneplus-one-which-phone-has-better-features-greater-appeal-626717<<37<<403.750000 - status code - 71 - wp - 0
+
+Feedback  - http://pricebaba.com/mobile/sony-xperia-z3<<25<<369.600006 - status code - 71 - wp - 0
+
+Feedback  - http://www.ibtimes.co.in/xiaomi-officially-launches-redmi-2-mi-pad-india-price-specifications-625992<<25<<382.799988 - status code - 71 - wp - 0
+
+Feedback  - http://www.mysmartprice.com/mobile/htc-desire-826-msp5573<<25<<369.600006 - status code - 79 - wp - 470400000
+
+Feedback  - http://www.pocket-lint.com/news/134103-massive-samsung-galaxy-s6-plus-could-tide-you-over-until-the-note-5-arrives<<25<<224.399994 - status code - 71 - wp - 0
+
+Feedback  - http://www.in.techradar.com/news/phone-and-communications/mobile-phones/Nubia-Z9-Mini-Smartphone-The-fight-is-on-/articleshow/47360738.cms<<25<<330.000000 - status code - 71 - wp - 0
+
+Feedback  - http://pricebaba.com/mobile/iball-slide-6351-q40<<25<<369.600006 - status code - 71 - wp - 0
+
+Feedback  - http://m.ibtimes.co.in/huawei-honor-6-plus-vs-oneplus-one-which-phone-has-better-features-greater-appeal-626717<<25<<277.200012 - status code - 71 - wp - 0
+
+Feedback  - http://m.ibtimes.co.in/oneplus-one-steep-price-cut-makes-it-perfect-buy-only-week-634411<<37<<339.149994 - status code - 71 - wp - 0
+
+Feedback  - http://mobiles.sulekha.com/samsung_galaxy-s4_mobile.htm<<25<<330.000000 - status code - 71 - wp - 0
+
+Feedback  - http://indiatoday.intoday.in/technology/story/alleged-moto-e-3rd-gen-leaked-in-bluetooth-certification/1/441972.html<<26<<240.239990 - status code - 71 - wp - 0
+
+Feedback  - http://m.gsmarena.com/nokia_lumia_730_dual_sim-6640.php<<25<<264.000000 - status code - 79 - wp - 0
+
+Feedback  - http://pricebaba.com/mobile/lava-iris-x8-2gb-16gb<<26<<218.399994 - status code - 71 - wp - 0
+
+Feedback  - http://www.youtube.com/video/WRtjGGC9jDE<<37<<468.350006 - status code - 79 - wp - 0
+
+Feedback  - http://www.gsmarena.com/sony_xperia_m2-6146.php<<26<<273.000000 - status code - 79 - wp - 0
+
+Feedback  - http://www.supersmartdeals.com/Deals/7778/Mi-Redmi-2-Dark-Grey-Black-<<25<<343.200012 - status code - 79 - wp - 0
+
+Feedback  - http://www.androidpit.com/best-android-phone<<25<<396.000000 - status code - 79 - wp - 0
+
+Feedback  - http://www.youtube.com/video/0TvCdpQ4JQg<<37<<468.350006 - status code - 79 - wp - 0
+
+Feedback  - http://www.gsmarena.com/oneplus_one-pictures-6327.php<<37<<468.350006 - status code - 79 - wp - 596700000
+
+Feedback  - http://pricebaba.com/mobile/micromax-canvas-fire-4<<25<<369.600006 - status code - 71 - wp - 0
+
+Feedback  - http://www.androidpit.com/best-android-phone<<26<<273.000000 - status code - 79 - wp - 0
+
+Feedback  - http://www.youtube.com/video/0TvCdpQ4JQg<<25<<382.799988 - status code - 79 - wp - 0
+
+Feedback  - http://www.gsmarena.com/samsung_i9500_galaxy_s4-5125.php<<25<<330.000000 - status code - 79 - wp - 333200000
+
+Feedback  - http://www.mysmartprice.com/product/mobile/oneplus-one-mst4120-other<<37<<516.799988 - status code - 79 - wp - 0
+
+Feedback  - http://www.smartprix.com/mobiles/mobiles_between_10000_and_15000<<25<<330.000000 - status code - 79 - wp - 0
+
+Feedback  - http://indiatoday.intoday.in/technology/story/alleged-moto-e-3rd-gen-leaked-in-bluetooth-certification/1/441972.html<<26<<273.000000 - status code - 71 - wp - 0
+
+Feedback  - http://m.ibtimes.co.in/xiaomi-mi4i-vs-mi4-specifications-comparison-everything-you-need-know-630216<<25<<277.200012 - status code - 71 - wp - 0
+
+Feedback  - http://www.supersmartdeals.com/Deals/114/Apple-iPhone-5S-16GB<<37<<419.899994 - status code - 79 - wp - 0
+
+Feedback  - http://www.mysmartprice.com/mobile/videocon-v1520-msp5355<<26<<254.800003 - status code - 79 - wp - 0
+
+Feedback  - http://www.mymobile143.com/htc-desire-626g-plus/<<25<<290.399994 - status code - 79 - wp - 0
+
+Feedback  - http://www.smartprix.com/tablets/apple-ipad-mini-wifi-16gb-p2636<<25<<303.600006 - status code - 79 - wp - 686400000
+
+Feedback  - http://www.smartprix.com/tablets/apple-ipad-mini-wifi-16gb-p2636<<26<<273.000000 - status code - 79 - wp - 686400000
+
+Feedback  - http://www.smartprix.com/mobiles/apple-iphone-5c-8gb-p11014b70ej4<<25<<330.000000 - status code - 79 - wp - 0
+
+Feedback  - http://pricebaba.com/mobile/apple-iphone-5s<<37<<452.200012 - status code - 71 - wp - 0
+
+Feedback  - http://www.phonearena.com/phones/compare/Apple-iPhone-5s,Apple-iPhone-5/phones/7710,7378<<37<<403.750000 - status code - 79 - wp - 0
+
+Feedback  - http://pricebaba.com/mobile/pricelist/micromax-price-list<<25<<264.000000 - status code - 71 - wp - 0
+
+Feedback  - http://m.siliconindia.com/gadget/news/Top-10-Best-Smartphones-For-June-2015-nid-183280.html/4<<25<<224.399994 - status code - 79 - wp - 0
+
+Feedback  - http://www.phonearena.com/phones/compare/Apple-iPhone-6,Sony-Xperia-Z2/phones/8346,8323<<26<<200.199997 - status code - 79 - wp - 0
+
+Feedback  - http://shopping.micromaxonline.com/deals/smartphones-1.html<<25<<369.600006 - status code - 15 - wp - 0
+
+Feedback  - http://m.ibtimes.co.in/update-oneplus-one-aka-bacon-cyanogenmod-official-android-5-1-lollipop-cm12-1-custom-rom-how-629836<<37<<339.149994 - status code - 71 - wp - 0
+
+Feedback  - http://www.ibtimes.co.in/top-10-smartphones-released-ces-2015-lenovo-lg-htc-huawei-samsung-acer-more-619988<<26<<263.899994 - status code - 71 - wp - 0
+
+Feedback  - http://www.ibtimes.co.in/sony-xperia-m4-aqua-vs-xiaomi-mi-4i-vs-asus-zenfone-2-ze551ml-vs-zte-nubia-z9-mini-specification-634471<<25<<382.799988 - status code - 71 - wp - 0
+

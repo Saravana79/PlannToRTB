@@ -1,0 +1,8235 @@
+=== Successful responses ===
+BidRequest:
+id: "4Bd\313QHVr\344\270_\237\252\021\206^"
+ip: "<\';"
+user_agent: "Mozilla/5.0 (iPad; CPU OS 6_1_2 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Mobile/10B146,gzip(gfe)"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 355
+  weight: 0.841633277621
+}
+detected_vertical {
+  id: 433
+  weight: 0.569953111881
+}
+detected_vertical {
+  id: 379
+  weight: 0.661808334637
+}
+detected_vertical {
+  id: 540
+  weight: 0.330991741989
+}
+detected_vertical {
+  id: 24
+  weight: 0.719692640225
+}
+adslot {
+  id: 28
+  width: 768
+  height: 1024
+  excluded_attribute: 5
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 410000
+    direct_deal {
+      direct_deal_id: 1986858600936713314
+      fixed_cpm_micros: 410000
+    }
+  }
+  publisher_settings_list_id: 56751369
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+mobile {
+  platform: "ipad"
+  app_id: "530434022"
+  is_app: true
+  mobile_device_type: TABLET
+  screen_orientation: 2
+  is_interstitial_request: true
+  app_category_ids: 60508
+  app_category_ids: 60548
+  app_category_ids: 60556
+  app_category_ids: 60535
+  os_version {
+    os_version_major: 6
+    os_version_minor: 1
+    os_version_micro: 2
+  }
+  carrier_id: 71352
+}
+cookie_age_seconds: 1349367
+postal_code: "02102"
+geo_criteria_id: 1018127
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "}\251\235\272\225D\2107-;~\031\030\033\020:"
+ip: "\323\234\205"
+user_agent: "Mozilla/5.0 (iPad; CPU OS 5_1_1 like Mac OS X) AppleWebKit/534.46 (KHTML,like Gecko) Mobile/9B206,gzip(gfe)"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 609
+  weight: 0.83879242374
+}
+detected_vertical {
+  id: 66
+  weight: 0.240136766052
+}
+detected_vertical {
+  id: 607
+  weight: 0.106384236161
+}
+detected_vertical {
+  id: 380
+  weight: 0.087361375345
+}
+detected_vertical {
+  id: 23
+  weight: 0.589929647688
+}
+adslot {
+  id: 129
+  width: 468
+  height: 60
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 490000
+    direct_deal {
+      direct_deal_id: 4599525101211302781
+      fixed_cpm_micros: 490000
+    }
+  }
+  publisher_settings_list_id: 56751470
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+mobile {
+  platform: "ipad"
+  app_id: "530434022"
+  is_app: true
+  mobile_device_type: TABLET
+  screen_orientation: 1
+  is_interstitial_request: false
+  app_category_ids: 60535
+  os_version {
+    os_version_major: 5
+    os_version_minor: 1
+    os_version_micro: 1
+  }
+  carrier_id: 70152
+}
+cookie_age_seconds: 1153732
+postal_code: "99501"
+geo_criteria_id: 1012873
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "C\325\353\353v@Rm\346\344cH\214x&`"
+ip: "P\304\304"
+user_agent: "Mozilla/4.08 (compatible; MSIE 6.0; Windows NT 5.1)"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 608
+  weight: 0.161786474155
+}
+detected_vertical {
+  id: 570
+  weight: 0.541466426665
+}
+detected_vertical {
+  id: 379
+  weight: 0.396224268054
+}
+detected_vertical {
+  id: 380
+  weight: 0.0293913796807
+}
+detected_vertical {
+  id: 607
+  weight: 0.119027240569
+}
+adslot {
+  id: 58
+  width: 300
+  height: 250
+  excluded_attribute: 1
+  excluded_attribute: 48
+  excluded_attribute: 9
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 40000
+    direct_deal {
+      direct_deal_id: 2179005099057495776
+      fixed_cpm_micros: 40000
+    }
+  }
+  publisher_settings_list_id: 56751399
+}
+adslot {
+  id: 96
+  width: 300
+  height: 250
+  excluded_attribute: 1
+  excluded_attribute: 48
+  excluded_attribute: 3
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 270000
+    direct_deal {
+      direct_deal_id: 2178882294527747904
+      fixed_cpm_micros: 270000
+    }
+  }
+  publisher_settings_list_id: 56751437
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 1017505
+postal_code_prefix: "E1B"
+geo_criteria_id: 1002061
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "\331\244T\004T\037!k\034t\'b\320X\021\232"
+ip: "\352=\""
+user_agent: "Mozilla/5.0 (iPad; CPU OS 5_1_1 like Mac OS X) AppleWebKit/534.46 (KHTML,like Gecko) Mobile/9B206,gzip(gfe)"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 609
+  weight: 0.497433326633
+}
+detected_vertical {
+  id: 379
+  weight: 0.712863307214
+}
+detected_vertical {
+  id: 540
+  weight: 0.570041391896
+}
+detected_vertical {
+  id: 565
+  weight: 0.949152204603
+}
+detected_vertical {
+  id: 380
+  weight: 0.308091777618
+}
+adslot {
+  id: 152
+  width: 468
+  height: 60
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 3
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 440000
+    direct_deal {
+      direct_deal_id: 3349485501089483545
+      fixed_cpm_micros: 440000
+    }
+  }
+  publisher_settings_list_id: 56751493
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+mobile {
+  platform: "ipad"
+  app_id: "610424031"
+  is_app: true
+  mobile_device_type: TABLET
+  screen_orientation: 1
+  is_interstitial_request: false
+  app_category_ids: 60535
+  os_version {
+    os_version_major: 5
+    os_version_minor: 1
+    os_version_micro: 1
+  }
+  carrier_id: 70361
+}
+cookie_age_seconds: 2523892
+postal_code: "10116"
+geo_criteria_id: 9005559
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "2\205\333\'\362.\313\0259\270\371\314Y\275\374\033"
+ip: "\357\177\217"
+user_agent: "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0;)"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 23
+  weight: 0.171512588759
+}
+detected_vertical {
+  id: 563
+  weight: 0.223232449018
+}
+detected_vertical {
+  id: 66
+  weight: 0.80140632536
+}
+detected_vertical {
+  id: 355
+  weight: 0.0499816712383
+}
+detected_vertical {
+  id: 607
+  weight: 0.587605266569
+}
+adslot {
+  id: 163
+  width: 300
+  height: 250
+  excluded_attribute: 4
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 770000
+    direct_deal {
+      direct_deal_id: 2146971194085678192
+      fixed_cpm_micros: 770000
+    }
+  }
+  publisher_settings_list_id: 56751504
+}
+adslot {
+  id: 64
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 3
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 220000
+    direct_deal {
+      direct_deal_id: 3700142917101206696
+      fixed_cpm_micros: 220000
+    }
+  }
+  publisher_settings_list_id: 56751405
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 781776
+postal_code: "94087"
+geo_criteria_id: 9031936
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+ad {
+  html_snippet: "<html><body><iframe src=\"https://www.plannto.com/advertisments/show_ads?item_id=106,107&ads_id=41&size=300x250&click_url=%%CLICK_URL_ESC%%&wp=%%WINNING_PRICE%%&sid=&ref_url=http://www.cartrade.com/bugatti-cars&device=pc&v=&cb=%%CACHEBUSTER%%&t=1&a=&gid=CAESELz_Eu_JzRmISw7-SNL6c8M&l=9031936\" width=\"300\" height=\"250\" style=\"border:0px;\"/></body></html>"
+  adslot {
+    id: 163
+    max_cpm_micros: 305950000
+    adgroup_id: 18102001720
+  }
+  click_through_url: "http://autoportal.com"
+  vendor_type: 113
+  attribute: 7
+  attribute: 50
+  attribute: 47
+  buyer_creative_id: "PlannTo-Creative-1-41-1"
+  width: 300
+  height: 250
+}
+ad {
+  html_snippet: "<html><body><iframe src=\"https://www.plannto.com/advertisments/show_ads?item_id=106,107&ads_id=41&size=300x250&click_url=%%CLICK_URL_ESC%%&wp=%%WINNING_PRICE%%&sid=&ref_url=http://www.cartrade.com/bugatti-cars&device=pc&v=&cb=%%CACHEBUSTER%%&t=1&a=&gid=CAESELz_Eu_JzRmISw7-SNL6c8M&l=9031936\" width=\"300\" height=\"250\" style=\"border:0px;\"/></body></html>"
+  adslot {
+    id: 64
+    max_cpm_micros: 305950000
+    adgroup_id: 18102001720
+  }
+  click_through_url: "http://autoportal.com"
+  vendor_type: 113
+  attribute: 7
+  attribute: 50
+  attribute: 47
+  buyer_creative_id: "PlannTo-Creative-1-41-1"
+  width: 300
+  height: 250
+}
+processing_time_ms: 7
+BidRequest:
+id: ";\356\315\302\207\007\037\0268\017r\263\267\341\364\257"
+ip: "\177\016\242"
+user_agent: "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.7pre) Gecko/20070815 Firefox/2.0.0.6 Navigator/9.0b3"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 540
+  weight: 0.936286480121
+}
+detected_vertical {
+  id: 474
+  weight: 0.225892031064
+}
+detected_vertical {
+  id: 379
+  weight: 0.10048831125
+}
+detected_vertical {
+  id: 380
+  weight: 0.0822642238489
+}
+detected_vertical {
+  id: 119
+  weight: 0.467448412197
+}
+adslot {
+  id: 181
+  width: 300
+  height: 250
+  excluded_attribute: 3
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 630000
+    direct_deal {
+      direct_deal_id: 3195582711550928167
+      fixed_cpm_micros: 630000
+    }
+  }
+  publisher_settings_list_id: 56751522
+}
+adslot {
+  id: 27
+  width: 300
+  height: 250
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 3
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+  }
+  publisher_settings_list_id: 56751368
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 2098072
+postal_code_prefix: "M4C"
+geo_criteria_id: 1002451
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "\254\n\235\357`\221\273\345\347\241P\357\257\021w\224"
+ip: "\227\021\006"
+user_agent: "Mozilla/5.0 (Macintosh; U; PPC Mac OS X; sv-se) AppleWebKit/419 (KHTML, like Gecko) Safari/419.3"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 119
+  weight: 0.486608298518
+}
+detected_vertical {
+  id: 474
+  weight: 0.281956407223
+}
+detected_vertical {
+  id: 563
+  weight: 0.87670692327
+}
+detected_vertical {
+  id: 380
+  weight: 0.872287092029
+}
+detected_vertical {
+  id: 23
+  weight: 0.329650061075
+}
+adslot {
+  id: 96
+  width: 300
+  height: 250
+  excluded_attribute: 6
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 60000
+    direct_deal {
+      direct_deal_id: 361369833247101373
+      fixed_cpm_micros: 60000
+    }
+  }
+  publisher_settings_list_id: 56751437
+}
+adslot {
+  id: 54
+  width: 300
+  height: 250
+  excluded_attribute: 3
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 560000
+    direct_deal {
+      direct_deal_id: 146145542623435895
+      fixed_cpm_micros: 560000
+    }
+  }
+  publisher_settings_list_id: 56751395
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 154781
+postal_code: "33601"
+geo_criteria_id: 1015214
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+ad {
+  html_snippet: "<html><body><iframe src=\"https://www.plannto.com/advertisments/show_ads?item_id=106,107&ads_id=41&size=300x250&click_url=%%CLICK_URL_ESC%%&wp=%%WINNING_PRICE%%&sid=&ref_url=http://www.cartrade.com/bugatti-cars&device=pc&v=&cb=%%CACHEBUSTER%%&a=&gid=CAESELz_Eu_JzRmISw7-SNL6c8M&l=1015214\" width=\"300\" height=\"250\" style=\"border:0px;\"/></body></html>"
+  adslot {
+    id: 96
+    max_cpm_micros: 263750000
+    adgroup_id: 18102001720
+  }
+  click_through_url: "http://autoportal.com"
+  vendor_type: 113
+  attribute: 50
+  attribute: 47
+  buyer_creative_id: "PlannTo-Creative-1-41-1"
+  width: 300
+  height: 250
+}
+ad {
+  html_snippet: "<html><body><iframe src=\"https://www.plannto.com/advertisments/show_ads?item_id=106,107&ads_id=41&size=300x250&click_url=%%CLICK_URL_ESC%%&wp=%%WINNING_PRICE%%&sid=&ref_url=http://www.cartrade.com/bugatti-cars&device=pc&v=&cb=%%CACHEBUSTER%%&a=&gid=CAESELz_Eu_JzRmISw7-SNL6c8M&l=1015214\" width=\"300\" height=\"250\" style=\"border:0px;\"/></body></html>"
+  adslot {
+    id: 54
+    max_cpm_micros: 263750000
+    adgroup_id: 18102001720
+  }
+  click_through_url: "http://autoportal.com"
+  vendor_type: 113
+  attribute: 50
+  attribute: 47
+  buyer_creative_id: "PlannTo-Creative-1-41-1"
+  width: 300
+  height: 250
+}
+processing_time_ms: 7
+BidRequest:
+id: "\"\327\200F+-\335\316S?*\377\273\347\237\231"
+ip: "\223&\337"
+user_agent: "Mozilla/4.08 (compatible; MSIE 6.0; Windows NT 5.1)"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 608
+  weight: 0.280184591664
+}
+detected_vertical {
+  id: 355
+  weight: 0.540405148556
+}
+detected_vertical {
+  id: 23
+  weight: 0.260686026152
+}
+detected_vertical {
+  id: 433
+  weight: 0.311724759598
+}
+detected_vertical {
+  id: 607
+  weight: 0.488959961062
+}
+adslot {
+  id: 102
+  width: 300
+  height: 250
+  excluded_attribute: 1
+  excluded_attribute: 48
+  excluded_attribute: 3
+  excluded_attribute: 48
+  excluded_attribute: 5
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 530000
+    direct_deal {
+      direct_deal_id: 1354997101613073629
+      fixed_cpm_micros: 530000
+    }
+  }
+  publisher_settings_list_id: 56751443
+}
+adslot {
+  id: 131
+  width: 300
+  height: 250
+  excluded_attribute: 1
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 360000
+    direct_deal {
+      direct_deal_id: 3282774721722279163
+      fixed_cpm_micros: 360000
+    }
+  }
+  publisher_settings_list_id: 56751472
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 220815
+postal_code: "2753"
+geo_criteria_id: 1000278
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "\262HZR\276[dxB\232*\332%m\213\322"
+ip: "\241z#"
+user_agent: "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.7pre) Gecko/20070815 Firefox/2.0.0.6 Navigator/9.0b3"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 563
+  weight: 0.887812112526
+}
+detected_vertical {
+  id: 570
+  weight: 0.133444774759
+}
+detected_vertical {
+  id: 355
+  weight: 0.395149947408
+}
+detected_vertical {
+  id: 22
+  weight: 0.104064071235
+}
+detected_vertical {
+  id: 609
+  weight: 0.689761022038
+}
+adslot {
+  id: 94
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 620000
+    direct_deal {
+      direct_deal_id: 141654699390078163
+      fixed_cpm_micros: 620000
+    }
+  }
+  publisher_settings_list_id: 56751435
+}
+adslot {
+  id: 174
+  width: 300
+  height: 250
+  excluded_attribute: 1
+  excluded_attribute: 48
+  excluded_attribute: 4
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 100000
+    direct_deal {
+      direct_deal_id: 4080180437359011366
+      fixed_cpm_micros: 100000
+    }
+  }
+  publisher_settings_list_id: 56751515
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 2070937
+postal_code: "94087"
+geo_criteria_id: 9031936
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "\277\224|*I.\021\335\323\221\265q\337\022\177\302"
+ip: "R\245\254"
+user_agent: "Mozilla/4.08 (compatible; MSIE 6.0; Windows NT 5.1)"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 570
+  weight: 0.765811681791
+}
+detected_vertical {
+  id: 563
+  weight: 0.41912214767
+}
+detected_vertical {
+  id: 474
+  weight: 0.816454761385
+}
+detected_vertical {
+  id: 22
+  weight: 0.378651747686
+}
+detected_vertical {
+  id: 119
+  weight: 0.99628437996
+}
+adslot {
+  id: 34
+  width: 300
+  height: 250
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 4
+  excluded_attribute: 48
+  excluded_attribute: 5
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  excluded_sensitive_category: 19
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 910000
+    direct_deal {
+      direct_deal_id: 4571662526082248206
+      fixed_cpm_micros: 910000
+    }
+  }
+  publisher_settings_list_id: 56751375
+}
+adslot {
+  id: 1
+  width: 300
+  height: 250
+  excluded_attribute: 4
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 360000
+    direct_deal {
+      direct_deal_id: 1149540174766789575
+      fixed_cpm_micros: 360000
+    }
+  }
+  publisher_settings_list_id: 56751342
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 1195465
+postal_code: "3000"
+geo_criteria_id: 1000567
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "\225\217\360\212N{\324\340+y\260\245\014\"4@"
+ip: "\222a\031"
+user_agent: "Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10_4_11; en) AppleWebKit/528.5+ (KHTML, like Gecko) Version/4.0 Safari/528.1"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 608
+  weight: 0.843060664413
+}
+detected_vertical {
+  id: 66
+  weight: 0.713236944735
+}
+detected_vertical {
+  id: 563
+  weight: 0.48691769294
+}
+detected_vertical {
+  id: 540
+  weight: 0.159165301812
+}
+detected_vertical {
+  id: 607
+  weight: 0.981746968804
+}
+adslot {
+  id: 170
+  width: 300
+  height: 250
+  excluded_attribute: 5
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 690000
+    direct_deal {
+      direct_deal_id: 2898949930022946646
+      fixed_cpm_micros: 690000
+    }
+  }
+  publisher_settings_list_id: 56751511
+}
+adslot {
+  id: 71
+  width: 300
+  height: 250
+  excluded_attribute: 1
+  excluded_attribute: 48
+  excluded_attribute: 4
+  excluded_attribute: 48
+  excluded_attribute: 5
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 720000
+    direct_deal {
+      direct_deal_id: 3934499671346061551
+      fixed_cpm_micros: 720000
+    }
+  }
+  publisher_settings_list_id: 56751412
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 1798976
+postal_code_prefix: "B3H"
+geo_criteria_id: 1002113
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "\265\213RuR\362\014\226\026;\006i\364_\363?"
+ip: "\260\014]"
+user_agent: "Mozilla/5.0 (Linux; U; Android 2.3.5; en-us; DROID X2 Build/4.5.1A-DTN-200-18) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1,gzip(gfe)"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 24
+  weight: 0.379649896542
+}
+detected_vertical {
+  id: 433
+  weight: 0.609731896298
+}
+detected_vertical {
+  id: 23
+  weight: 0.520578604238
+}
+detected_vertical {
+  id: 565
+  weight: 0.104226061462
+}
+detected_vertical {
+  id: 119
+  weight: 0.0767005962227
+}
+adslot {
+  id: 200
+  width: 728
+  height: 90
+  excluded_attribute: 2
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 700000
+    direct_deal {
+      direct_deal_id: 4121307365767850188
+      fixed_cpm_micros: 700000
+    }
+  }
+  publisher_settings_list_id: 56751541
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+mobile {
+  platform: "android"
+  is_app: false
+  mobile_device_type: HIGHEND_PHONE
+  screen_orientation: 0
+  is_interstitial_request: false
+  os_version {
+    os_version_major: 2
+    os_version_minor: 3
+    os_version_micro: 5
+  }
+  carrier_id: 71352
+}
+cookie_age_seconds: 2038873
+postal_code_prefix: "M4C"
+geo_criteria_id: 1002451
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "\027\334\361\222D\274Mk\234\002\014;\323\023\300\211"
+ip: "\304\216\252"
+user_agent: "Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10_4_11; en) AppleWebKit/528.5+ (KHTML, like Gecko) Version/4.0 Safari/528.1"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 24
+  weight: 0.996519250542
+}
+detected_vertical {
+  id: 66
+  weight: 0.782760616556
+}
+detected_vertical {
+  id: 379
+  weight: 0.97828199184
+}
+detected_vertical {
+  id: 380
+  weight: 0.512780030108
+}
+detected_vertical {
+  id: 22
+  weight: 0.156607642157
+}
+adslot {
+  id: 132
+  width: 300
+  height: 250
+  excluded_attribute: 1
+  excluded_attribute: 48
+  excluded_attribute: 5
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 800000
+    direct_deal {
+      direct_deal_id: 4032032597941781033
+      fixed_cpm_micros: 800000
+    }
+  }
+  publisher_settings_list_id: 56751473
+}
+adslot {
+  id: 17
+  width: 300
+  height: 250
+  excluded_attribute: 3
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 620000
+    direct_deal {
+      direct_deal_id: 4477061950212908381
+      fixed_cpm_micros: 620000
+    }
+  }
+  publisher_settings_list_id: 56751358
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 784612
+postal_code_prefix: "M4C"
+geo_criteria_id: 1002451
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "9.JO6\247x\220\007\217\2121$<<\023"
+ip: "\246\027S"
+user_agent: "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.2pre) Gecko/20070118 Firefox/2.0.0.2pre"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 608
+  weight: 0.194093925984
+}
+detected_vertical {
+  id: 433
+  weight: 0.249867839914
+}
+detected_vertical {
+  id: 66
+  weight: 0.3096239671
+}
+detected_vertical {
+  id: 379
+  weight: 0.744828403242
+}
+detected_vertical {
+  id: 540
+  weight: 0.0854220303341
+}
+adslot {
+  id: 187
+  width: 300
+  height: 250
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 20000
+    direct_deal {
+      direct_deal_id: 3001654349972852618
+      fixed_cpm_micros: 20000
+    }
+  }
+  publisher_settings_list_id: 56751528
+}
+adslot {
+  id: 97
+  width: 300
+  height: 250
+  excluded_attribute: 3
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+  }
+  publisher_settings_list_id: 56751438
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 2029025
+postal_code: "27583"
+geo_criteria_id: 1021337
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "L\323\036\200\340fad\311Q\324\212\335\354\3349"
+ip: "\274j\256"
+user_agent: "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0;)"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 24
+  weight: 0.34015782702
+}
+detected_vertical {
+  id: 379
+  weight: 0.175958308041
+}
+detected_vertical {
+  id: 355
+  weight: 0.547537506689
+}
+detected_vertical {
+  id: 433
+  weight: 0.0151640568809
+}
+detected_vertical {
+  id: 23
+  weight: 0.00766396840888
+}
+adslot {
+  id: 135
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 720000
+    direct_deal {
+      direct_deal_id: 878724210477060517
+      fixed_cpm_micros: 720000
+    }
+  }
+  publisher_settings_list_id: 56751476
+}
+adslot {
+  id: 93
+  width: 300
+  height: 250
+  excluded_attribute: 1
+  excluded_attribute: 48
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 5
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  excluded_sensitive_category: 8
+  excluded_sensitive_category: 18
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 740000
+    direct_deal {
+      direct_deal_id: 2879910792448385181
+      fixed_cpm_micros: 740000
+    }
+  }
+  publisher_settings_list_id: 56751434
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 1254528
+postal_code: "10116"
+geo_criteria_id: 9005559
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 6
+BidRequest:
+id: "9\034\256\250\036-\026D N6\201\'\260\317\331"
+ip: "\256\276\n"
+user_agent: "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0;)"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 355
+  weight: 0.902566076756
+}
+detected_vertical {
+  id: 608
+  weight: 0.95322303722
+}
+detected_vertical {
+  id: 23
+  weight: 0.880461557713
+}
+detected_vertical {
+  id: 540
+  weight: 0.630628758717
+}
+detected_vertical {
+  id: 119
+  weight: 0.615905494413
+}
+adslot {
+  id: 134
+  width: 300
+  height: 250
+  excluded_attribute: 5
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  excluded_sensitive_category: 25
+  excluded_sensitive_category: 18
+  excluded_sensitive_category: 5
+  matching_ad_data {
+    adgroup_id: 18102001720
+  }
+  publisher_settings_list_id: 56751475
+}
+adslot {
+  id: 170
+  width: 300
+  height: 250
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 850000
+    direct_deal {
+      direct_deal_id: 1391826434927799887
+      fixed_cpm_micros: 850000
+    }
+  }
+  publisher_settings_list_id: 56751511
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 1122460
+postal_code_prefix: "M4C"
+geo_criteria_id: 1002451
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "\231\005\337oN-\026\356\002!\245\335\351_B-"
+ip: "/\013\021"
+user_agent: "Mozilla/5.0 (Macintosh; U; PPC Mac OS X; sv-se) AppleWebKit/419 (KHTML, like Gecko) Safari/419.3"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 24
+  weight: 0.948408003276
+}
+detected_vertical {
+  id: 433
+  weight: 0.370671112449
+}
+detected_vertical {
+  id: 379
+  weight: 0.502282098578
+}
+detected_vertical {
+  id: 565
+  weight: 0.677338202181
+}
+detected_vertical {
+  id: 23
+  weight: 0.759899974964
+}
+adslot {
+  id: 75
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 5
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  excluded_sensitive_category: 25
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 430000
+    direct_deal {
+      direct_deal_id: 2683804153521445048
+      fixed_cpm_micros: 430000
+    }
+  }
+  publisher_settings_list_id: 56751416
+}
+adslot {
+  id: 131
+  width: 300
+  height: 250
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 970000
+    direct_deal {
+      direct_deal_id: 4399927851307758228
+      fixed_cpm_micros: 970000
+    }
+  }
+  publisher_settings_list_id: 56751472
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 998537
+postal_code_prefix: "E1B"
+geo_criteria_id: 1002061
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "!D\263\243\037\017r>\361\213\261P\036\352M\026"
+ip: "l\245\036"
+user_agent: "Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.0.2) Gecko/2008092313 Ubuntu/8.04 (hardy) Firefox/3.1"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 563
+  weight: 0.140033892691
+}
+detected_vertical {
+  id: 474
+  weight: 0.0126427113447
+}
+detected_vertical {
+  id: 355
+  weight: 0.031917312683
+}
+detected_vertical {
+  id: 540
+  weight: 0.616258198885
+}
+detected_vertical {
+  id: 119
+  weight: 0.171694625783
+}
+adslot {
+  id: 64
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 5
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 220000
+    direct_deal {
+      direct_deal_id: 3901099842805206783
+      fixed_cpm_micros: 220000
+    }
+  }
+  publisher_settings_list_id: 56751405
+}
+adslot {
+  id: 139
+  excluded_attribute: 1
+  excluded_attribute: 48
+  excluded_attribute: 3
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  excluded_sensitive_category: 19
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 520000
+    direct_deal {
+      direct_deal_id: 135688625896665595
+      fixed_cpm_micros: 520000
+    }
+  }
+  publisher_settings_list_id: 56751480
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+video {
+  videoad_start_delay: -1
+  max_ad_duration: 37000
+}
+cookie_age_seconds: 1480004
+postal_code: "02102"
+geo_criteria_id: 1018127
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "\037\000\265\357+B\323\234\320\347\275\360\234\341\001w"
+ip: "\236\357."
+user_agent: "Mozilla/5.0 (BlackBerry; U; BlackBerry 9220; en) AppleWebKit/534.11+ (KHTML, like Gecko) Version/7.1.0.337 Mobile Safari/534.11+,gzip(gfe)"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 608
+  weight: 0.93290221553
+}
+detected_vertical {
+  id: 24
+  weight: 0.429424877634
+}
+detected_vertical {
+  id: 563
+  weight: 0.65460974844
+}
+detected_vertical {
+  id: 380
+  weight: 0.782834478187
+}
+detected_vertical {
+  id: 565
+  weight: 0.0443352513684
+}
+adslot {
+  id: 94
+  width: 320
+  height: 50
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 3
+  excluded_attribute: 48
+  excluded_attribute: 4
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 30000
+    direct_deal {
+      direct_deal_id: 9602111962841732
+      fixed_cpm_micros: 30000
+    }
+  }
+  publisher_settings_list_id: 56751435
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+mobile {
+  platform: "blackberry"
+  is_app: false
+  mobile_device_type: HIGHEND_PHONE
+  screen_orientation: 0
+  is_interstitial_request: false
+  os_version {
+    os_version_major: 9
+    os_version_minor: 2
+    os_version_micro: 20
+  }
+  carrier_id: 71352
+}
+cookie_age_seconds: 1422969
+postal_code: "3000"
+geo_criteria_id: 1000567
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "\027\223\005\243\334\247n\036|$0_Z\356+\354"
+ip: "\236r\306"
+user_agent: "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.2pre) Gecko/20070118 Firefox/2.0.0.2pre"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 608
+  weight: 0.35653216673
+}
+detected_vertical {
+  id: 563
+  weight: 0.433220978224
+}
+detected_vertical {
+  id: 379
+  weight: 0.135913810169
+}
+detected_vertical {
+  id: 22
+  weight: 0.992321412012
+}
+detected_vertical {
+  id: 23
+  weight: 0.386239455885
+}
+adslot {
+  id: 102
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 5
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 980000
+    direct_deal {
+      direct_deal_id: 4192509005234106873
+      fixed_cpm_micros: 980000
+    }
+  }
+  publisher_settings_list_id: 56751443
+}
+adslot {
+  id: 189
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 3
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 780000
+    direct_deal {
+      direct_deal_id: 1441932858672045680
+      fixed_cpm_micros: 780000
+    }
+  }
+  publisher_settings_list_id: 56751530
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 988316
+postal_code: "27583"
+geo_criteria_id: 1021337
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "W\227\237`\3027\360\rB\320\305\333\352\311)\253"
+ip: "\231\207t"
+user_agent: "Mozilla/4.08 (compatible; MSIE 6.0; Windows NT 5.1)"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 570
+  weight: 0.958931798677
+}
+detected_vertical {
+  id: 474
+  weight: 0.429416121237
+}
+detected_vertical {
+  id: 355
+  weight: 0.506864348519
+}
+detected_vertical {
+  id: 565
+  weight: 0.685243804985
+}
+detected_vertical {
+  id: 607
+  weight: 0.686980972392
+}
+adslot {
+  id: 81
+  width: 300
+  height: 250
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 810000
+    direct_deal {
+      direct_deal_id: 8323409543437089
+      fixed_cpm_micros: 810000
+    }
+  }
+  publisher_settings_list_id: 56751422
+}
+adslot {
+  id: 53
+  width: 300
+  height: 250
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 340000
+    direct_deal {
+      direct_deal_id: 3140929213656027925
+      fixed_cpm_micros: 340000
+    }
+  }
+  publisher_settings_list_id: 56751394
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 535661
+postal_code: "02102"
+geo_criteria_id: 1018127
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "0\366\271\257_x\206\324\305\214\307k#\234\206\321"
+ip: "-5a"
+user_agent: "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0;)"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 24
+  weight: 0.249645815082
+}
+detected_vertical {
+  id: 609
+  weight: 0.663834415412
+}
+detected_vertical {
+  id: 570
+  weight: 0.687632284588
+}
+detected_vertical {
+  id: 355
+  weight: 0.604689890077
+}
+detected_vertical {
+  id: 22
+  weight: 0.165163771666
+}
+adslot {
+  id: 7
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 2
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 780000
+    direct_deal {
+      direct_deal_id: 4151216400644927901
+      fixed_cpm_micros: 780000
+    }
+  }
+  publisher_settings_list_id: 56751348
+}
+adslot {
+  id: 133
+  width: 300
+  height: 250
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  excluded_sensitive_category: 25
+  excluded_sensitive_category: 18
+  excluded_sensitive_category: 4
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 100000
+    direct_deal {
+      direct_deal_id: 1526477367142182815
+      fixed_cpm_micros: 100000
+    }
+  }
+  publisher_settings_list_id: 56751474
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 2395192
+postal_code: "4810"
+geo_criteria_id: 1000414
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "\205\344uQ\263\367\022\354\225\351\356\016\354\347\340\266"
+ip: "`\264\211"
+user_agent: "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0;)"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 608
+  weight: 0.77116190277
+}
+detected_vertical {
+  id: 355
+  weight: 0.180556395294
+}
+detected_vertical {
+  id: 66
+  weight: 0.0626710863324
+}
+detected_vertical {
+  id: 379
+  weight: 0.304291595406
+}
+detected_vertical {
+  id: 540
+  weight: 0.732737522069
+}
+adslot {
+  id: 172
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 3
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 320000
+    direct_deal {
+      direct_deal_id: 2636499554672829294
+      fixed_cpm_micros: 320000
+    }
+  }
+  publisher_settings_list_id: 56751513
+}
+adslot {
+  id: 157
+  width: 300
+  height: 250
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 4
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 450000
+    direct_deal {
+      direct_deal_id: 3431137968271068814
+      fixed_cpm_micros: 450000
+    }
+  }
+  publisher_settings_list_id: 56751498
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 1104863
+postal_code: "3000"
+geo_criteria_id: 1000567
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "\231\371w\217\307u9\272~\016A\277\360n\200O"
+ip: "\360F\343"
+user_agent: "Mozilla/5.0 (BlackBerry; U; BlackBerry 9220; en) AppleWebKit/534.11+ (KHTML, like Gecko) Version/7.1.0.337 Mobile Safari/534.11+,gzip(gfe)"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 24
+  weight: 0.300214658512
+}
+detected_vertical {
+  id: 609
+  weight: 0.28768082478
+}
+detected_vertical {
+  id: 474
+  weight: 0.368493940935
+}
+detected_vertical {
+  id: 563
+  weight: 0.833763310803
+}
+detected_vertical {
+  id: 570
+  weight: 0.210990608732
+}
+adslot {
+  id: 12
+  width: 320
+  height: 50
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 5
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 70000
+    direct_deal {
+      direct_deal_id: 4024328213391625254
+      fixed_cpm_micros: 70000
+    }
+  }
+  publisher_settings_list_id: 56751353
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+mobile {
+  platform: "blackberry"
+  is_app: false
+  mobile_device_type: HIGHEND_PHONE
+  screen_orientation: 0
+  is_interstitial_request: false
+  os_version {
+    os_version_major: 9
+    os_version_minor: 2
+    os_version_micro: 20
+  }
+  carrier_id: 70361
+}
+cookie_age_seconds: 2171759
+postal_code_prefix: "E1B"
+geo_criteria_id: 1002061
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "\372)\354K\267\377\377\'{\373Gr\'\352\2148"
+ip: "\226E7"
+user_agent: "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0;)"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 563
+  weight: 0.0944209640718
+}
+detected_vertical {
+  id: 474
+  weight: 0.596297901186
+}
+detected_vertical {
+  id: 379
+  weight: 0.532576431725
+}
+detected_vertical {
+  id: 66
+  weight: 0.268837433616
+}
+detected_vertical {
+  id: 23
+  weight: 0.536836534583
+}
+adslot {
+  id: 19
+  width: 300
+  height: 250
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 920000
+    direct_deal {
+      direct_deal_id: 1410024446766377838
+      fixed_cpm_micros: 920000
+    }
+  }
+  publisher_settings_list_id: 56751360
+}
+adslot {
+  id: 178
+  width: 300
+  height: 250
+  excluded_attribute: 1
+  excluded_attribute: 48
+  excluded_attribute: 4
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 910000
+    direct_deal {
+      direct_deal_id: 1016411626201537739
+      fixed_cpm_micros: 910000
+    }
+  }
+  publisher_settings_list_id: 56751519
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 709105
+postal_code: "94087"
+geo_criteria_id: 9031936
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "!-\301\275\375\262\354\376I\007[:\272\204\031\303"
+ip: "\212\272\203"
+user_agent: "Mozilla/5.0 (iPhone; CPU iPhone OS 6_1_2 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Mobile/10B146,gzip(gfe)"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 608
+  weight: 0.665098334328
+}
+detected_vertical {
+  id: 474
+  weight: 0.789114083108
+}
+detected_vertical {
+  id: 66
+  weight: 0.397583831057
+}
+detected_vertical {
+  id: 22
+  weight: 0.949440964371
+}
+detected_vertical {
+  id: 23
+  weight: 0.543495986825
+}
+adslot {
+  id: 124
+  width: 320
+  height: 50
+  excluded_attribute: 2
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 480000
+    direct_deal {
+      direct_deal_id: 2568618946766501706
+      fixed_cpm_micros: 480000
+    }
+  }
+  publisher_settings_list_id: 56751465
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+mobile {
+  platform: "iphone"
+  app_id: "4453712097"
+  is_app: true
+  mobile_device_type: HIGHEND_PHONE
+  screen_orientation: 1
+  is_interstitial_request: false
+  app_category_ids: 60556
+  app_category_ids: 60548
+  app_category_ids: 60508
+  app_category_ids: 60564
+  os_version {
+    os_version_major: 6
+    os_version_minor: 1
+    os_version_micro: 2
+  }
+  carrier_id: 70152
+}
+cookie_age_seconds: 2436896
+postal_code: "99501"
+geo_criteria_id: 1012873
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "\246\263x\331\022x&\324\244)v\0337\351\301Q"
+ip: "\215\306m"
+user_agent: "Mozilla/4.08 (compatible; MSIE 6.0; Windows NT 5.1)"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 23
+  weight: 0.993141040952
+}
+detected_vertical {
+  id: 570
+  weight: 0.91129757492
+}
+detected_vertical {
+  id: 379
+  weight: 0.446198807237
+}
+detected_vertical {
+  id: 474
+  weight: 0.333638626684
+}
+detected_vertical {
+  id: 607
+  weight: 0.957995263036
+}
+adslot {
+  id: 170
+  width: 300
+  height: 250
+  excluded_attribute: 1
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 390000
+    direct_deal {
+      direct_deal_id: 1547175414153670814
+      fixed_cpm_micros: 390000
+    }
+  }
+  publisher_settings_list_id: 56751511
+}
+adslot {
+  id: 157
+  width: 300
+  height: 250
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 3
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 550000
+    direct_deal {
+      direct_deal_id: 1852066720582649165
+      fixed_cpm_micros: 550000
+    }
+  }
+  publisher_settings_list_id: 56751498
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 2251074
+postal_code: "94087"
+geo_criteria_id: 9031936
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "X\ty\206\361\355v\031~\342\355\356\007F\257\030"
+ip: "w\007\310"
+user_agent: "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.7pre) Gecko/20070815 Firefox/2.0.0.6 Navigator/9.0b3"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 24
+  weight: 0.393728694793
+}
+detected_vertical {
+  id: 609
+  weight: 0.79175820502
+}
+detected_vertical {
+  id: 563
+  weight: 0.937040939533
+}
+detected_vertical {
+  id: 540
+  weight: 0.82213644331
+}
+detected_vertical {
+  id: 119
+  weight: 0.700739351581
+}
+adslot {
+  id: 136
+  width: 300
+  height: 250
+  excluded_attribute: 4
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 920000
+    direct_deal {
+      direct_deal_id: 646379420153018824
+      fixed_cpm_micros: 920000
+    }
+  }
+  publisher_settings_list_id: 56751477
+}
+adslot {
+  id: 135
+  width: 300
+  height: 250
+  excluded_attribute: 3
+  excluded_attribute: 48
+  excluded_attribute: 4
+  excluded_attribute: 48
+  excluded_attribute: 5
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 630000
+    direct_deal {
+      direct_deal_id: 2861933332580035094
+      fixed_cpm_micros: 630000
+    }
+  }
+  publisher_settings_list_id: 56751476
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 2221107
+postal_code: "2753"
+geo_criteria_id: 1000278
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "\022@\210\363\263\312\316\251\014\237\366v&\354\202z"
+ip: "\271B\333"
+user_agent: "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.7pre) Gecko/20070815 Firefox/2.0.0.6 Navigator/9.0b3"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 24
+  weight: 0.0895157783084
+}
+detected_vertical {
+  id: 379
+  weight: 0.425198828799
+}
+detected_vertical {
+  id: 607
+  weight: 0.148881156914
+}
+detected_vertical {
+  id: 355
+  weight: 0.101067628681
+}
+detected_vertical {
+  id: 23
+  weight: 0.0248780990892
+}
+adslot {
+  id: 102
+  width: 300
+  height: 250
+  excluded_attribute: 3
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 780000
+    direct_deal {
+      direct_deal_id: 997792034766681577
+      fixed_cpm_micros: 780000
+    }
+  }
+  publisher_settings_list_id: 56751443
+}
+adslot {
+  id: 88
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 890000
+    direct_deal {
+      direct_deal_id: 4327603314852701957
+      fixed_cpm_micros: 890000
+    }
+  }
+  publisher_settings_list_id: 56751429
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 142563
+postal_code_prefix: "B3H"
+geo_criteria_id: 1002113
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "\331\032\001\\\300\336\017\210\315\033\342\353\250)\364\225"
+ip: "|\353l"
+user_agent: "Mozilla/5.0 (Macintosh; U; PPC Mac OS X; sv-se) AppleWebKit/419 (KHTML, like Gecko) Safari/419.3"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 119
+  weight: 0.753321279897
+}
+detected_vertical {
+  id: 609
+  weight: 0.241007261435
+}
+detected_vertical {
+  id: 474
+  weight: 0.130698986267
+}
+detected_vertical {
+  id: 563
+  weight: 0.633000988342
+}
+detected_vertical {
+  id: 433
+  weight: 0.348270148458
+}
+adslot {
+  id: 85
+  width: 300
+  height: 250
+  excluded_attribute: 1
+  excluded_attribute: 48
+  excluded_attribute: 4
+  excluded_attribute: 48
+  excluded_attribute: 5
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  excluded_sensitive_category: 7
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 600000
+    direct_deal {
+      direct_deal_id: 4064964252430851366
+      fixed_cpm_micros: 600000
+    }
+  }
+  publisher_settings_list_id: 56751426
+}
+adslot {
+  id: 15
+  width: 300
+  height: 250
+  excluded_attribute: 1
+  excluded_attribute: 48
+  excluded_attribute: 3
+  excluded_attribute: 48
+  excluded_attribute: 4
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+  }
+  publisher_settings_list_id: 56751356
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 709668
+postal_code_prefix: "B3H"
+geo_criteria_id: 1002113
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "\213;s\237\203\007W-\303\312\3332Z0\377p"
+ip: "a7\216"
+user_agent: "Mozilla/4.08 (compatible; MSIE 6.0; Windows NT 5.1)"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 66
+  weight: 0.114041146623
+}
+detected_vertical {
+  id: 540
+  weight: 0.617031502738
+}
+detected_vertical {
+  id: 565
+  weight: 0.897900986751
+}
+detected_vertical {
+  id: 22
+  weight: 0.719710733125
+}
+detected_vertical {
+  id: 607
+  weight: 0.949757232601
+}
+adslot {
+  id: 133
+  width: 300
+  height: 250
+  excluded_attribute: 1
+  excluded_attribute: 48
+  excluded_attribute: 5
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 600000
+    direct_deal {
+      direct_deal_id: 2307339154925985596
+      fixed_cpm_micros: 600000
+    }
+  }
+  publisher_settings_list_id: 56751474
+}
+adslot {
+  id: 165
+  width: 300
+  height: 250
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  excluded_sensitive_category: 0
+  excluded_sensitive_category: 4
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 540000
+    direct_deal {
+      direct_deal_id: 3184699087236362942
+      fixed_cpm_micros: 540000
+    }
+  }
+  publisher_settings_list_id: 56751506
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 1365845
+postal_code: "10116"
+geo_criteria_id: 9005559
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 0
+BidRequest:
+id: "\333Z\0176;\341\324gn$d\211\211C\265\022"
+ip: "\315\352\t"
+user_agent: "Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.0.2) Gecko/2008092313 Ubuntu/8.04 (hardy) Firefox/3.1"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 608
+  weight: 0.638342798011
+}
+detected_vertical {
+  id: 24
+  weight: 0.675000480041
+}
+detected_vertical {
+  id: 570
+  weight: 0.745705096718
+}
+detected_vertical {
+  id: 379
+  weight: 0.791345143615
+}
+detected_vertical {
+  id: 66
+  weight: 0.428560127451
+}
+adslot {
+  id: 104
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 3
+  excluded_attribute: 48
+  excluded_attribute: 1
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 170000
+    direct_deal {
+      direct_deal_id: 3951137042083007002
+      fixed_cpm_micros: 170000
+    }
+  }
+  publisher_settings_list_id: 56751445
+}
+adslot {
+  id: 35
+  width: 300
+  height: 250
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 3
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 480000
+    direct_deal {
+      direct_deal_id: 656947236190255662
+      fixed_cpm_micros: 480000
+    }
+  }
+  publisher_settings_list_id: 56751376
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 260170
+postal_code_prefix: "B3H"
+geo_criteria_id: 1002113
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "Ku\000\357|C)\233\003 Bnp\2419\274"
+ip: "\034\320\361"
+user_agent: "Mozilla/4.08 (compatible; MSIE 6.0; Windows NT 5.1)"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 570
+  weight: 0.474882278326
+}
+detected_vertical {
+  id: 540
+  weight: 0.979679812938
+}
+detected_vertical {
+  id: 66
+  weight: 0.78738617073
+}
+detected_vertical {
+  id: 22
+  weight: 0.817005978523
+}
+detected_vertical {
+  id: 119
+  weight: 0.60736816262
+}
+adslot {
+  id: 54
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 760000
+    direct_deal {
+      direct_deal_id: 3408048327420024173
+      fixed_cpm_micros: 760000
+    }
+  }
+  publisher_settings_list_id: 56751395
+}
+adslot {
+  id: 13
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 5
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 830000
+    direct_deal {
+      direct_deal_id: 2083211553166744352
+      fixed_cpm_micros: 830000
+    }
+  }
+  publisher_settings_list_id: 56751354
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 90202
+postal_code: "27583"
+geo_criteria_id: 1021337
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "UP\355\220\014\274\261\351\013\243G\3208=\251\221"
+ip: "\303\032\252"
+user_agent: "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0;)"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 355
+  weight: 0.915786456886
+}
+detected_vertical {
+  id: 379
+  weight: 0.0400671272092
+}
+detected_vertical {
+  id: 563
+  weight: 0.165055323875
+}
+detected_vertical {
+  id: 22
+  weight: 0.22366765304
+}
+detected_vertical {
+  id: 607
+  weight: 0.091563645251
+}
+adslot {
+  id: 87
+  width: 300
+  height: 250
+  excluded_attribute: 1
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 420000
+    direct_deal {
+      direct_deal_id: 3716529610512555956
+      fixed_cpm_micros: 420000
+    }
+  }
+  publisher_settings_list_id: 56751428
+}
+adslot {
+  id: 138
+  width: 300
+  height: 250
+  excluded_attribute: 5
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 320000
+    direct_deal {
+      direct_deal_id: 3203440000097361390
+      fixed_cpm_micros: 320000
+    }
+  }
+  publisher_settings_list_id: 56751479
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 970316
+postal_code: "3000"
+geo_criteria_id: 1000567
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "?\340i3\312\333cY\354R\205\200\316;{\215"
+ip: "\304;\024"
+user_agent: "Mozilla/5.0 (Windows; U; MSIE 7.0; Windows NT 6.0; en-US)"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 433
+  weight: 0.195098486912
+}
+detected_vertical {
+  id: 66
+  weight: 0.905072227763
+}
+detected_vertical {
+  id: 379
+  weight: 0.737079975098
+}
+detected_vertical {
+  id: 570
+  weight: 0.531490909484
+}
+detected_vertical {
+  id: 23
+  weight: 0.290791861789
+}
+adslot {
+  id: 60
+  width: 300
+  height: 250
+  excluded_attribute: 1
+  excluded_attribute: 48
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 730000
+    direct_deal {
+      direct_deal_id: 126292937269357915
+      fixed_cpm_micros: 730000
+    }
+  }
+  publisher_settings_list_id: 56751401
+}
+adslot {
+  id: 17
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  excluded_sensitive_category: 3
+  excluded_sensitive_category: 19
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 700000
+    direct_deal {
+      direct_deal_id: 4181850041337297154
+      fixed_cpm_micros: 700000
+    }
+  }
+  publisher_settings_list_id: 56751358
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 637837
+postal_code_prefix: "B3H"
+geo_criteria_id: 1002113
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: ",\237\014c\266\222=\303\326\307h\r\300z\234v"
+ip: "\033\036("
+user_agent: "Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.0.2) Gecko/2008092313 Ubuntu/8.04 (hardy) Firefox/3.1"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 608
+  weight: 0.200079111169
+}
+detected_vertical {
+  id: 609
+  weight: 0.500638626039
+}
+detected_vertical {
+  id: 563
+  weight: 0.564246933643
+}
+detected_vertical {
+  id: 380
+  weight: 0.113230518026
+}
+detected_vertical {
+  id: 355
+  weight: 0.917772542896
+}
+adslot {
+  id: 99
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 50000
+    direct_deal {
+      direct_deal_id: 1501323565853624170
+      fixed_cpm_micros: 50000
+    }
+  }
+  publisher_settings_list_id: 56751440
+}
+adslot {
+  id: 63
+  width: 300
+  height: 250
+  excluded_attribute: 5
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 60000
+    direct_deal {
+      direct_deal_id: 996265372130245831
+      fixed_cpm_micros: 60000
+    }
+  }
+  publisher_settings_list_id: 56751404
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 1922750
+postal_code: "2753"
+geo_criteria_id: 1000278
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "\005b\000\326\"\344K\374\034z\237\350{kp\325"
+ip: "\270v\037"
+user_agent: "Mozilla/5.0 (Linux; U; Android 2.3.5; en-us; DROID X2 Build/4.5.1A-DTN-200-18) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1,gzip(gfe)"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 355
+  weight: 0.673927741536
+}
+detected_vertical {
+  id: 570
+  weight: 0.484855245753
+}
+detected_vertical {
+  id: 563
+  weight: 0.917516901067
+}
+detected_vertical {
+  id: 474
+  weight: 0.21258010898
+}
+detected_vertical {
+  id: 119
+  weight: 0.829596892553
+}
+adslot {
+  id: 167
+  width: 728
+  height: 90
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 4
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  excluded_sensitive_category: 4
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 420000
+    direct_deal {
+      direct_deal_id: 2552204256626375185
+      fixed_cpm_micros: 420000
+    }
+  }
+  publisher_settings_list_id: 56751508
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+mobile {
+  platform: "android"
+  is_app: false
+  mobile_device_type: HIGHEND_PHONE
+  screen_orientation: 0
+  is_interstitial_request: false
+  os_version {
+    os_version_major: 2
+    os_version_minor: 3
+    os_version_micro: 5
+  }
+  carrier_id: 70392
+}
+cookie_age_seconds: 376650
+postal_code: "94087"
+geo_criteria_id: 9031936
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "\372\357d\277\226WI[\373m\305K\r\030\335\355"
+ip: "\223\317]"
+user_agent: "Mozilla/5.0 (Windows; U; MSIE 7.0; Windows NT 6.0; en-US)"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 609
+  weight: 0.68611667365
+}
+detected_vertical {
+  id: 570
+  weight: 0.891743579972
+}
+detected_vertical {
+  id: 563
+  weight: 0.512098023741
+}
+detected_vertical {
+  id: 565
+  weight: 0.570879921436
+}
+detected_vertical {
+  id: 119
+  weight: 0.617142461495
+}
+adslot {
+  id: 59
+  width: 300
+  height: 250
+  excluded_attribute: 4
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 220000
+    direct_deal {
+      direct_deal_id: 715674946133195767
+      fixed_cpm_micros: 220000
+    }
+  }
+  publisher_settings_list_id: 56751400
+}
+adslot {
+  id: 189
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 3
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  excluded_sensitive_category: 24
+  excluded_sensitive_category: 18
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 490000
+    direct_deal {
+      direct_deal_id: 2727515130193451842
+      fixed_cpm_micros: 490000
+    }
+  }
+  publisher_settings_list_id: 56751530
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 1759890
+postal_code_prefix: "M4C"
+geo_criteria_id: 1002451
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "\321B\013\257\010\252\377v\275R\250\016\332\221\2172"
+ip: "8\323h"
+user_agent: "Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10_4_11; en) AppleWebKit/528.5+ (KHTML, like Gecko) Version/4.0 Safari/528.1"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 608
+  weight: 0.467283480922
+}
+detected_vertical {
+  id: 379
+  weight: 0.432928756455
+}
+detected_vertical {
+  id: 23
+  weight: 0.870371506707
+}
+detected_vertical {
+  id: 355
+  weight: 0.441503142008
+}
+detected_vertical {
+  id: 607
+  weight: 0.691119938484
+}
+adslot {
+  id: 23
+  width: 300
+  height: 250
+  excluded_attribute: 1
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 830000
+    direct_deal {
+      direct_deal_id: 1378398506416050540
+      fixed_cpm_micros: 830000
+    }
+  }
+  publisher_settings_list_id: 56751364
+}
+adslot {
+  id: 147
+  width: 300
+  height: 250
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 390000
+    direct_deal {
+      direct_deal_id: 2914172781308846200
+      fixed_cpm_micros: 390000
+    }
+  }
+  publisher_settings_list_id: 56751488
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 365920
+postal_code_prefix: "M4C"
+geo_criteria_id: 1002451
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "\3312\255\305\336S-\321x\351 *\023\344G\357"
+ip: "m\177\335"
+user_agent: "Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10_4_11; en) AppleWebKit/528.5+ (KHTML, like Gecko) Version/4.0 Safari/528.1"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 355
+  weight: 0.121473126704
+}
+detected_vertical {
+  id: 379
+  weight: 0.342343928627
+}
+detected_vertical {
+  id: 563
+  weight: 0.977644041186
+}
+detected_vertical {
+  id: 565
+  weight: 0.306827993788
+}
+detected_vertical {
+  id: 609
+  weight: 0.0714330829832
+}
+adslot {
+  id: 116
+  width: 300
+  height: 250
+  excluded_attribute: 5
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 670000
+    direct_deal {
+      direct_deal_id: 3808810907659877968
+      fixed_cpm_micros: 670000
+    }
+  }
+  publisher_settings_list_id: 56751457
+}
+adslot {
+  id: 70
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 3
+  excluded_attribute: 48
+  excluded_attribute: 4
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 530000
+    direct_deal {
+      direct_deal_id: 3868748999950193335
+      fixed_cpm_micros: 530000
+    }
+  }
+  publisher_settings_list_id: 56751411
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 615880
+postal_code: "2753"
+geo_criteria_id: 1000278
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "S\t\033\221z\315\252\353\013\227U\244\201\257\306\351"
+is_ping: true
+
+BidResponse:
+processing_time_ms: 0
+BidRequest:
+id: "!\255,=I\236\216\305\0031LU\217-\311\305"
+ip: "7\003o"
+user_agent: "Mozilla/5.0 (iPhone; CPU iPhone OS 6_1_2 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Mobile/10B146,gzip(gfe)"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 24
+  weight: 0.0420098523662
+}
+detected_vertical {
+  id: 66
+  weight: 0.771994935867
+}
+detected_vertical {
+  id: 379
+  weight: 0.752280654852
+}
+detected_vertical {
+  id: 22
+  weight: 0.903061816204
+}
+detected_vertical {
+  id: 607
+  weight: 0.35779264368
+}
+adslot {
+  id: 22
+  width: 320
+  height: 50
+  excluded_attribute: 1
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 820000
+    direct_deal {
+      direct_deal_id: 3622599293873521794
+      fixed_cpm_micros: 820000
+    }
+  }
+  publisher_settings_list_id: 56751363
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+mobile {
+  platform: "iphone"
+  app_id: "610434022"
+  is_app: true
+  mobile_device_type: HIGHEND_PHONE
+  screen_orientation: 1
+  is_interstitial_request: false
+  app_category_ids: 60556
+  app_category_ids: 60548
+  app_category_ids: 60508
+  app_category_ids: 60564
+  os_version {
+    os_version_major: 6
+    os_version_minor: 1
+    os_version_micro: 2
+  }
+  carrier_id: 70392
+}
+cookie_age_seconds: 985792
+postal_code: "2600"
+geo_criteria_id: 1000142
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "Hbg\377\306\227\307\271\357\313m\030\344\330\251\207"
+ip: "\324\010a"
+user_agent: "Mozilla/5.0 (Macintosh; U; PPC Mac OS X; sv-se) AppleWebKit/419 (KHTML, like Gecko) Safari/419.3"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 24
+  weight: 0.373476375481
+}
+detected_vertical {
+  id: 433
+  weight: 0.228836419117
+}
+detected_vertical {
+  id: 474
+  weight: 0.623247256552
+}
+detected_vertical {
+  id: 563
+  weight: 0.277392412975
+}
+detected_vertical {
+  id: 119
+  weight: 0.858734365853
+}
+adslot {
+  id: 83
+  width: 300
+  height: 250
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 840000
+    direct_deal {
+      direct_deal_id: 1439089967769877414
+      fixed_cpm_micros: 840000
+    }
+  }
+  publisher_settings_list_id: 56751424
+}
+adslot {
+  id: 134
+  width: 300
+  height: 250
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 160000
+    direct_deal {
+      direct_deal_id: 215213460877290590
+      fixed_cpm_micros: 160000
+    }
+  }
+  publisher_settings_list_id: 56751475
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 1470403
+postal_code_prefix: "E1B"
+geo_criteria_id: 1002061
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "w^\362h\006\351jU\363\030\224a+0*D"
+ip: "D\374\217"
+user_agent: "Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.0.2) Gecko/2008092313 Ubuntu/8.04 (hardy) Firefox/3.1"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 608
+  weight: 0.786533258229
+}
+detected_vertical {
+  id: 433
+  weight: 0.569971565507
+}
+detected_vertical {
+  id: 355
+  weight: 0.802830692337
+}
+detected_vertical {
+  id: 540
+  weight: 0.516493483123
+}
+detected_vertical {
+  id: 565
+  weight: 0.548654794254
+}
+adslot {
+  id: 105
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 3
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  excluded_sensitive_category: 8
+  excluded_sensitive_category: 25
+  excluded_sensitive_category: 19
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 130000
+    direct_deal {
+      direct_deal_id: 3811257652699959196
+      fixed_cpm_micros: 130000
+    }
+  }
+  publisher_settings_list_id: 56751446
+}
+adslot {
+  id: 150
+  width: 300
+  height: 250
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 3
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 290000
+    direct_deal {
+      direct_deal_id: 214527014998079148
+      fixed_cpm_micros: 290000
+    }
+  }
+  publisher_settings_list_id: 56751491
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 73509
+postal_code: "2600"
+geo_criteria_id: 1000142
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "\323W\325`\246\237\263F\027L\222\031\355\201\270g"
+ip: "P\320L"
+user_agent: "Mozilla/5.0 (BlackBerry; U; BlackBerry 9220; en) AppleWebKit/534.11+ (KHTML, like Gecko) Version/7.1.0.337 Mobile Safari/534.11+,gzip(gfe)"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 609
+  weight: 0.209267728474
+}
+detected_vertical {
+  id: 563
+  weight: 0.367138453892
+}
+detected_vertical {
+  id: 540
+  weight: 0.303343028128
+}
+detected_vertical {
+  id: 22
+  weight: 0.16786243355
+}
+detected_vertical {
+  id: 119
+  weight: 0.0457997745419
+}
+adslot {
+  id: 104
+  width: 320
+  height: 50
+  excluded_attribute: 4
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  excluded_sensitive_category: 8
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 710000
+    direct_deal {
+      direct_deal_id: 3274514738275419998
+      fixed_cpm_micros: 710000
+    }
+  }
+  publisher_settings_list_id: 56751445
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+mobile {
+  platform: "blackberry"
+  is_app: false
+  mobile_device_type: HIGHEND_PHONE
+  screen_orientation: 0
+  is_interstitial_request: false
+  os_version {
+    os_version_major: 9
+    os_version_minor: 2
+    os_version_micro: 20
+  }
+  carrier_id: 71352
+}
+cookie_age_seconds: 524929
+postal_code_prefix: "B3H"
+geo_criteria_id: 1002113
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "\305g\343\372\022r\326e^{fL\305Mx\007"
+ip: "B\260\307"
+user_agent: "Mozilla/5.0 (Windows; U; MSIE 7.0; Windows NT 6.0; en-US)"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 570
+  weight: 0.683716936979
+}
+detected_vertical {
+  id: 380
+  weight: 0.0308289719507
+}
+detected_vertical {
+  id: 565
+  weight: 0.0914726827353
+}
+detected_vertical {
+  id: 22
+  weight: 0.595552102373
+}
+detected_vertical {
+  id: 607
+  weight: 0.226216412564
+}
+adslot {
+  id: 107
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 1
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 670000
+    direct_deal {
+      direct_deal_id: 2880364327446181275
+      fixed_cpm_micros: 670000
+    }
+  }
+  publisher_settings_list_id: 56751448
+}
+adslot {
+  id: 151
+  excluded_attribute: 9
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 340000
+    direct_deal {
+      direct_deal_id: 274106243117896475
+      fixed_cpm_micros: 340000
+    }
+  }
+  publisher_settings_list_id: 56751492
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+video {
+  videoad_start_delay: 36000
+  max_ad_duration: 25000
+}
+cookie_age_seconds: 1953676
+postal_code: "2753"
+geo_criteria_id: 1000278
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "W\023\245\304\002G\212\327\367\213\t\265\260U@\252"
+ip: "7\333\325"
+user_agent: "Mozilla/5.0 (Linux; U; Android 2.3.6; it-it; GT-S5570I Build/GINGERBREAD) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1 (Mobile; afma-sdk-a-v6.1.0),gzip(gfe)"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 24
+  weight: 0.24840901434
+}
+detected_vertical {
+  id: 474
+  weight: 0.326277199563
+}
+detected_vertical {
+  id: 379
+  weight: 0.900528242562
+}
+detected_vertical {
+  id: 540
+  weight: 0.55039961485
+}
+detected_vertical {
+  id: 119
+  weight: 0.261317327504
+}
+adslot {
+  id: 33
+  width: 320
+  height: 50
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 430000
+    direct_deal {
+      direct_deal_id: 2106857547883093715
+      fixed_cpm_micros: 430000
+    }
+  }
+  publisher_settings_list_id: 56751374
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+mobile {
+  platform: "android"
+  app_id: "com.foo.bar"
+  is_app: true
+  mobile_device_type: HIGHEND_PHONE
+  screen_orientation: 2
+  is_interstitial_request: false
+  app_category_ids: 60005
+  os_version {
+    os_version_major: 2
+    os_version_minor: 3
+    os_version_micro: 6
+  }
+  carrier_id: 70361
+}
+cookie_age_seconds: 1806195
+postal_code: "3000"
+geo_criteria_id: 1000567
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "\356\016{\237\376\007o\0374\265QF\0053\275\355"
+ip: "\327\232\240"
+user_agent: "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.2pre) Gecko/20070118 Firefox/2.0.0.2pre"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 24
+  weight: 0.720242143076
+}
+detected_vertical {
+  id: 379
+  weight: 0.181908233452
+}
+detected_vertical {
+  id: 474
+  weight: 0.37490352483
+}
+detected_vertical {
+  id: 563
+  weight: 0.238260871395
+}
+detected_vertical {
+  id: 22
+  weight: 0.67275036367
+}
+adslot {
+  id: 178
+  width: 300
+  height: 250
+  excluded_attribute: 4
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 990000
+    direct_deal {
+      direct_deal_id: 4544841976339130136
+      fixed_cpm_micros: 990000
+    }
+  }
+  publisher_settings_list_id: 56751519
+}
+adslot {
+  id: 35
+  width: 300
+  height: 250
+  excluded_attribute: 2
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  excluded_sensitive_category: 24
+  excluded_sensitive_category: 25
+  excluded_sensitive_category: 3
+  excluded_sensitive_category: 7
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 650000
+    direct_deal {
+      direct_deal_id: 2113376454361974041
+      fixed_cpm_micros: 650000
+    }
+  }
+  publisher_settings_list_id: 56751376
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 2004925
+postal_code: "3000"
+geo_criteria_id: 1000567
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "q\251\341\273\234\353\200\265\350\014\377-\035\374\334R"
+ip: "\360\252\365"
+user_agent: "Mozilla/5.0 (Windows; U; MSIE 7.0; Windows NT 6.0; en-US)"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 355
+  weight: 0.997564907999
+}
+detected_vertical {
+  id: 433
+  weight: 0.463597704562
+}
+detected_vertical {
+  id: 563
+  weight: 0.156230311396
+}
+detected_vertical {
+  id: 540
+  weight: 0.752555370269
+}
+detected_vertical {
+  id: 119
+  weight: 0.883154582392
+}
+adslot {
+  id: 125
+  width: 300
+  height: 250
+  excluded_attribute: 4
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+  }
+  publisher_settings_list_id: 56751466
+}
+adslot {
+  id: 178
+  width: 300
+  height: 250
+  excluded_attribute: 5
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  excluded_sensitive_category: 7
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 490000
+    direct_deal {
+      direct_deal_id: 2466538235833065593
+      fixed_cpm_micros: 490000
+    }
+  }
+  publisher_settings_list_id: 56751519
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 332969
+postal_code_prefix: "E1B"
+geo_criteria_id: 1002061
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "\273\010\360-\306\325\2004\202\000\363\023\227\177$\000"
+ip: "\343\300r"
+user_agent: "Mozilla/5.0 (Windows; U; MSIE 7.0; Windows NT 6.0; en-US)"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 608
+  weight: 0.688766149793
+}
+detected_vertical {
+  id: 355
+  weight: 0.738727492088
+}
+detected_vertical {
+  id: 563
+  weight: 0.700453209425
+}
+detected_vertical {
+  id: 565
+  weight: 0.12402853998
+}
+detected_vertical {
+  id: 433
+  weight: 0.902060677754
+}
+adslot {
+  id: 143
+  width: 300
+  height: 250
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 3
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 970000
+    direct_deal {
+      direct_deal_id: 4594354534784010119
+      fixed_cpm_micros: 970000
+    }
+  }
+  publisher_settings_list_id: 56751484
+}
+adslot {
+  id: 176
+  width: 300
+  height: 250
+  excluded_attribute: 3
+  excluded_attribute: 48
+  excluded_attribute: 4
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 950000
+    direct_deal {
+      direct_deal_id: 3750122817582117167
+      fixed_cpm_micros: 950000
+    }
+  }
+  publisher_settings_list_id: 56751517
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 1569493
+postal_code: "94087"
+geo_criteria_id: 9031936
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "C\370\367)\236\350\214\363\342l\356\211\235t4#"
+ip: "\301y\262"
+user_agent: "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.2pre) Gecko/20070118 Firefox/2.0.0.2pre"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 24
+  weight: 0.225974813873
+}
+detected_vertical {
+  id: 608
+  weight: 0.737602873481
+}
+detected_vertical {
+  id: 570
+  weight: 0.742178783561
+}
+detected_vertical {
+  id: 540
+  weight: 0.335394250872
+}
+detected_vertical {
+  id: 565
+  weight: 0.746379944894
+}
+adslot {
+  id: 131
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 3
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 940000
+    direct_deal {
+      direct_deal_id: 1689723635981277786
+      fixed_cpm_micros: 940000
+    }
+  }
+  publisher_settings_list_id: 56751472
+}
+adslot {
+  id: 96
+  width: 300
+  height: 250
+  excluded_attribute: 5
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+  }
+  publisher_settings_list_id: 56751437
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 946014
+postal_code: "99501"
+geo_criteria_id: 1012873
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "^\004AZ\361D\242\367{\'gm\260\334\340\251"
+ip: "\007C\254"
+user_agent: "Mozilla/5.0 (Linux; U; Android 4.1.1; fr-ca; GT-P3113 Build/JRO03C) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30 (Mobile; afma-sdk-a-v6.1.0),gzip(gfe)"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 433
+  weight: 0.194589568916
+}
+detected_vertical {
+  id: 570
+  weight: 0.838982975844
+}
+detected_vertical {
+  id: 607
+  weight: 0.987897574983
+}
+detected_vertical {
+  id: 540
+  weight: 0.468032228906
+}
+detected_vertical {
+  id: 119
+  weight: 0.557180356641
+}
+adslot {
+  id: 71
+  width: 728
+  height: 90
+  excluded_attribute: 5
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 220000
+    direct_deal {
+      direct_deal_id: 2454951252408418162
+      fixed_cpm_micros: 220000
+    }
+  }
+  publisher_settings_list_id: 56751412
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+mobile {
+  platform: "android"
+  app_id: "com.one.two"
+  is_app: true
+  mobile_device_type: TABLET
+  screen_orientation: 2
+  is_interstitial_request: false
+  app_category_ids: 60025
+  app_category_ids: 60002
+  app_category_ids: 60005
+  os_version {
+    os_version_major: 4
+    os_version_minor: 1
+    os_version_micro: 1
+  }
+  carrier_id: 70392
+}
+cookie_age_seconds: 2096938
+postal_code: "27583"
+geo_criteria_id: 1021337
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "t\260\334\367\020\325\376O\340F\3747\317\323p\277"
+ip: "\316\365}"
+user_agent: "Mozilla/5.0 (iPod; U; CPU iPhone OS 4_2_1 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8C148 Safari/6533.18.5,gzip(gfe)"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 609
+  weight: 0.139892788797
+}
+detected_vertical {
+  id: 66
+  weight: 0.432249408283
+}
+detected_vertical {
+  id: 355
+  weight: 0.113175412636
+}
+detected_vertical {
+  id: 540
+  weight: 0.544136820815
+}
+detected_vertical {
+  id: 607
+  weight: 0.782753337913
+}
+adslot {
+  id: 191
+  width: 728
+  height: 90
+  excluded_attribute: 3
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 670000
+    direct_deal {
+      direct_deal_id: 639182862576823277
+      fixed_cpm_micros: 670000
+    }
+  }
+  publisher_settings_list_id: 56751532
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+mobile {
+  platform: "iphone"
+  is_app: false
+  mobile_device_type: HIGHEND_PHONE
+  screen_orientation: 0
+  is_interstitial_request: false
+  os_version {
+    os_version_major: 4
+    os_version_minor: 2
+    os_version_micro: 1
+  }
+  carrier_id: 71352
+}
+cookie_age_seconds: 489805
+postal_code: "4810"
+geo_criteria_id: 1000414
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "\241&\032H*2\312\252|\035\266\315\017\311r\030"
+ip: "l\303\356"
+user_agent: "Mozilla/4.08 (compatible; MSIE 6.0; Windows NT 5.1)"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 24
+  weight: 0.560796301756
+}
+detected_vertical {
+  id: 433
+  weight: 0.517672844144
+}
+detected_vertical {
+  id: 563
+  weight: 0.601426007952
+}
+detected_vertical {
+  id: 380
+  weight: 0.192627932296
+}
+detected_vertical {
+  id: 608
+  weight: 0.170073951561
+}
+adslot {
+  id: 24
+  width: 300
+  height: 250
+  excluded_attribute: 5
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+  }
+  publisher_settings_list_id: 56751365
+}
+adslot {
+  id: 36
+  width: 300
+  height: 250
+  excluded_attribute: 4
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 270000
+    direct_deal {
+      direct_deal_id: 52170862651523356
+      fixed_cpm_micros: 270000
+    }
+  }
+  publisher_settings_list_id: 56751377
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 504802
+postal_code: "27583"
+geo_criteria_id: 1021337
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "W@\347\027\350\342\2655\231V,\027\030\305nz"
+ip: "\020-\003"
+user_agent: "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0;)"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 119
+  weight: 0.422886331228
+}
+detected_vertical {
+  id: 433
+  weight: 0.329015665013
+}
+detected_vertical {
+  id: 570
+  weight: 0.0254365713922
+}
+detected_vertical {
+  id: 607
+  weight: 0.371740073847
+}
+detected_vertical {
+  id: 23
+  weight: 0.546585179918
+}
+adslot {
+  id: 119
+  excluded_attribute: 1
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 80000
+    direct_deal {
+      direct_deal_id: 2433629452824603403
+      fixed_cpm_micros: 80000
+    }
+  }
+  publisher_settings_list_id: 56751460
+}
+adslot {
+  id: 191
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 5
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 160000
+    direct_deal {
+      direct_deal_id: 110030278748144776
+      fixed_cpm_micros: 160000
+    }
+  }
+  publisher_settings_list_id: 56751532
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+video {
+  videoad_start_delay: -1
+  max_ad_duration: 21000
+}
+cookie_age_seconds: 936327
+postal_code: "27583"
+geo_criteria_id: 1021337
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "\337\243N\303u\260\n\036\352\364Q\246!\326<A"
+ip: "\335R\203"
+user_agent: "Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10_4_11; en) AppleWebKit/528.5+ (KHTML, like Gecko) Version/4.0 Safari/528.1"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 608
+  weight: 0.685014896444
+}
+detected_vertical {
+  id: 570
+  weight: 0.800614072321
+}
+detected_vertical {
+  id: 563
+  weight: 0.301101503602
+}
+detected_vertical {
+  id: 565
+  weight: 0.520293620526
+}
+detected_vertical {
+  id: 23
+  weight: 0.727786703276
+}
+adslot {
+  id: 59
+  width: 300
+  height: 250
+  excluded_attribute: 5
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 670000
+    direct_deal {
+      direct_deal_id: 2066632873666964539
+      fixed_cpm_micros: 670000
+    }
+  }
+  publisher_settings_list_id: 56751400
+}
+adslot {
+  id: 188
+  width: 300
+  height: 250
+  excluded_attribute: 5
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  excluded_sensitive_category: 24
+  excluded_sensitive_category: 25
+  excluded_sensitive_category: 10
+  excluded_sensitive_category: 3
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 230000
+    direct_deal {
+      direct_deal_id: 47487361833708762
+      fixed_cpm_micros: 230000
+    }
+  }
+  publisher_settings_list_id: 56751529
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 1372919
+postal_code: "2600"
+geo_criteria_id: 1000142
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "\354\331\224\3153\020E\2041\005\267\030\311e\255="
+ip: "\321\025M"
+user_agent: "Mozilla/4.08 (compatible; MSIE 6.0; Windows NT 5.1)"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 24
+  weight: 0.46714980819
+}
+detected_vertical {
+  id: 570
+  weight: 0.552837488908
+}
+detected_vertical {
+  id: 540
+  weight: 0.808119661792
+}
+detected_vertical {
+  id: 565
+  weight: 0.98396705592
+}
+detected_vertical {
+  id: 607
+  weight: 0.00653237355899
+}
+adslot {
+  id: 169
+  width: 300
+  height: 250
+  excluded_attribute: 1
+  excluded_attribute: 48
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 4
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 590000
+    direct_deal {
+      direct_deal_id: 98656323990251223
+      fixed_cpm_micros: 590000
+    }
+  }
+  publisher_settings_list_id: 56751510
+}
+adslot {
+  id: 69
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 750000
+    direct_deal {
+      direct_deal_id: 2247709322733084556
+      fixed_cpm_micros: 750000
+    }
+  }
+  publisher_settings_list_id: 56751410
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 1254430
+postal_code_prefix: "M4C"
+geo_criteria_id: 1002451
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "\301\2079\2303\027\222\034\211K\260\246\2169*@"
+ip: "%\262R"
+user_agent: "Mozilla/4.08 (compatible; MSIE 6.0; Windows NT 5.1)"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 24
+  weight: 0.736076181179
+}
+detected_vertical {
+  id: 433
+  weight: 0.0331791843782
+}
+detected_vertical {
+  id: 563
+  weight: 0.297956711314
+}
+detected_vertical {
+  id: 540
+  weight: 0.486865956824
+}
+detected_vertical {
+  id: 23
+  weight: 0.0708203072618
+}
+adslot {
+  id: 161
+  width: 300
+  height: 250
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 830000
+    direct_deal {
+      direct_deal_id: 2778128455818291690
+      fixed_cpm_micros: 830000
+    }
+  }
+  publisher_settings_list_id: 56751502
+}
+adslot {
+  id: 43
+  width: 300
+  height: 250
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  excluded_sensitive_category: 3
+  excluded_sensitive_category: 19
+  excluded_sensitive_category: 5
+  excluded_sensitive_category: 7
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 860000
+    direct_deal {
+      direct_deal_id: 4048274596835379657
+      fixed_cpm_micros: 860000
+    }
+  }
+  publisher_settings_list_id: 56751384
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 165674
+postal_code: "94087"
+geo_criteria_id: 9031936
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "\362\002[\360\255$\321\217X\272\215Yf\244PX"
+ip: "\230\001\016"
+user_agent: "Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10_4_11; en) AppleWebKit/528.5+ (KHTML, like Gecko) Version/4.0 Safari/528.1"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 608
+  weight: 0.897742221375
+}
+detected_vertical {
+  id: 474
+  weight: 0.476057327531
+}
+detected_vertical {
+  id: 607
+  weight: 0.862234560669
+}
+detected_vertical {
+  id: 66
+  weight: 0.404206877566
+}
+detected_vertical {
+  id: 23
+  weight: 0.536246139947
+}
+adslot {
+  id: 15
+  width: 300
+  height: 250
+  excluded_attribute: 5
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 560000
+    direct_deal {
+      direct_deal_id: 10133802373680532
+      fixed_cpm_micros: 560000
+    }
+  }
+  publisher_settings_list_id: 56751356
+}
+adslot {
+  id: 48
+  width: 300
+  height: 250
+  excluded_attribute: 1
+  excluded_attribute: 48
+  excluded_attribute: 3
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 880000
+    direct_deal {
+      direct_deal_id: 26421698448289118
+      fixed_cpm_micros: 880000
+    }
+  }
+  publisher_settings_list_id: 56751389
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 1811513
+postal_code_prefix: "B3H"
+geo_criteria_id: 1002113
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "\354\'n\365K^\037\354\025\322\365c\331\246o;"
+ip: "\267\240I"
+user_agent: "Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.0.2) Gecko/2008092313 Ubuntu/8.04 (hardy) Firefox/3.1"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 433
+  weight: 0.155768324021
+}
+detected_vertical {
+  id: 380
+  weight: 0.0382630253895
+}
+detected_vertical {
+  id: 565
+  weight: 0.540740684049
+}
+detected_vertical {
+  id: 22
+  weight: 0.18176328927
+}
+detected_vertical {
+  id: 540
+  weight: 0.819944138226
+}
+adslot {
+  id: 139
+  excluded_attribute: 6
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+  }
+  publisher_settings_list_id: 56751480
+}
+adslot {
+  id: 141
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 3
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  excluded_sensitive_category: 10
+  excluded_sensitive_category: 4
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 260000
+    direct_deal {
+      direct_deal_id: 816182129845646991
+      fixed_cpm_micros: 260000
+    }
+  }
+  publisher_settings_list_id: 56751482
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+video {
+  videoad_start_delay: -1
+}
+cookie_age_seconds: 2270970
+postal_code_prefix: "B3H"
+geo_criteria_id: 1002113
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "5\n\227\216NB?9\350\242\274\365\200\223a\004"
+ip: "O\311\230"
+user_agent: "Mozilla/5.0 (Macintosh; U; PPC Mac OS X; sv-se) AppleWebKit/419 (KHTML, like Gecko) Safari/419.3"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 570
+  weight: 0.46127153751
+}
+detected_vertical {
+  id: 563
+  weight: 0.659566280146
+}
+detected_vertical {
+  id: 66
+  weight: 0.200079048519
+}
+detected_vertical {
+  id: 22
+  weight: 0.201127383287
+}
+detected_vertical {
+  id: 119
+  weight: 0.980237404086
+}
+adslot {
+  id: 55
+  width: 300
+  height: 250
+  excluded_attribute: 1
+  excluded_attribute: 48
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 30000
+    direct_deal {
+      direct_deal_id: 2140376501917928798
+      fixed_cpm_micros: 30000
+    }
+  }
+  publisher_settings_list_id: 56751396
+}
+adslot {
+  id: 106
+  width: 300
+  height: 250
+  excluded_attribute: 4
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 680000
+    direct_deal {
+      direct_deal_id: 2758802021029548027
+      fixed_cpm_micros: 680000
+    }
+  }
+  publisher_settings_list_id: 56751447
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 2187512
+postal_code: "4810"
+geo_criteria_id: 1000414
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 5
+BidRequest:
+id: "j\355\262\252\320\026\311mQ\270\2406_r\336p"
+ip: "\256\031\351"
+user_agent: "Mozilla/4.08 (compatible; MSIE 6.0; Windows NT 5.1)"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 609
+  weight: 0.918043436003
+}
+detected_vertical {
+  id: 66
+  weight: 0.755131330185
+}
+detected_vertical {
+  id: 563
+  weight: 0.110399899989
+}
+detected_vertical {
+  id: 380
+  weight: 0.736126419866
+}
+detected_vertical {
+  id: 565
+  weight: 0.557545764222
+}
+adslot {
+  id: 23
+  width: 300
+  height: 250
+  excluded_attribute: 3
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 160000
+    direct_deal {
+      direct_deal_id: 766173249717440959
+      fixed_cpm_micros: 160000
+    }
+  }
+  publisher_settings_list_id: 56751364
+}
+adslot {
+  id: 106
+  width: 300
+  height: 250
+  excluded_attribute: 3
+  excluded_attribute: 48
+  excluded_attribute: 5
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 620000
+    direct_deal {
+      direct_deal_id: 2631913252196099022
+      fixed_cpm_micros: 620000
+    }
+  }
+  publisher_settings_list_id: 56751447
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 1650958
+postal_code: "99501"
+geo_criteria_id: 1012873
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 5
+BidRequest:
+id: "A~\326\330Bi\035\223_\"`+[\222*\270"
+ip: "Li\247"
+user_agent: "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.7pre) Gecko/20070815 Firefox/2.0.0.6 Navigator/9.0b3"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 608
+  weight: 0.0437179707353
+}
+detected_vertical {
+  id: 609
+  weight: 0.107387508865
+}
+detected_vertical {
+  id: 563
+  weight: 0.632082992118
+}
+detected_vertical {
+  id: 380
+  weight: 0.33770992886
+}
+detected_vertical {
+  id: 540
+  weight: 0.423830181457
+}
+adslot {
+  id: 38
+  width: 300
+  height: 250
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  excluded_sensitive_category: 0
+  excluded_sensitive_category: 18
+  excluded_sensitive_category: 3
+  excluded_sensitive_category: 23
+  matching_ad_data {
+    adgroup_id: 18102001720
+  }
+  publisher_settings_list_id: 56751379
+}
+adslot {
+  id: 188
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 5
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  excluded_sensitive_category: 18
+  excluded_sensitive_category: 19
+  matching_ad_data {
+    adgroup_id: 18102001720
+  }
+  publisher_settings_list_id: 56751529
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 725123
+postal_code_prefix: "M4C"
+geo_criteria_id: 1002451
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 0
+BidRequest:
+id: "qXH\303Z\027\275/|\266\033>3\330\2452"
+ip: "\214\324\n"
+user_agent: "Mozilla/4.08 (compatible; MSIE 6.0; Windows NT 5.1)"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 608
+  weight: 0.0498850003382
+}
+detected_vertical {
+  id: 24
+  weight: 0.868463924133
+}
+detected_vertical {
+  id: 355
+  weight: 0.707097909546
+}
+detected_vertical {
+  id: 540
+  weight: 0.0632000171166
+}
+detected_vertical {
+  id: 22
+  weight: 0.114382574277
+}
+adslot {
+  id: 45
+  excluded_attribute: 5
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  excluded_sensitive_category: 8
+  excluded_sensitive_category: 18
+  excluded_sensitive_category: 4
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 10000
+    direct_deal {
+      direct_deal_id: 343003429628783927
+      fixed_cpm_micros: 10000
+    }
+  }
+  publisher_settings_list_id: 56751386
+}
+adslot {
+  id: 196
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 860000
+    direct_deal {
+      direct_deal_id: 1413084955155787116
+      fixed_cpm_micros: 860000
+    }
+  }
+  publisher_settings_list_id: 56751537
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+video {
+  videoad_start_delay: 0
+}
+cookie_age_seconds: 1651070
+postal_code: "2753"
+geo_criteria_id: 1000278
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "\320\370\266\275\345\235@\316\231dK\254\332\363\203#"
+ip: "\232\203\304"
+user_agent: "Mozilla/4.08 (compatible; MSIE 6.0; Windows NT 5.1)"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 570
+  weight: 0.3461611925
+}
+detected_vertical {
+  id: 565
+  weight: 0.0378461206573
+}
+detected_vertical {
+  id: 474
+  weight: 0.959901497269
+}
+detected_vertical {
+  id: 22
+  weight: 0.698403576727
+}
+detected_vertical {
+  id: 23
+  weight: 0.403709910241
+}
+adslot {
+  id: 149
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 260000
+    direct_deal {
+      direct_deal_id: 997254014185471699
+      fixed_cpm_micros: 260000
+    }
+  }
+  publisher_settings_list_id: 56751490
+}
+adslot {
+  id: 109
+  width: 300
+  height: 250
+  excluded_attribute: 1
+  excluded_attribute: 48
+  excluded_attribute: 5
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 520000
+    direct_deal {
+      direct_deal_id: 2873548666230699103
+      fixed_cpm_micros: 520000
+    }
+  }
+  publisher_settings_list_id: 56751450
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 356638
+postal_code: "3000"
+geo_criteria_id: 1000567
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "B\245\321N8\010J\352\2421\233\260>\311f\257"
+is_ping: true
+
+BidResponse:
+processing_time_ms: 0
+BidRequest:
+id: "v\2433UEs~\240\224\335c\357\355x\327v"
+ip: "E\2225"
+user_agent: "Mozilla/5.0 (Macintosh; U; PPC Mac OS X; sv-se) AppleWebKit/419 (KHTML, like Gecko) Safari/419.3"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 24
+  weight: 0.00519389978477
+}
+detected_vertical {
+  id: 609
+  weight: 0.279130746949
+}
+detected_vertical {
+  id: 66
+  weight: 0.337417831601
+}
+detected_vertical {
+  id: 570
+  weight: 0.926037182287
+}
+detected_vertical {
+  id: 607
+  weight: 0.488559916164
+}
+adslot {
+  id: 58
+  width: 300
+  height: 250
+  excluded_attribute: 3
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 740000
+    direct_deal {
+      direct_deal_id: 4285181763105394671
+      fixed_cpm_micros: 740000
+    }
+  }
+  publisher_settings_list_id: 56751399
+}
+adslot {
+  id: 104
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 5
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 320000
+    direct_deal {
+      direct_deal_id: 2934002430400513901
+      fixed_cpm_micros: 320000
+    }
+  }
+  publisher_settings_list_id: 56751445
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 1390733
+postal_code_prefix: "E1B"
+geo_criteria_id: 1002061
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "\223\377\353\273H\303\277\320Y\267-?\266y\010\025"
+ip: "\265{\375"
+user_agent: "Mozilla/5.0 (Macintosh; U; PPC Mac OS X; sv-se) AppleWebKit/419 (KHTML, like Gecko) Safari/419.3"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 355
+  weight: 0.925727000557
+}
+detected_vertical {
+  id: 66
+  weight: 0.303462524857
+}
+detected_vertical {
+  id: 607
+  weight: 0.0909082836939
+}
+detected_vertical {
+  id: 540
+  weight: 0.186063550348
+}
+detected_vertical {
+  id: 119
+  weight: 0.608601344701
+}
+adslot {
+  id: 8
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 290000
+    direct_deal {
+      direct_deal_id: 1694588824604598900
+      fixed_cpm_micros: 290000
+    }
+  }
+  publisher_settings_list_id: 56751349
+}
+adslot {
+  id: 66
+  excluded_attribute: 1
+  excluded_attribute: 48
+  excluded_attribute: 4
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 980000
+    direct_deal {
+      direct_deal_id: 133943433551227072
+      fixed_cpm_micros: 980000
+    }
+  }
+  publisher_settings_list_id: 56751407
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+video {
+  videoad_start_delay: 0
+  max_ad_duration: 34000
+}
+cookie_age_seconds: 2339030
+postal_code_prefix: "E1B"
+geo_criteria_id: 1002061
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "-\315M\3378\00571\331`\347^\351\271\235\365"
+ip: "\322Y,"
+user_agent: "Mozilla/5.0 (Macintosh; U; PPC Mac OS X; sv-se) AppleWebKit/419 (KHTML, like Gecko) Safari/419.3"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 379
+  weight: 0.607811892297
+}
+detected_vertical {
+  id: 433
+  weight: 0.173267391191
+}
+detected_vertical {
+  id: 355
+  weight: 0.32292513391
+}
+detected_vertical {
+  id: 22
+  weight: 0.671492072126
+}
+detected_vertical {
+  id: 608
+  weight: 0.833189054075
+}
+adslot {
+  id: 46
+  width: 300
+  height: 250
+  excluded_attribute: 3
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 330000
+    direct_deal {
+      direct_deal_id: 1236518947981830733
+      fixed_cpm_micros: 330000
+    }
+  }
+  publisher_settings_list_id: 56751387
+}
+adslot {
+  id: 126
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 4
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  excluded_sensitive_category: 10
+  excluded_sensitive_category: 23
+  excluded_sensitive_category: 7
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 990000
+    direct_deal {
+      direct_deal_id: 4120024326304929070
+      fixed_cpm_micros: 990000
+    }
+  }
+  publisher_settings_list_id: 56751467
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 1011100
+postal_code: "10116"
+geo_criteria_id: 9005559
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "\014\036\211\262\206\t(J\025\010v\003?\231\377\240"
+ip: "\n\242\266"
+user_agent: "Mozilla/5.0 (Linux; U; Android 2.3.5; en-us; DROID X2 Build/4.5.1A-DTN-200-18) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1,gzip(gfe)"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 24
+  weight: 0.67417045049
+}
+detected_vertical {
+  id: 433
+  weight: 0.151976691992
+}
+detected_vertical {
+  id: 379
+  weight: 0.0391730643208
+}
+detected_vertical {
+  id: 565
+  weight: 0.926308208964
+}
+detected_vertical {
+  id: 22
+  weight: 0.311589683724
+}
+adslot {
+  id: 13
+  width: 728
+  height: 90
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 4
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  excluded_sensitive_category: 8
+  excluded_sensitive_category: 25
+  excluded_sensitive_category: 18
+  excluded_sensitive_category: 4
+  matching_ad_data {
+    adgroup_id: 18102001720
+  }
+  publisher_settings_list_id: 56751354
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+mobile {
+  platform: "android"
+  is_app: false
+  mobile_device_type: HIGHEND_PHONE
+  screen_orientation: 0
+  is_interstitial_request: false
+  os_version {
+    os_version_major: 2
+    os_version_minor: 3
+    os_version_micro: 5
+  }
+  carrier_id: 71352
+}
+cookie_age_seconds: 690405
+postal_code_prefix: "E1B"
+geo_criteria_id: 1002061
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "q\364I\220e\266\311\252\320y\251F\364\376\020p"
+ip: "\003\235b"
+user_agent: "Mozilla/5.0 (Macintosh; U; PPC Mac OS X; sv-se) AppleWebKit/419 (KHTML, like Gecko) Safari/419.3"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 433
+  weight: 0.527562840623
+}
+detected_vertical {
+  id: 474
+  weight: 0.395273586455
+}
+detected_vertical {
+  id: 355
+  weight: 0.291880887587
+}
+detected_vertical {
+  id: 66
+  weight: 0.196965062011
+}
+detected_vertical {
+  id: 119
+  weight: 0.0879448518145
+}
+adslot {
+  id: 32
+  width: 300
+  height: 250
+  excluded_attribute: 5
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 50000
+    direct_deal {
+      direct_deal_id: 1546128932875097768
+      fixed_cpm_micros: 50000
+    }
+  }
+  publisher_settings_list_id: 56751373
+}
+adslot {
+  id: 147
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 610000
+    direct_deal {
+      direct_deal_id: 1262316806596574437
+      fixed_cpm_micros: 610000
+    }
+  }
+  publisher_settings_list_id: 56751488
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 1289426
+postal_code_prefix: "E1B"
+geo_criteria_id: 1002061
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "\374\245\316p\000=\'\252\343\243\277\0339\224\201L"
+ip: "\361\"\342"
+user_agent: "Mozilla/5.0 (Windows; U; MSIE 7.0; Windows NT 6.0; en-US)"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 474
+  weight: 0.684398460541
+}
+detected_vertical {
+  id: 66
+  weight: 0.355638372681
+}
+detected_vertical {
+  id: 540
+  weight: 0.41705032746
+}
+detected_vertical {
+  id: 570
+  weight: 0.91157872407
+}
+detected_vertical {
+  id: 22
+  weight: 0.79365252794
+}
+adslot {
+  id: 147
+  width: 300
+  height: 250
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 5
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 880000
+    direct_deal {
+      direct_deal_id: 1941183578138168047
+      fixed_cpm_micros: 880000
+    }
+  }
+  publisher_settings_list_id: 56751488
+}
+adslot {
+  id: 51
+  width: 300
+  height: 250
+  excluded_attribute: 1
+  excluded_attribute: 48
+  excluded_attribute: 2
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  excluded_sensitive_category: 24
+  excluded_sensitive_category: 3
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 670000
+    direct_deal {
+      direct_deal_id: 2626445890636994706
+      fixed_cpm_micros: 670000
+    }
+  }
+  publisher_settings_list_id: 56751392
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 1667820
+postal_code: "99501"
+geo_criteria_id: 1012873
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 5
+BidRequest:
+id: "4\256\0100\203\r\353=\371\373P\034_\177\t\205"
+ip: "\253jZ"
+user_agent: "Mozilla/5.0 (iPod; U; CPU iPhone OS 4_2_1 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8C148 Safari/6533.18.5,gzip(gfe)"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 608
+  weight: 0.800764703358
+}
+detected_vertical {
+  id: 24
+  weight: 0.244305708073
+}
+detected_vertical {
+  id: 570
+  weight: 0.962079735973
+}
+detected_vertical {
+  id: 540
+  weight: 0.0994713999877
+}
+detected_vertical {
+  id: 23
+  weight: 0.106465756816
+}
+adslot {
+  id: 182
+  width: 728
+  height: 90
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 4
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 80000
+    direct_deal {
+      direct_deal_id: 3759418656183717142
+      fixed_cpm_micros: 80000
+    }
+  }
+  publisher_settings_list_id: 56751523
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+mobile {
+  platform: "iphone"
+  is_app: false
+  mobile_device_type: HIGHEND_PHONE
+  screen_orientation: 0
+  is_interstitial_request: false
+  os_version {
+    os_version_major: 4
+    os_version_minor: 2
+    os_version_micro: 1
+  }
+  carrier_id: 70392
+}
+cookie_age_seconds: 1971422
+postal_code: "10116"
+geo_criteria_id: 9005559
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "k[?+\255\\oV\000m\357\276iQ\243u"
+ip: "*\323b"
+user_agent: "Mozilla/5.0 (Windows; U; MSIE 7.0; Windows NT 6.0; en-US)"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 24
+  weight: 0.0616251115252
+}
+detected_vertical {
+  id: 609
+  weight: 0.191249831773
+}
+detected_vertical {
+  id: 570
+  weight: 0.718748445031
+}
+detected_vertical {
+  id: 380
+  weight: 0.159982918628
+}
+detected_vertical {
+  id: 22
+  weight: 0.221896621343
+}
+adslot {
+  id: 72
+  width: 300
+  height: 250
+  excluded_attribute: 1
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 650000
+    direct_deal {
+      direct_deal_id: 3515328077429919653
+      fixed_cpm_micros: 650000
+    }
+  }
+  publisher_settings_list_id: 56751413
+}
+adslot {
+  id: 33
+  width: 300
+  height: 250
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  excluded_sensitive_category: 0
+  excluded_sensitive_category: 5
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 560000
+    direct_deal {
+      direct_deal_id: 1412376289827657296
+      fixed_cpm_micros: 560000
+    }
+  }
+  publisher_settings_list_id: 56751374
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 778572
+postal_code_prefix: "M4C"
+geo_criteria_id: 1002451
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 0
+BidRequest:
+id: ">\340\334\232\361\251\375\007\317O\326\260\334\350\247$"
+ip: "3\206\237"
+user_agent: "Mozilla/4.08 (compatible; MSIE 6.0; Windows NT 5.1)"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 355
+  weight: 0.687458605119
+}
+detected_vertical {
+  id: 380
+  weight: 0.949339605733
+}
+detected_vertical {
+  id: 66
+  weight: 0.0362440978053
+}
+detected_vertical {
+  id: 563
+  weight: 0.0861124512517
+}
+detected_vertical {
+  id: 540
+  weight: 0.658662149213
+}
+adslot {
+  id: 3
+  width: 300
+  height: 250
+  excluded_attribute: 3
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 870000
+    direct_deal {
+      direct_deal_id: 1280987797014757504
+      fixed_cpm_micros: 870000
+    }
+  }
+  publisher_settings_list_id: 56751344
+}
+adslot {
+  id: 147
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 3
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  excluded_sensitive_category: 18
+  excluded_sensitive_category: 5
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 980000
+    direct_deal {
+      direct_deal_id: 1742046884170274152
+      fixed_cpm_micros: 980000
+    }
+  }
+  publisher_settings_list_id: 56751488
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 100495
+postal_code: "2753"
+geo_criteria_id: 1000278
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "\331l\355\273k?#\024{J\342\272\260\356\335T"
+ip: "\t\267\313"
+user_agent: "Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10_4_11; en) AppleWebKit/528.5+ (KHTML, like Gecko) Version/4.0 Safari/528.1"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 379
+  weight: 0.242982722001
+}
+detected_vertical {
+  id: 433
+  weight: 0.45417914262
+}
+detected_vertical {
+  id: 563
+  weight: 0.566787102522
+}
+detected_vertical {
+  id: 24
+  weight: 0.446073862418
+}
+detected_vertical {
+  id: 119
+  weight: 0.391399240661
+}
+adslot {
+  id: 19
+  width: 300
+  height: 250
+  excluded_attribute: 1
+  excluded_attribute: 48
+  excluded_attribute: 5
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 660000
+    direct_deal {
+      direct_deal_id: 4123134396978048061
+      fixed_cpm_micros: 660000
+    }
+  }
+  publisher_settings_list_id: 56751360
+}
+adslot {
+  id: 100
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 430000
+    direct_deal {
+      direct_deal_id: 1546990143288254343
+      fixed_cpm_micros: 430000
+    }
+  }
+  publisher_settings_list_id: 56751441
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 2574262
+postal_code: "99501"
+geo_criteria_id: 1012873
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "\004\334F+\331>\355\030\3519\243X>B\211\263"
+ip: "\205\331\242"
+user_agent: "Mozilla/5.0 (Macintosh; U; PPC Mac OS X; sv-se) AppleWebKit/419 (KHTML, like Gecko) Safari/419.3"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 379
+  weight: 0.7890703658
+}
+detected_vertical {
+  id: 474
+  weight: 0.574736845738
+}
+detected_vertical {
+  id: 563
+  weight: 0.319023670085
+}
+detected_vertical {
+  id: 570
+  weight: 0.0619253626925
+}
+detected_vertical {
+  id: 607
+  weight: 0.26391444117
+}
+adslot {
+  id: 83
+  width: 300
+  height: 250
+  excluded_attribute: 1
+  excluded_attribute: 48
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 9
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  excluded_sensitive_category: 24
+  excluded_sensitive_category: 3
+  excluded_sensitive_category: 7
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 410000
+    direct_deal {
+      direct_deal_id: 1129615952407037470
+      fixed_cpm_micros: 410000
+    }
+  }
+  publisher_settings_list_id: 56751424
+}
+adslot {
+  id: 111
+  width: 300
+  height: 250
+  excluded_attribute: 1
+  excluded_attribute: 48
+  excluded_attribute: 5
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 940000
+    direct_deal {
+      direct_deal_id: 4081796281641993212
+      fixed_cpm_micros: 940000
+    }
+  }
+  publisher_settings_list_id: 56751452
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 2428941
+postal_code: "3000"
+geo_criteria_id: 1000567
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 5
+BidRequest:
+id: "\247\356\"w\275\017[\333\325\223\353\227\240\225;\311"
+ip: "z\217\337"
+user_agent: "Mozilla/5.0 (Linux; U; Android 2.3.6; it-it; GT-S5570I Build/GINGERBREAD) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1 (Mobile; afma-sdk-a-v6.1.0),gzip(gfe)"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 563
+  weight: 0.962665829031
+}
+detected_vertical {
+  id: 607
+  weight: 0.58522039602
+}
+detected_vertical {
+  id: 355
+  weight: 0.707478452856
+}
+detected_vertical {
+  id: 22
+  weight: 0.292813676198
+}
+detected_vertical {
+  id: 23
+  weight: 0.666356947891
+}
+adslot {
+  id: 57
+  width: 320
+  height: 50
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 980000
+    direct_deal {
+      direct_deal_id: 969178943767421550
+      fixed_cpm_micros: 980000
+    }
+  }
+  publisher_settings_list_id: 56751398
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+mobile {
+  platform: "android"
+  app_id: "fus.ro.dah"
+  is_app: true
+  mobile_device_type: HIGHEND_PHONE
+  screen_orientation: 2
+  is_interstitial_request: false
+  app_category_ids: 60032
+  app_category_ids: 60025
+  app_category_ids: 60005
+  os_version {
+    os_version_major: 2
+    os_version_minor: 3
+    os_version_micro: 6
+  }
+  carrier_id: 70392
+}
+cookie_age_seconds: 1399014
+postal_code: "99501"
+geo_criteria_id: 1012873
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "\346e\363\253L\210\355M\304\022l\347\351\nW\361"
+ip: "\215y\221"
+user_agent: "Mozilla/5.0 (Linux; U; Android 4.0.4; en-us; DROID BIONIC Build/6.7.2-223_DBN_M4-23) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30 (Mobile; afma-sdk-a-v6.2.1),gzip(gfe)"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 355
+  weight: 0.30134900577
+}
+detected_vertical {
+  id: 433
+  weight: 0.412648516477
+}
+detected_vertical {
+  id: 474
+  weight: 0.475752992717
+}
+detected_vertical {
+  id: 563
+  weight: 0.548141885195
+}
+detected_vertical {
+  id: 565
+  weight: 0.755494979448
+}
+adslot {
+  id: 34
+  width: 360
+  height: 640
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 650000
+    direct_deal {
+      direct_deal_id: 3603722679750265566
+      fixed_cpm_micros: 650000
+    }
+  }
+  publisher_settings_list_id: 56751375
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+mobile {
+  platform: "android"
+  app_id: "a.b.c"
+  is_app: true
+  mobile_device_type: HIGHEND_PHONE
+  screen_orientation: 1
+  is_interstitial_request: true
+  app_category_ids: 60032
+  app_category_ids: 60025
+  os_version {
+    os_version_major: 4
+    os_version_minor: 0
+    os_version_micro: 4
+  }
+  carrier_id: 70392
+}
+cookie_age_seconds: 1442663
+postal_code: "3000"
+geo_criteria_id: 1000567
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "&\t\023\1771\361&\262Bt\272\322\374\250NV"
+ip: "\037:a"
+user_agent: "Mozilla/5.0 (iPad; CPU OS 6_1_2 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Mobile/10B146,gzip(gfe)"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 433
+  weight: 0.517936860598
+}
+detected_vertical {
+  id: 66
+  weight: 0.353906232899
+}
+detected_vertical {
+  id: 355
+  weight: 0.700267495115
+}
+detected_vertical {
+  id: 540
+  weight: 0.994075380654
+}
+detected_vertical {
+  id: 23
+  weight: 0.971542447632
+}
+adslot {
+  id: 21
+  width: 768
+  height: 1024
+  excluded_attribute: 1
+  excluded_attribute: 48
+  excluded_attribute: 3
+  excluded_attribute: 48
+  excluded_attribute: 9
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 140000
+    direct_deal {
+      direct_deal_id: 1228102221544920477
+      fixed_cpm_micros: 140000
+    }
+  }
+  publisher_settings_list_id: 56751362
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+mobile {
+  platform: "ipad"
+  app_id: "4453712097"
+  is_app: true
+  mobile_device_type: TABLET
+  screen_orientation: 2
+  is_interstitial_request: true
+  app_category_ids: 60556
+  os_version {
+    os_version_major: 6
+    os_version_minor: 1
+    os_version_micro: 2
+  }
+  carrier_id: 70152
+}
+cookie_age_seconds: 2408705
+postal_code: "33601"
+geo_criteria_id: 1015214
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "\253\374\264\367b\333\265\204\340\2514I\377\354\375\241"
+ip: "-\3225"
+user_agent: "Mozilla/5.0 (Linux; U; Android 4.0.4; en-us; DROID BIONIC Build/6.7.2-223_DBN_M4-23) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30 (Mobile; afma-sdk-a-v6.2.1),gzip(gfe)"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 24
+  weight: 0.818909074025
+}
+detected_vertical {
+  id: 609
+  weight: 0.17265877386
+}
+detected_vertical {
+  id: 66
+  weight: 0.750243484667
+}
+detected_vertical {
+  id: 570
+  weight: 0.709661965528
+}
+detected_vertical {
+  id: 22
+  weight: 0.866268250317
+}
+adslot {
+  id: 52
+  width: 360
+  height: 640
+  excluded_attribute: 3
+  excluded_attribute: 48
+  excluded_attribute: 5
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 150000
+    direct_deal {
+      direct_deal_id: 155558037519101425
+      fixed_cpm_micros: 150000
+    }
+  }
+  publisher_settings_list_id: 56751393
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+mobile {
+  platform: "android"
+  app_id: "test.app.id"
+  is_app: true
+  mobile_device_type: HIGHEND_PHONE
+  screen_orientation: 1
+  is_interstitial_request: true
+  app_category_ids: 60032
+  app_category_ids: 60025
+  app_category_ids: 60004
+  app_category_ids: 60005
+  os_version {
+    os_version_major: 4
+    os_version_minor: 0
+    os_version_micro: 4
+  }
+  carrier_id: 70152
+}
+cookie_age_seconds: 1871727
+postal_code: "02102"
+geo_criteria_id: 1018127
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "\274\332m\000\225<\025\247\2140\366\344Q\311#%"
+ip: "\245\246N"
+user_agent: "Mozilla/5.0 (Macintosh; U; PPC Mac OS X; sv-se) AppleWebKit/419 (KHTML, like Gecko) Safari/419.3"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 433
+  weight: 0.245581870906
+}
+detected_vertical {
+  id: 474
+  weight: 0.695040817417
+}
+detected_vertical {
+  id: 380
+  weight: 0.568103217802
+}
+detected_vertical {
+  id: 22
+  weight: 0.460968578975
+}
+detected_vertical {
+  id: 607
+  weight: 0.04516082669
+}
+adslot {
+  id: 167
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 270000
+    direct_deal {
+      direct_deal_id: 3917070600132064938
+      fixed_cpm_micros: 270000
+    }
+  }
+  publisher_settings_list_id: 56751508
+}
+adslot {
+  id: 79
+  excluded_attribute: 3
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 590000
+    direct_deal {
+      direct_deal_id: 3522235580108478100
+      fixed_cpm_micros: 590000
+    }
+  }
+  publisher_settings_list_id: 56751420
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+video {
+  videoad_start_delay: 7000
+  max_ad_duration: 7000
+}
+cookie_age_seconds: 82995
+postal_code: "2600"
+geo_criteria_id: 1000142
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "[\263\272\374\177K0\361\247iwA\372o.\355"
+ip: "\357\020\333"
+user_agent: "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.2pre) Gecko/20070118 Firefox/2.0.0.2pre"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 433
+  weight: 0.303524541258
+}
+detected_vertical {
+  id: 563
+  weight: 0.00814813334613
+}
+detected_vertical {
+  id: 540
+  weight: 0.351071983651
+}
+detected_vertical {
+  id: 22
+  weight: 0.128525291067
+}
+detected_vertical {
+  id: 23
+  weight: 0.505034850835
+}
+adslot {
+  id: 65
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 900000
+    direct_deal {
+      direct_deal_id: 3697771905509292047
+      fixed_cpm_micros: 900000
+    }
+  }
+  publisher_settings_list_id: 56751406
+}
+adslot {
+  id: 46
+  width: 300
+  height: 250
+  excluded_attribute: 4
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 560000
+    direct_deal {
+      direct_deal_id: 2372212894023194455
+      fixed_cpm_micros: 560000
+    }
+  }
+  publisher_settings_list_id: 56751387
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 817478
+postal_code_prefix: "E1B"
+geo_criteria_id: 1002061
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 5
+BidRequest:
+id: "\'\005\300\325\250\001W\267\352\\bsI\342\262\020"
+ip: "\327T\217"
+user_agent: "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.2pre) Gecko/20070118 Firefox/2.0.0.2pre"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 608
+  weight: 0.870501961247
+}
+detected_vertical {
+  id: 474
+  weight: 0.524575850651
+}
+detected_vertical {
+  id: 540
+  weight: 0.350910454699
+}
+detected_vertical {
+  id: 22
+  weight: 0.368326345328
+}
+detected_vertical {
+  id: 607
+  weight: 0.483676371341
+}
+adslot {
+  id: 93
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 3
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 340000
+    direct_deal {
+      direct_deal_id: 1364838296758831570
+      fixed_cpm_micros: 340000
+    }
+  }
+  publisher_settings_list_id: 56751434
+}
+adslot {
+  id: 55
+  width: 300
+  height: 250
+  excluded_attribute: 5
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 380000
+    direct_deal {
+      direct_deal_id: 1997581242852573631
+      fixed_cpm_micros: 380000
+    }
+  }
+  publisher_settings_list_id: 56751396
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 549183
+postal_code: "4810"
+geo_criteria_id: 1000414
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "$\324;Q!\276\366\005|\235\0104$\036\234\347"
+ip: "\311|w"
+user_agent: "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.7pre) Gecko/20070815 Firefox/2.0.0.6 Navigator/9.0b3"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 609
+  weight: 0.821749985074
+}
+detected_vertical {
+  id: 379
+  weight: 0.293782426105
+}
+detected_vertical {
+  id: 380
+  weight: 0.432790731904
+}
+detected_vertical {
+  id: 22
+  weight: 0.262377144232
+}
+detected_vertical {
+  id: 119
+  weight: 0.248033766481
+}
+adslot {
+  id: 40
+  width: 300
+  height: 250
+  excluded_attribute: 5
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  excluded_sensitive_category: 24
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 230000
+    direct_deal {
+      direct_deal_id: 3816457949621450981
+      fixed_cpm_micros: 230000
+    }
+  }
+  publisher_settings_list_id: 56751381
+}
+adslot {
+  id: 107
+  width: 300
+  height: 250
+  excluded_attribute: 4
+  excluded_attribute: 48
+  excluded_attribute: 5
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 600000
+    direct_deal {
+      direct_deal_id: 4118684160223403976
+      fixed_cpm_micros: 600000
+    }
+  }
+  publisher_settings_list_id: 56751448
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 986393
+postal_code: "3000"
+geo_criteria_id: 1000567
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "\362\261%(n\232\376\264\274BtD$\255\352\213"
+ip: "\274\274*"
+user_agent: "Mozilla/5.0 (Macintosh; U; PPC Mac OS X; sv-se) AppleWebKit/419 (KHTML, like Gecko) Safari/419.3"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 380
+  weight: 0.669905798612
+}
+detected_vertical {
+  id: 540
+  weight: 0.133163886646
+}
+detected_vertical {
+  id: 565
+  weight: 0.0623554530691
+}
+detected_vertical {
+  id: 22
+  weight: 0.31959413455
+}
+detected_vertical {
+  id: 23
+  weight: 0.539586064787
+}
+adslot {
+  id: 107
+  width: 300
+  height: 250
+  excluded_attribute: 5
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 950000
+    direct_deal {
+      direct_deal_id: 245952737354199754
+      fixed_cpm_micros: 950000
+    }
+  }
+  publisher_settings_list_id: 56751448
+}
+adslot {
+  id: 54
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 460000
+    direct_deal {
+      direct_deal_id: 66352786267810269
+      fixed_cpm_micros: 460000
+    }
+  }
+  publisher_settings_list_id: 56751395
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 1857986
+postal_code_prefix: "B3H"
+geo_criteria_id: 1002113
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 5
+BidRequest:
+id: "l\267\361t?\216\211\266\035\037d\\\371{\r\324"
+ip: "\275\177\275"
+user_agent: "Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10_4_11; en) AppleWebKit/528.5+ (KHTML, like Gecko) Version/4.0 Safari/528.1"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 608
+  weight: 0.116427058792
+}
+detected_vertical {
+  id: 474
+  weight: 0.238338008883
+}
+detected_vertical {
+  id: 355
+  weight: 0.866263810096
+}
+detected_vertical {
+  id: 380
+  weight: 0.189315816592
+}
+detected_vertical {
+  id: 66
+  weight: 0.590546500227
+}
+adslot {
+  id: 179
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 4
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 740000
+    direct_deal {
+      direct_deal_id: 1657764202921798873
+      fixed_cpm_micros: 740000
+    }
+  }
+  publisher_settings_list_id: 56751520
+}
+adslot {
+  id: 127
+  excluded_attribute: 9
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 50000
+    direct_deal {
+      direct_deal_id: 1086777138305119137
+      fixed_cpm_micros: 50000
+    }
+  }
+  publisher_settings_list_id: 56751468
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+video {
+  videoad_start_delay: -1
+}
+cookie_age_seconds: 1737727
+postal_code_prefix: "M4C"
+geo_criteria_id: 1002451
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "\023\036\275cNQ8}6\310\307#\237(/("
+ip: "\210\363b"
+user_agent: "Mozilla/4.08 (compatible; MSIE 6.0; Windows NT 5.1)"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 608
+  weight: 0.121307229686
+}
+detected_vertical {
+  id: 24
+  weight: 0.165659930926
+}
+detected_vertical {
+  id: 607
+  weight: 0.108409686557
+}
+detected_vertical {
+  id: 355
+  weight: 0.583522041862
+}
+detected_vertical {
+  id: 23
+  weight: 0.898725504992
+}
+adslot {
+  id: 90
+  excluded_attribute: 1
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 170000
+    direct_deal {
+      direct_deal_id: 884773687220352379
+      fixed_cpm_micros: 170000
+    }
+  }
+  publisher_settings_list_id: 56751431
+}
+adslot {
+  id: 32
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 140000
+    direct_deal {
+      direct_deal_id: 1172121549809594664
+      fixed_cpm_micros: 140000
+    }
+  }
+  publisher_settings_list_id: 56751373
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+video {
+  videoad_start_delay: 5000
+  max_ad_duration: 57000
+}
+cookie_age_seconds: 1220674
+postal_code: "3000"
+geo_criteria_id: 1000567
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "\221,,\010k\234\225\240\327\314\211\207l\222\237\004"
+ip: "\356;\373"
+user_agent: "Mozilla/5.0 (iPad; CPU OS 5_1_1 like Mac OS X) AppleWebKit/534.46 (KHTML,like Gecko) Mobile/9B206,gzip(gfe)"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 379
+  weight: 0.916441769654
+}
+detected_vertical {
+  id: 433
+  weight: 0.342727724884
+}
+detected_vertical {
+  id: 119
+  weight: 0.576334235469
+}
+detected_vertical {
+  id: 565
+  weight: 0.545461917116
+}
+detected_vertical {
+  id: 607
+  weight: 0.0420176292304
+}
+adslot {
+  id: 2
+  width: 468
+  height: 60
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 3
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  excluded_sensitive_category: 25
+  excluded_sensitive_category: 5
+  excluded_sensitive_category: 23
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 420000
+    direct_deal {
+      direct_deal_id: 3614750581540954177
+      fixed_cpm_micros: 420000
+    }
+  }
+  publisher_settings_list_id: 56751343
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+mobile {
+  platform: "ipad"
+  app_id: "610434022"
+  is_app: true
+  mobile_device_type: TABLET
+  screen_orientation: 1
+  is_interstitial_request: false
+  app_category_ids: 60556
+  app_category_ids: 60564
+  os_version {
+    os_version_major: 5
+    os_version_minor: 1
+    os_version_micro: 1
+  }
+  carrier_id: 70361
+}
+cookie_age_seconds: 1840366
+postal_code: "99501"
+geo_criteria_id: 1012873
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "V\220Q\203\026\276j1\376\215o\313\2522\320-"
+ip: "\311\202>"
+user_agent: "Mozilla/5.0 (Windows; U; MSIE 7.0; Windows NT 6.0; en-US)"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 608
+  weight: 0.331125976843
+}
+detected_vertical {
+  id: 24
+  weight: 0.783267075119
+}
+detected_vertical {
+  id: 380
+  weight: 0.144199527294
+}
+detected_vertical {
+  id: 433
+  weight: 0.749850059191
+}
+detected_vertical {
+  id: 607
+  weight: 0.230800497754
+}
+adslot {
+  id: 83
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 1
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 400000
+    direct_deal {
+      direct_deal_id: 3780402541703995236
+      fixed_cpm_micros: 400000
+    }
+  }
+  publisher_settings_list_id: 56751424
+}
+adslot {
+  id: 189
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 3
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 370000
+    direct_deal {
+      direct_deal_id: 2484473315180480531
+      fixed_cpm_micros: 370000
+    }
+  }
+  publisher_settings_list_id: 56751530
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 829359
+postal_code: "02102"
+geo_criteria_id: 1018127
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "\tYM\256\314\210\341\302*\264\257\263\360\007gZ"
+ip: "\354\251\t"
+user_agent: "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.7pre) Gecko/20070815 Firefox/2.0.0.6 Navigator/9.0b3"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 379
+  weight: 0.72024036118
+}
+detected_vertical {
+  id: 609
+  weight: 0.593448079565
+}
+detected_vertical {
+  id: 563
+  weight: 0.525359998254
+}
+detected_vertical {
+  id: 380
+  weight: 0.0638303557689
+}
+detected_vertical {
+  id: 433
+  weight: 0.0657891325987
+}
+adslot {
+  id: 182
+  width: 300
+  height: 250
+  excluded_attribute: 2
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+  }
+  publisher_settings_list_id: 56751523
+}
+adslot {
+  id: 66
+  width: 300
+  height: 250
+  excluded_attribute: 4
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 290000
+    direct_deal {
+      direct_deal_id: 2962261237053821119
+      fixed_cpm_micros: 290000
+    }
+  }
+  publisher_settings_list_id: 56751407
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 49453
+postal_code: "4810"
+geo_criteria_id: 1000414
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "k\316Huw\215;\230Sk\020\323\037.-\000"
+ip: "\324\374\365"
+user_agent: "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.7pre) Gecko/20070815 Firefox/2.0.0.6 Navigator/9.0b3"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 474
+  weight: 0.839347629293
+}
+detected_vertical {
+  id: 355
+  weight: 0.213472536998
+}
+detected_vertical {
+  id: 380
+  weight: 0.215426421859
+}
+detected_vertical {
+  id: 565
+  weight: 0.318019819676
+}
+detected_vertical {
+  id: 23
+  weight: 0.539547482679
+}
+adslot {
+  id: 173
+  excluded_attribute: 4
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+  }
+  publisher_settings_list_id: 56751514
+}
+adslot {
+  id: 111
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 860000
+    direct_deal {
+      direct_deal_id: 2536085730060837720
+      fixed_cpm_micros: 860000
+    }
+  }
+  publisher_settings_list_id: 56751452
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+video {
+  videoad_start_delay: 49000
+  max_ad_duration: 1000
+}
+cookie_age_seconds: 765940
+postal_code_prefix: "M4C"
+geo_criteria_id: 1002451
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "\352\375\237\301>\264\2543\330N\264\316m\222\310\363"
+ip: "v[\357"
+user_agent: "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.2pre) Gecko/20070118 Firefox/2.0.0.2pre"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 474
+  weight: 0.195771280241
+}
+detected_vertical {
+  id: 355
+  weight: 0.0621785563436
+}
+detected_vertical {
+  id: 565
+  weight: 0.28929861075
+}
+detected_vertical {
+  id: 22
+  weight: 0.760779375453
+}
+detected_vertical {
+  id: 607
+  weight: 0.121643018873
+}
+adslot {
+  id: 102
+  width: 300
+  height: 250
+  excluded_attribute: 1
+  excluded_attribute: 48
+  excluded_attribute: 4
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+  }
+  publisher_settings_list_id: 56751443
+}
+adslot {
+  id: 64
+  width: 300
+  height: 250
+  excluded_attribute: 3
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 160000
+    direct_deal {
+      direct_deal_id: 2856614624800503313
+      fixed_cpm_micros: 160000
+    }
+  }
+  publisher_settings_list_id: 56751405
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 1748909
+postal_code: "2600"
+geo_criteria_id: 1000142
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "\256\207\360\372\374\210\n\226O\017\333\255B=\006b"
+ip: "\345\'."
+user_agent: "Mozilla/4.08 (compatible; MSIE 6.0; Windows NT 5.1)"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 24
+  weight: 0.156606005309
+}
+detected_vertical {
+  id: 23
+  weight: 0.550428925337
+}
+detected_vertical {
+  id: 380
+  weight: 0.997938601858
+}
+detected_vertical {
+  id: 22
+  weight: 0.12018522684
+}
+detected_vertical {
+  id: 119
+  weight: 0.363978024984
+}
+adslot {
+  id: 153
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 2
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  excluded_sensitive_category: 24
+  excluded_sensitive_category: 10
+  excluded_sensitive_category: 18
+  excluded_sensitive_category: 23
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 860000
+    direct_deal {
+      direct_deal_id: 3635968887631880742
+      fixed_cpm_micros: 860000
+    }
+  }
+  publisher_settings_list_id: 56751494
+}
+adslot {
+  id: 54
+  width: 300
+  height: 250
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  excluded_sensitive_category: 19
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 110000
+    direct_deal {
+      direct_deal_id: 3136288324342288053
+      fixed_cpm_micros: 110000
+    }
+  }
+  publisher_settings_list_id: 56751395
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 116953
+postal_code: "99501"
+geo_criteria_id: 1012873
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "/\224\375\036 \256ce8\271\204)\255\017){"
+ip: "E\277\234"
+user_agent: "Mozilla/5.0 (Macintosh; U; PPC Mac OS X; sv-se) AppleWebKit/419 (KHTML, like Gecko) Safari/419.3"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 379
+  weight: 0.810901060142
+}
+detected_vertical {
+  id: 608
+  weight: 0.78917182051
+}
+detected_vertical {
+  id: 570
+  weight: 0.684215168641
+}
+detected_vertical {
+  id: 563
+  weight: 0.360827010813
+}
+detected_vertical {
+  id: 474
+  weight: 0.401493975375
+}
+adslot {
+  id: 125
+  width: 300
+  height: 250
+  excluded_attribute: 4
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 170000
+    direct_deal {
+      direct_deal_id: 2227787444462299851
+      fixed_cpm_micros: 170000
+    }
+  }
+  publisher_settings_list_id: 56751466
+}
+adslot {
+  id: 49
+  width: 300
+  height: 250
+  excluded_attribute: 1
+  excluded_attribute: 48
+  excluded_attribute: 4
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 620000
+    direct_deal {
+      direct_deal_id: 877631759553297096
+      fixed_cpm_micros: 620000
+    }
+  }
+  publisher_settings_list_id: 56751390
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 1537839
+postal_code: "94087"
+geo_criteria_id: 9031936
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3
+BidRequest:
+id: "v\302\034\374\245mM\2344\212\237\376\270\316\004{"
+ip: "E`\001"
+user_agent: "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.2pre) Gecko/20070118 Firefox/2.0.0.2pre"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 379
+  weight: 0.91165118403
+}
+detected_vertical {
+  id: 474
+  weight: 0.488528093678
+}
+detected_vertical {
+  id: 355
+  weight: 0.1733632306
+}
+detected_vertical {
+  id: 565
+  weight: 0.925877975187
+}
+detected_vertical {
+  id: 23
+  weight: 0.953180454331
+}
+adslot {
+  id: 11
+  width: 300
+  height: 250
+  excluded_attribute: 7
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 500000
+    direct_deal {
+      direct_deal_id: 3515337294839874329
+      fixed_cpm_micros: 500000
+    }
+  }
+  publisher_settings_list_id: 56751352
+}
+adslot {
+  id: 10
+  width: 300
+  height: 250
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 5
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 420000
+    direct_deal {
+      direct_deal_id: 952737362435030173
+      fixed_cpm_micros: 420000
+    }
+  }
+  publisher_settings_list_id: 56751351
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 1582527
+postal_code: "2600"
+geo_criteria_id: 1000142
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "F_\025)H\324\233\n\224\320:\013\007X-\372"
+ip: "~\212\""
+user_agent: "Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.0.2) Gecko/2008092313 Ubuntu/8.04 (hardy) Firefox/3.1"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 379
+  weight: 0.165655187928
+}
+detected_vertical {
+  id: 609
+  weight: 0.341255371689
+}
+detected_vertical {
+  id: 355
+  weight: 0.509135034338
+}
+detected_vertical {
+  id: 540
+  weight: 0.463750893876
+}
+detected_vertical {
+  id: 24
+  weight: 0.772269266594
+}
+adslot {
+  id: 163
+  width: 300
+  height: 250
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 3
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 620000
+    direct_deal {
+      direct_deal_id: 814448744538245203
+      fixed_cpm_micros: 620000
+    }
+  }
+  publisher_settings_list_id: 56751504
+}
+adslot {
+  id: 21
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  excluded_attribute: 5
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 50000
+    direct_deal {
+      direct_deal_id: 4579328737294124710
+      fixed_cpm_micros: 50000
+    }
+  }
+  publisher_settings_list_id: 56751362
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 701313
+postal_code: "27583"
+geo_criteria_id: 1021337
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "\033E>R\344\032Ml/\366cg\222\326\252\254"
+ip: "1\237\336"
+user_agent: "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0;)"
+url: "http://www.cartrade.com/bugatti-cars"
+detected_language: "en"
+detected_vertical {
+  id: 609
+  weight: 0.0548864790271
+}
+detected_vertical {
+  id: 66
+  weight: 0.642622817138
+}
+detected_vertical {
+  id: 540
+  weight: 0.479870057001
+}
+detected_vertical {
+  id: 565
+  weight: 0.548295060129
+}
+detected_vertical {
+  id: 607
+  weight: 0.5769054923
+}
+adslot {
+  id: 68
+  width: 300
+  height: 250
+  excluded_attribute: 2
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 90000
+    direct_deal {
+      direct_deal_id: 693654130643190227
+      fixed_cpm_micros: 90000
+    }
+  }
+  publisher_settings_list_id: 56751409
+}
+adslot {
+  id: 39
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 900000
+    direct_deal {
+      direct_deal_id: 3808699441567841297
+      fixed_cpm_micros: 900000
+    }
+  }
+  publisher_settings_list_id: 56751380
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 1696439
+postal_code: "99501"
+geo_criteria_id: 1012873
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "\337\355\265E\263\225/\205\\\222S\2214\317s("
+ip: "\362m\035"
+user_agent: "Mozilla/5.0 (Macintosh; U; PPC Mac OS X; sv-se) AppleWebKit/419 (KHTML, like Gecko) Safari/419.3"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 608
+  weight: 0.280122301405
+}
+detected_vertical {
+  id: 563
+  weight: 0.708249115725
+}
+detected_vertical {
+  id: 570
+  weight: 0.582896146164
+}
+detected_vertical {
+  id: 355
+  weight: 0.104242353343
+}
+detected_vertical {
+  id: 22
+  weight: 0.480120683422
+}
+adslot {
+  id: 87
+  width: 300
+  height: 250
+  excluded_attribute: 5
+  excluded_attribute: 48
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  excluded_sensitive_category: 3
+  excluded_sensitive_category: 10
+  excluded_sensitive_category: 19
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 400000
+    direct_deal {
+      direct_deal_id: 1036444337232421310
+      fixed_cpm_micros: 400000
+    }
+  }
+  publisher_settings_list_id: 56751428
+}
+adslot {
+  id: 189
+  width: 300
+  height: 250
+  excluded_attribute: 6
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 440000
+    direct_deal {
+      direct_deal_id: 3046643474289680893
+      fixed_cpm_micros: 440000
+    }
+  }
+  publisher_settings_list_id: 56751530
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 1834958
+postal_code: "94087"
+geo_criteria_id: 9031936
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 4
+BidRequest:
+id: "\230\034f[\374L>\313!\261\177\227\315\222\252\017"
+ip: "e_\271"
+user_agent: "Mozilla/4.08 (compatible; MSIE 6.0; Windows NT 5.1)"
+url: "http://www.gsmarena.com/samsung_galaxy_e7-687912.php"
+detected_language: "en"
+detected_vertical {
+  id: 563
+  weight: 0.0128669872721
+}
+detected_vertical {
+  id: 570
+  weight: 0.647654437774
+}
+detected_vertical {
+  id: 355
+  weight: 0.121736817791
+}
+detected_vertical {
+  id: 380
+  weight: 0.074952022275
+}
+detected_vertical {
+  id: 433
+  weight: 0.689755999867
+}
+adslot {
+  id: 186
+  width: 300
+  height: 250
+  excluded_attribute: 2
+  excluded_attribute: 48
+  excluded_attribute: 3
+  excluded_attribute: 48
+  excluded_attribute: 4
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 440000
+    direct_deal {
+      direct_deal_id: 2486200700695500500
+      fixed_cpm_micros: 440000
+    }
+  }
+  publisher_settings_list_id: 56751527
+}
+adslot {
+  id: 44
+  width: 300
+  height: 250
+  excluded_attribute: 9
+  excluded_attribute: 48
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  allowed_vendor_type: 113
+  matching_ad_data {
+    adgroup_id: 18102001720
+    minimum_cpm_micros: 350000
+    direct_deal {
+      direct_deal_id: 3300059761833542514
+      fixed_cpm_micros: 350000
+    }
+  }
+  publisher_settings_list_id: 56751385
+}
+is_test: true
+cookie_version: 1
+google_user_id: "CAESELz_Eu_JzRmISw7-SNL6c8M"
+DEPRECATED_seller_network: "Google News"
+cookie_age_seconds: 1716717
+postal_code: "2600"
+geo_criteria_id: 1000142
+seller_network_id: 10001
+publisher_settings_list_id: 56751341
+
+BidResponse:
+processing_time_ms: 3

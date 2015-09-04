@@ -208,14 +208,19 @@ bool getProbability(double check)
 
 		string groupid="";
 		bool addressRemarketing = true;
+
+		if(request.bidRequest->isTest)
+		{
+			cout << urlName << request.bidRequest->isTest << endl;
+		}
 		// if(!val["imp"][0]["pmp"]["ext"]["adgroup_id"].isNull())
 		// {
 			groupid = val["imp"][0]["pmp"]["ext"]["adgroup_id"].asString();
 
-			if((groupid == "20841722560") && urlName.find("youtube.com") != std::string::npos)
+			if((groupid == "24913477600") )
 		
 			{
-				//cout << "excluded attribute " << request.bidRequest->imp[0].pmp->ext["excluded_attribute"] << endl;	
+				cout << "ukraine " << urlName << endl;	
 			}	
 
 		// }
@@ -252,7 +257,7 @@ bool getProbability(double check)
 			
 		}
 
-		if(addressRemarketing && urlName.find("%") == std::string::npos )
+		if(addressRemarketing && urlName.find("%") == std::string::npos && groupid != "24913477600")
 		{
 			gotIDs = helper.processBidURLWrapper(urlName, item_ids, advertisementid,eCPM, click_url,val,request.bidRequest->toJsonStr(),isRemarketingBlocked,bidthroughRemarketing,hastaggingrestricted,add_details);
 		}

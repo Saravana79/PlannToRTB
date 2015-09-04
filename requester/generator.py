@@ -22,13 +22,13 @@ CHANNELS = ['12345']
 # The below are example values for these fields that are used to populate
 # publisher info.
 BRANDED_PUB_DATA = [
-  #  ('http://www.cnet.com/how-to/10-killer-tips-for-your-samsung-galaxy-note-3/', 502, 32423234, 'NDTV'),
+ #   ('http://m.gsmarena.com/xiaomi_mi_4i-7211.php', 502, 32423234, 'NDTV'),
  #  ('http://snapsort.com/compare/Canon-EOS-1200D-vs-Nikon-D3200', 502, 32423234, 'FoneAre'),
- #  (' http://gadgetstouse.com/full-reviews/micromax-canvas-nitro-review/24964', 10001, 56751341, 'Google News'),
+   ('http://www.gsmarena.com/samsung_galaxy_e7-687912.php', 10001, 56751341, 'Google News'),
 #    ('http://phandroid.com/2014/07/18/cool-tricks-every-android-phone-user-should-know/', 10001, 56751341, 'Google News'),
- #   ('http://www.igyaan.in/71117/motorola-moto-g-hands/', 10001, 56751341, 'Google News'),
+    ('http://www.cartrade.com/bugatti-cars', 10001, 56751341, 'Google News'),
   #  ('http://gadgetstouse.com/featured/top-5-smartphones-6-inch-display/18459', 10001, 12672383, 'gadgetstouse'),
-    ('http://www.youtube.com/video/Z_7oN4FwCko', 1528, 84485234, 'Tech First'),
+ #   ('http://www.youtube.com/video/Z_7oN4FwCko', 1528, 84485234, 'Tech First'),
  #   ('http://www.youtube.com/video/gJ3Ds6uf0Yg', 1528, 84485234, 'Tech First'),
     
 #    ('http://www.nytimes.com/pages/technology/index.html', 936, 9034124,'New York Times'),
@@ -50,7 +50,7 @@ MAX_DIRECT_DEAL_ID = 1 << 62
 MAX_MATCHING_ADGROUPS = 3
 
 DIMENSIONS = [
-    (468, 60),
+    (300, 250),
 ]
 
 MAX_SLOT_ID = 200
@@ -104,7 +104,7 @@ USER_AGENTS = [
 
 # Criteria.
 MAX_EXCLUDED_ATTRIBUTES = 3
-CREATIVE_ATTRIBUTES = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+CREATIVE_ATTRIBUTES = [1, 2, 3, 4, 5, 6, 7, 9]
 
 MAX_EXCLUDED_BUYER_NETWORKS = 2
 

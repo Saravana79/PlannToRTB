@@ -1,0 +1,13 @@
+connecting to Carbon at 127.0.0.1:2003 (localhost)
+VICKY: augmentor runner check
+watchServiceProvider: name router.augmentationLoop not already connected 
+connecting to router.augmentationLoop/augmentors
+connected to tcp://127.0.0.1:18000
+connecting to agentConfigurationService/listen
+wexists handler returned -101
+2. returning result 
+Augment Init
+wexists handler returned -101
+2. returning result 
+warning: could not connect to PostAuctionLoop/logger immediately
+need to disconenct from rtbPostAuctionService serviceClass/rtbPostAuctionService/PostAuctionLoop logger

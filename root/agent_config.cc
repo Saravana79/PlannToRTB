@@ -99,7 +99,9 @@ const Creative Creative::sample250
 const Creative Creative::sample160
     (160, 600,  "Createive160", 9);
 const Creative Creative::sample320
-    (320, 50,  "Createive160", 10);    
+    (320, 50,  "Createive160", 10);   
+const Creative Creative::sample3201
+    (320, 100,  "Createive320x100", 11);    
 
 bool
 Creative::
