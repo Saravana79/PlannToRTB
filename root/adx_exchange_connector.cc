@@ -227,22 +227,23 @@ ParseGbrMobile (const GoogleBidRequest& gbr, BidRequest& br)
         br.device.emplace();
     auto& dev = *br.device;
     const auto& mobile = gbr.mobile ();
-    if (mobile.has_platform())
-        dev.os    = mobile.platform() ;
-    if (mobile.has_brand()) dev.make  = mobile.brand() ;
-    if (mobile.has_model()) dev.model = mobile.model() ;
-    if (mobile.has_os_version())
+    const auto& device = gbr.device ();
+    if (device.has_platform())
+        dev.os    = device.platform() ;
+    if (device.has_brand()) dev.make  = device.brand() ;
+    if (device.has_model()) dev.model = device.model() ;
+    if (device.has_os_version())
     {
         dev.osv = "";
-        if (mobile.os_version().has_os_version_major())
-            dev.osv += to_string(mobile.os_version().os_version_major());
-        if (mobile.os_version().has_os_version_minor())
-            dev.osv += "." + to_string(mobile.os_version().os_version_minor());
-        if (mobile.os_version().has_os_version_micro ())
-            dev.osv += "." + to_string(mobile.os_version().os_version_micro ());
+        if (device.os_version().major())
+            dev.osv += to_string(device.os_version().major());
+        if (device.os_version().minor())
+            dev.osv += "." + to_string(device.os_version().minor());
+        if (device.os_version().micro())
+            dev.osv += "." + to_string(device.os_version().micro());
     }
 
-    if (mobile.has_carrier_id()) dev.carrier = to_string(mobile.carrier_id()) ;
+    if (device.has_carrier_id()) dev.carrier = to_string(device.carrier_id()) ;
     if (mobile.is_app())
     {
         if (!br.app) br.app.emplace();
@@ -268,12 +269,12 @@ ParseGbrMobile (const GoogleBidRequest& gbr, BidRequest& br)
         if (!br.site) br.site.emplace();
     }
 
-    if (mobile.has_mobile_device_type())
+    if (device.has_device_type())
     {
-        switch  (mobile.mobile_device_type())
+        switch  (device.device_type())
         {
-        case BidRequest_Mobile_MobileDeviceType_HIGHEND_PHONE:
-        case BidRequest_Mobile_MobileDeviceType_TABLET:
+        case BidRequest_Device_DeviceType_HIGHEND_PHONE:
+        case BidRequest_Device_DeviceType_TABLET:
             br.device->devicetype.val = OpenRTB::DeviceType::MOBILE_OR_TABLET ;
             break;
         default:
@@ -283,11 +284,26 @@ ParseGbrMobile (const GoogleBidRequest& gbr, BidRequest& br)
 
     // will be needed later on to populate the ext field on the openrtb device obj.
     auto& ext = br.device->ext ;
-    if (mobile.has_screen_height())      ext.atStr("screen_height")      = mobile.screen_height();
-    if (mobile.has_screen_width())       ext.atStr("screen_width")       = mobile.screen_width();
-    if (mobile.has_screen_orientation()) ext.atStr("screen_orientation") = mobile.screen_orientation();
-    if (mobile.has_screen_height()&&mobile.has_screen_width())
-        ext.atStr("res") = to_string(mobile.screen_width()) + "x" + to_string(mobile.screen_height());
+    if (device.has_screen_height())      ext.atStr("screen_height")      = device.screen_height();
+    if (device.has_screen_width())       ext.atStr("screen_width")       = device.screen_width();
+    if (device.has_screen_orientation())
+    {
+        switch  (device.screen_orientation())
+        {
+        case BidRequest_Device_ScreenOrientation_PORTRAIT:
+           ext.atStr("screen_orientation") = "1" ;
+            break;
+        case BidRequest_Device_ScreenOrientation_LANDSCAPE:
+            ext.atStr("screen_orientation") = "2" ;
+            break;
+        default:
+        ext.atStr("screen_orientation") = "0" ;
+            break;
+        }
+    }
+
+    if (device.has_screen_height()&&device.has_screen_width())
+        ext.atStr("res") = to_string(device.screen_width()) + "x" + to_string(device.screen_height());
 
     // this bid request should have exactly 1 impression.
     if (br.imp.empty()) br.imp.emplace_back();
@@ -305,8 +321,8 @@ ParseGbrMobile (const GoogleBidRequest& gbr, BidRequest& br)
 
     if (mobile.has_is_mobile_web_optimized())
         ext.atStr("is_mobile_web_optimized") = mobile.is_mobile_web_optimized();
-    if (mobile.has_device_pixel_ratio_millis())
-        ext.atStr("device_pixel_ratio_millis") = mobile.device_pixel_ratio_millis();
+    // if (mobile.has_device_pixel_ratio_millis())
+    //     ext.atStr("device_pixel_ratio_millis") = mobile.device_pixel_ratio_millis();
 
 }
 
@@ -566,11 +582,13 @@ ParseGbrAdSlot (const std::string currency,
 
             vector<std::string> adg_ids;
             for (auto i: boost::irange(0,slot.matching_ad_data_size())){
-                if(slot.matching_ad_data(i).has_adgroup_id()){
+             //   if(slot.matching_ad_data(i).has_billing_id()){
+                for (auto j: boost::irange(0,slot.matching_ad_data(i).billing_id_size())){
                     adg_ids.push_back(
                         boost::lexical_cast<std::string>(
-                            slot.matching_ad_data(i).adgroup_id()));
+                            slot.matching_ad_data(i).billing_id(j)));
                 }
+             //   }
             }
             spot.restrictions.addStrings("allowed_adgroup", adg_ids);
 
@@ -602,8 +620,8 @@ ParseGbrAdSlot (const std::string currency,
             for (auto i: boost::irange(0,slot.excluded_attribute_size()))
                 spot.pmp->ext["excluded_attribute"][i] = std::to_string(slot.excluded_attribute(i));
 
-            if (slot.has_publisher_settings_list_id())
-                spot.pmp->ext["publisher_settings_list_id"]= std::to_string(slot.publisher_settings_list_id());
+            // if (slot.has_publisher_settings_list_id())
+            //     spot.pmp->ext["publisher_settings_list_id"]= std::to_string(slot.publisher_settings_list_id());
 
             //cout << gbr.bid_response_feedback_size() << " - size " << endl;
              for (auto j: boost::irange(0, gbr.bid_response_feedback_size()))
@@ -638,12 +656,14 @@ ParseGbrAdSlot (const std::string currency,
 
             for (auto const & matchingAdData : slot.matching_ad_data()) {
 
-                if (matchingAdData.has_adgroup_id())
-                {
+               // if (matchingAdData.has_billing_id())
+               // {
+                  for (auto const & billingID : matchingAdData.billing_id()) {
                     spot.pmp->ext["adgroup_id"] =
-                        std::to_string(matchingAdData.adgroup_id());
-                }
-
+                        std::to_string(billingID);
+                    }
+               // }
+                 //PlannTo - commented on 4Feb 2016 ad deal details are unknown.       
                 for (auto const & directDeal : matchingAdData.direct_deal()) {
 
                     double amountInCpm =
@@ -1050,20 +1070,20 @@ getResponse(const HttpAuctionHandler & connection,
 
                     if (meta.isMember("adgroup_id")) {
                         int64_t adgroup_id = stoll(meta["adgroup_id"].asString());
-                        adslot->set_adgroup_id(adgroup_id);
+                        adslot->set_billing_id(adgroup_id);
                     }
                 }
             }
         }
 
         if(!crinfo->adgroup_id_.empty()) {
-            adslot->set_adgroup_id(
+            adslot->set_billing_id(
                 boost::lexical_cast<uint64_t>(configuration_.expand(crinfo->adgroup_id_,ctx)));
         }
         else
         {
             int64_t adgroup_id = stoll(auction.request->imp[0].pmp->ext["adgroup_id"].asString());
-            adslot->set_adgroup_id(adgroup_id);
+            adslot->set_billing_id(adgroup_id);
         }
 
         for(const auto& cat : crinfo->restricted_category_)

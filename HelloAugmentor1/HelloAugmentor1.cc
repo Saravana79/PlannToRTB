@@ -316,21 +316,24 @@ bool getProbability(double check)
 						}
 						else
 						{
-							if(bidthroughRemarketing)
+							if(advertisementid != "74")
 							{
-								result[account].tags.insert("Advertisment-1-R");
-							}
-							else
-							{
-								if(hastaggingrestricted)
+								if(bidthroughRemarketing)
 								{
-									result[account].tags.insert("Advertisment-1");
+									result[account].tags.insert("Advertisment-1-R");
 								}
 								else
 								{
-									result[account].tags.insert("Advertisment-1-B");
+									if(hastaggingrestricted)
+									{
+										result[account].tags.insert("Advertisment-1");
+									}
+									else
+									{
+										result[account].tags.insert("Advertisment-1-B");
+									}
 								}
-							}
+							}	
 							
 						}
 					}	
